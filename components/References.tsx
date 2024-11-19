@@ -21,16 +21,16 @@ const referenceVariants = {
 
 const referencesData = [
   {
-    title: "Web Trnavského Samosprávneho Kraja",
-    description: "Komplexná redesign webovej stránky pre Trnavský samosprávny kraj, vytvorenie moderného, responzívneho rozhrania sozameraním na používateľskú prívetivosť a prístupnosť informácií.",
+    title: "Web Trnavského samosprávneho raja",
+    description: "Komplexný redesign webovej stránky pre Trnavský samosprávny kraj, vytvorenie moderného, responzívneho rozhrania so zameraním na používateľskú prívetivosť a prístupnosť informácií.",
     imageUrl: "/ttsk.jpg",
     websiteUrl: "https://www.trnava-vuc.sk",
     imagePosition: "right",
     technologies: ["WordPress", "PHP", "Tailwind CSS", "Responsive Design"]
   },
   {
-    title: "Správa Majetku Mesta Trnava",
-    description: "Vývoj komplexnej webovej aplikácie pre správu mestského majetku, implementácia pokročilých filtračných a analytických nástrojov pre efektívnu správu nehnuteľností.",
+    title: "Správa majetku mesta Trnava",
+    description: "Vývoj komplexnej webovej aplikácie pre správu mestského majetku, implementácia pokročilých nástrojov pre efektívnu správu nehnuteľností.",
     imageUrl: "/smmt.jpg",
     websiteUrl: "https://smmt.trnava.sk/",
     imagePosition: "left",
