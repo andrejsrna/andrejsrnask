@@ -2,6 +2,7 @@
 
 import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
 import { motion } from "framer-motion";
+import Link from 'next/link';
 
 const footerVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -26,33 +27,43 @@ export function Footer() {
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center">
           
-          {/* Logo alebo Názov */}
+          {/* Logo alebo Názov s odkazom na homepage */}
           <div className="mb-4 md:mb-0">
-            <h1 className="text-2xl font-bold text-orange-600">Andrej Srna</h1>
+            <Link href="/" className="text-2xl font-bold text-orange-600">Andrej Srna</Link>
           </div>
           
           {/* Navigačné Odkazy */}
-          <div className="flex space-x-4 mb-4 md:mb-0">
-            <a href="https://andrejsrna.sk/#about" className="hover:text-orange-600 transition-colors duration-300">O mne</a>
-            <a href="https://andrejsrna.sk/#services" className="hover:text-orange-600 transition-colors duration-300">Služby</a>
-            <a href="https://andrejsrna.sk/#references" className="hover:text-orange-600 transition-colors duration-300">Portfólio</a>
-            <a href="https://andrejsrna.sk/#contact" className="hover:text-orange-600 transition-colors duration-300">Kontakt</a>
+          <div className="flex flex-wrap space-x-4 mb-4 md:mb-0">
+            <Link href="#about" className="hover:text-orange-600 transition-colors duration-300">O mne</Link>
+            <Link href="#services" className="hover:text-orange-600 transition-colors duration-300">Služby</Link>
+            <Link href="#references" className="hover:text-orange-600 transition-colors duration-300">Portfólio</Link>
+            <Link href="#contact" className="hover:text-orange-600 transition-colors duration-300">Kontakt</Link>
           </div>
           
           {/* Sociálne Siete */}
           <div className="flex space-x-4">
-            <a href="https://www.linkedin.com/in/andrej-srna-937351111/" target="_blank" rel="noopener noreferrer" className="text-2xl hover:text-orange-600 transition-colors duration-300">
+            <a href="https://www.linkedin.com/in/andrej-srna-937351111/" target="_blank" rel="noopener noreferrer" className="text-2xl hover:text-orange-600 transition-colors duration-300" aria-label="LinkedIn">
               <FaLinkedin />
             </a>
-            <a href="https://github.com/andrejsrna" target="_blank" rel="noopener noreferrer" className="text-2xl hover:text-orange-600 transition-colors duration-300">
+            <a href="https://github.com/andrejsrna" target="_blank" rel="noopener noreferrer" className="text-2xl hover:text-orange-600 transition-colors duration-300" aria-label="GitHub">
               <FaGithub />
             </a>
-            <a href="https://x.com/AndrejSrna" target="_blank" rel="noopener noreferrer" className="text-2xl hover:text-orange-600 transition-colors duration-300">
+            <a href="https://x.com/AndrejSrna" target="_blank" rel="noopener noreferrer" className="text-2xl hover:text-orange-600 transition-colors duration-300" aria-label="Twitter">
               <FaTwitter />
             </a>
             {/* Pridajte ďalšie sociálne siete podľa potreby */}
           </div>
         </div>
+        
+
+        <details className="mt-8">
+          <summary className="cursor-pointer text-sm font-semibold mb-4">Ďalšie odkazy</summary>
+          <ul className="flex flex-col md:flex-row md:space-x-6">
+            <li>
+              <Link href="/tvorba-web-stranok-pezinok" className="hover:text-orange-600 transition-colors duration-300">Tvorba web stránok Pezinok</Link>
+            </li>
+          </ul>
+        </details>
         
         {/* Copyright */}
         <div className="mt-6 text-center text-gray-400">

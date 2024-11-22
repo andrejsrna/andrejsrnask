@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://andrejsrna.sk
+
+# Sitemaps
+Sitemap: https://andrejsrna.sk/sitemap.xml
