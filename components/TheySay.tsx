@@ -57,7 +57,7 @@ export function Testimonials() {
               className="bg-white p-6 rounded-lg shadow-lg flex-1"
             >
               <FaQuoteLeft className="text-orange-600 text-2xl mb-4" />
-              <p className="text-gray-700 italic mb-4">"{testimonial.quote}"</p>
+              <p className="text-gray-700 italic mb-4">&quot;{testimonial.quote}&quot;</p>
               <p className="text-gray-900 font-semibold text-right">- {testimonial.author}</p>
             </motion.div>
           ))}
