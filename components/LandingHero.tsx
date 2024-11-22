@@ -3,20 +3,11 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { motion, Variants } from "framer-motion";
 
-const containerVariants: Variants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.3
-    }
-  }
-};
-
-const textVariants: Variants = {
-  hidden: { opacity: 0, x: -50 },
+const landingHeroVariants: Variants = {
+  hidden: { opacity: 0, y: -50 },
   visible: { 
     opacity: 1, 
-    x: 0,
+    y: 0,
     transition: {
       duration: 0.8,
       ease: "easeOut"
@@ -24,19 +15,7 @@ const textVariants: Variants = {
   }
 };
 
-const imageVariants: Variants = {
-  hidden: { opacity: 0, x: 50 },
-  visible: { 
-    opacity: 1, 
-    x: 0,
-    transition: {
-      duration: 0.8,
-      ease: "easeOut"
-    }
-  }
-};
-
-const buttonVariants: Variants = {
+const landingButtonVariants: Variants = {
   hidden: { opacity: 0, scale: 0.8 },
   visible: { 
     opacity: 1, 
@@ -49,12 +28,12 @@ const buttonVariants: Variants = {
   }
 };
 
-export function Hero() {
+export function LandingHero() {
   return (
     <section className="relative py-16 bg-gradient-to-r from-orange-50 to-yellow-100 overflow-hidden">
       
       {/* Abstraktné Oranžové Tvarov Pozadie */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 -z-20">
         {/* Tvar 1 */}
         <svg 
           className="absolute top-10 left-10 w-40 h-40 text-orange-300 opacity-70"
@@ -112,56 +91,53 @@ export function Hero() {
       </div>
       
       <motion.div 
-        variants={containerVariants}
+        variants={landingHeroVariants}
         initial="hidden"
         animate="visible"
         className="relative container mx-auto px-6 flex flex-col-reverse md:flex-row items-center justify-between z-10"
       >
-        {/* Text Content */}
+        {/* Textový obsah */}
         <motion.div
-          variants={textVariants}
           className="w-full md:w-1/2 mb-8 md:mb-0"
         >
           <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-4">
-            Ahoj, som <span className="text-orange-600">Andrej Srna</span>
+            Tvorba web stránok <span className="text-orange-600">Pezinok</span>
           </h1>
 
           <p className="text-lg sm:text-xl text-gray-700 mb-6">
-            Som vášnivý webový vývojár so špecializáciou na moderné, 
-            užívateľsky prívetivé webové aplikácie. <i>Vytvorme spolu niečo úžasné!</i>
+            Profesionálne a responzívne webové stránky priamo z Pezinka. Zameriavame sa na moderný dizajn, optimalizáciu pre vyhľadávače a bezproblémovú funkčnosť.
           </p>
 
           {/* Button */}
           <motion.div
-            variants={buttonVariants}
+            variants={landingButtonVariants}
             className="mt-4"
           >
             <Button asChild className="px-6 py-3 text-lg bg-orange-600 hover:bg-orange-700 text-white">
-              <a href="#contact">Kontaktujte ma</a>
+              <a href="#contact">Získať cenovú ponuku</a>
             </Button>
           </motion.div>
         </motion.div>
 
-        {/* Image */}
+        {/* Obrázok */}
         <motion.div
-          variants={imageVariants}
           className="w-full md:w-1/2 flex justify-center"
         >
           <div className="relative w-72 h-72 sm:w-80 sm:h-80">
             <Image
-              src="/zombo-andrej.jpeg"
-              alt="Andrej Srna"
+              src="/pezinok.jpeg" // Uistite sa, že obrázok existuje v priečinku public
+              alt="Tvorba web stránok Pezinok"
               layout="fill"
               objectFit="cover"
-              className="rounded-full shadow-lg border-4 border-white"
+              className="rounded-lg shadow-lg border-4 border-white"
             />
             {/* Dekoratívny Element */}
-            <div className="absolute top-0 left-0 w-full h-full rounded-full border-4 border-transparent bg-gradient-to-tr from-orange-400 to-yellow-600 animate-pulse opacity-20"></div>
+            <div className="absolute top-0 left-0 w-full h-full rounded-lg border-4 border-transparent bg-gradient-to-tr from-orange-400 to-yellow-600 animate-pulse opacity-20"></div>
           </div>
         </motion.div>
       </motion.div>
     </section>
   );
-};
+}
 
-export default Hero;
+export default LandingHero;

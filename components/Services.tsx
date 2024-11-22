@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Code, PenTool, Server } from "lucide-react";
+import { Code, PenTool, Server, Search, Globe, Smartphone, DownloadCloud, FileText, Layers } from "lucide-react";
 import { motion } from "framer-motion";
 
 const serviceVariants = {
@@ -36,8 +36,45 @@ const servicesData = [
     title: "Serverové riešenia",
     description: "Návrh a implementácia škálovateľných backend riešení so zameraním na výkon a bezpečnosť.",
     color: "text-purple-500"
+  },
+  {
+    icon: Search,
+    title: "SEO optimalizácia",
+    description: "Zlepšenie viditeľnosti vašej webovej stránky vo vyhľadávačoch a zvýšenie organického prenosu.",
+    color: "text-yellow-500"
+  },
+  {
+    icon: Globe,
+    title: "Administrácia webových stránok",
+    description: "Správa obsahu, aktualizácie a optimalizácie pre vaše webové stránky.",
+    color: "text-orange-500"
+  },
+  {
+    icon: Smartphone,
+    title: "Vývoj mobilných aplikácií",
+    description: "Tvorba natívnych a multiplatformových mobilných aplikácií pre Android a iOS.",
+    color: "text-red-500"
+  },
+  {
+    icon: DownloadCloud,
+    title: "Marketingový plán",
+    description: "Príprava komplexných marketingových stratégií a plánov na mieru podľa vašich cieľov.",
+    color: "text-cyan-500"
+  },
+  {
+    icon: FileText,
+    title: "CMS riešenia",
+    description: "Implementácia a správa redakčných systémov, ktoré vám umožnia jednoducho spravovať obsah.",
+    color: "text-teal-500"
+  },
+  {
+    icon: Layers,
+    title: "Moderný technologický stack",
+    description: "Použitie najnovších technológií pre robustné a udržateľné riešenia.",
+    color: "text-indigo-500"
   }
 ];
+
 
 export function Services() {
   return (
