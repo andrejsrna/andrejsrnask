@@ -6,6 +6,9 @@
 
 Vitajte na oficiálnom repozitári môjho osobného portfólia pre webový vývoj. Tento projekt je vytvorený pomocou **Next.js**, **Tailwind CSS** a **Framer Motion**, s cieľom poskytnúť profesionálnu a modernú prezentáciu mojich webových služieb v Pezinku. Stránka je optimalizovaná pre vyhľadávače (SEO), responzívna a ponúka plynulý používateľský zážitok.
 
+- [Andrej Srna](https://andrejsrna.sk/) - Link na môj web
+
+
 ## 🚀 Funkcie
 
 - **Responzívny Dizajn:** Optimalizovaný pre všetky zariadenia vrátane mobilov, tabletov a desktopov.
@@ -25,7 +28,6 @@ Vitajte na oficiálnom repozitári môjho osobného portfólia pre webový vývo
 - [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework pre rýchly dizajn.
 - [Framer Motion](https://www.framer.com/motion/) - Knižnica pre animácie v React aplikáciách.
 - [React Icons](https://react-icons.github.io/react-icons/) - Ikonová knižnica pre React.
-- [Google Analytics](https://analytics.google.com/) - Sledovanie návštevnosti a správania používateľov.
 - [next-sitemap](https://github.com/iamvishnusankar/next-sitemap) - Generovanie sitemap pre Next.js projekty.
 
 ## 📥 Inštalácia
