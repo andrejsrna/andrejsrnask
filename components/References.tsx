@@ -26,7 +26,7 @@ const referencesData = [
     imageUrl: "/ttsk.jpg",
     websiteUrl: "https://www.trnava-vuc.sk",
     imagePosition: "right",
-    technologies: ["WordPress", "PHP", "Tailwind CSS", "Responsive Design"]
+    technologies: ["WordPress", "PHP", "Tailwind CSS", "Responsive Design", "SEO", "Google Analytics", "User Permissions", "UX/UI Design", "UX Research", "UX Testing", "CMS", "API", "REST", "Nginx", "MySQL", "jQuery", "AJAX", "Facebook API"  ]
   },
   {
     title: "Správa majetku mesta Trnava",
@@ -34,7 +34,7 @@ const referencesData = [
     imageUrl: "/smmt.jpg",
     websiteUrl: "https://smmt.trnava.sk/",
     imagePosition: "left",
-    technologies: ["WordPress", "PHP", "CSS", "jQuery"]
+    technologies: ["WordPress", "PHP", "CSS", "jQuery", "AJAX", "MySQL", "API", "REST", "Nginx", "Tailwind CSS", "Facebook API", "CMS", "SEO", "Google Analytics", "User Permissions", "Responsive Design", "UX/UI Design", "UX Research", "UX Testing" ]
   }
 ];
 
