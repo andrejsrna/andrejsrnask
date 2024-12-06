@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { motion, Variants } from "framer-motion";
+import { useState } from "react";
 
 const containerVariants: Variants = {
   hidden: {},
@@ -49,7 +50,51 @@ const buttonVariants: Variants = {
   }
 };
 
+const crazyButtonVariants: Variants = {
+  normal: { 
+    scale: 1,
+    rotate: 0,
+    x: 0,
+    y: 0
+  },
+  crazy: {
+    scale: [1, 1.2, 0.8, 1.4, 0.9, 1],
+    rotate: [0, 45, -45, 180, -180, 0],
+    x: [0, 50, -50, 20, -20, 0],
+    y: [0, -30, 30, -15, 15, 0],
+    transition: {
+      duration: 1.5,
+      ease: "easeInOut",
+    }
+  }
+};
+
 export function Hero() {
+  const [isCrazy, setIsCrazy] = useState(false);
+  const [clickCount, setClickCount] = useState(0);
+
+  const messages = [
+    "Stále nestačilo? 😈",
+    "Niekto tu má rád chaos... 🌪️",
+    "Už si to klikol/a {clickCount}x! 🤪",
+    "Toto tlačidlo má magickú moc... ✨",
+    "Hovorí sa, že po 100 kliknutiach... 🤫",
+    "...sa stane niečo špeciálne! 🎉",
+    "Ale nikto sa tam ešte nedostal 😅",
+    "Máš na to! 💪",
+  ];
+
+  const getCurrentMessage = () => {
+    if (clickCount < 3) return null;
+    const messageIndex = Math.min(Math.floor(clickCount / 3) - 1, messages.length - 1);
+    return messages[messageIndex].replace("{clickCount}", clickCount.toString());
+  };
+
+  const handleCrazyClick = () => {
+    setIsCrazy(true);
+    setClickCount(prev => prev + 1);
+  };
+
   return (
     <section className="relative py-16 bg-gradient-to-r from-orange-50 to-yellow-100 overflow-hidden">
       
@@ -134,11 +179,33 @@ export function Hero() {
           {/* Button */}
           <motion.div
             variants={buttonVariants}
-            className="mt-4"
+            className="mt-4 space-x-4"
           >
             <Button asChild className="px-6 py-3 text-lg bg-orange-600 hover:bg-orange-700 text-white">
               <a href="#contact">Kontaktujte ma</a>
             </Button>
+            
+            <div className="inline-block relative">
+              <motion.button
+                variants={crazyButtonVariants}
+                animate={isCrazy ? "crazy" : "normal"}
+                onClick={handleCrazyClick}
+                onAnimationComplete={() => setIsCrazy(false)}
+                className="px-4 py-1.5 text-lg bg-purple-600 hover:bg-purple-700 text-white rounded-md"
+              >
+                Toto tlačítko určite nechcete stlačiť
+              </motion.button>
+              {clickCount >= 3 && (
+                <motion.p
+                  key={getCurrentMessage()}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="absolute -bottom-8 left-1/2 -translate-x-1/2 text-sm text-purple-600 font-semibold whitespace-nowrap"
+                >
+                  {getCurrentMessage()}
+                </motion.p>
+              )}
+            </div>
           </motion.div>
         </motion.div>
 

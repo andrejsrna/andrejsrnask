@@ -35,6 +35,14 @@ const referencesData = [
     websiteUrl: "https://smmt.trnava.sk/",
     imagePosition: "left",
     technologies: ["WordPress", "PHP", "CSS", "jQuery", "AJAX", "MySQL", "API", "REST", "Nginx", "Tailwind CSS", "Facebook API", "CMS", "SEO", "Google Analytics", "User Permissions", "Responsive Design", "UX/UI Design", "UX Research", "UX Testing" ]
+  },
+  {
+    title: "Zdravá župa",
+    description: "Vývoj komplexnej webovej aplikácie pre Zdravú župu, implementácia pokročilých nástrojov pre efektívnu správu informácií o zdravotníckych službách.",
+    imageUrl: "/zz.jpg",
+    websiteUrl: "https://zdravazupa.sk/",
+    imagePosition: "right",
+    technologies: ["React", "Tailwind", "Shadcn", "Next.js", "TypeScript", "API", "REST", "NextAuth", "PostgreSQL", "Docker", "Router", "Git", "GitHub", "Prisma", "Responsive Design", "SEO", "Cursor", "React Lightbox", "Confluence", "Jira" ]
   }
 ];
 
@@ -61,7 +69,7 @@ export function References() {
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
             variants={referenceVariants}
-            className={`flex flex-col md:flex-row items-center mb-16 ${
+            className={`flex flex-col md:flex-row items-center mb-8 md:mb-16 ${
               reference.imagePosition === 'left' 
                 ? 'md:flex-row-reverse' 
                 : ''
@@ -98,12 +106,13 @@ export function References() {
                 </Button>
               </Card>
             </div>
-            <div className="md:w-1/2 p-4">
-              <div className="relative w-full aspect-video rounded-lg overflow-hidden shadow-lg">
+            <div className="md:w-1/2 p-4 hidden md:block">
+              <div className="relative w-full h-[300px] md:aspect-video rounded-lg overflow-hidden shadow-lg">
                 <Image 
                   src={reference.imageUrl}
                   alt={reference.title}
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
