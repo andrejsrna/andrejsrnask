@@ -40,7 +40,7 @@ const referencesData = [
     title: "Zdravá župa",
     description: "Vývoj komplexnej webovej aplikácie pre Zdravú župu, implementácia pokročilých nástrojov pre efektívnu správu informácií o zdravotníckych službách.",
     imageUrl: "/zz.jpg",
-    websiteUrl: "https://zdravazupa.sk/",
+    websiteUrl: "https://www.zdravazupa.sk/",
     imagePosition: "right",
     technologies: ["React", "Tailwind", "Shadcn", "Next.js", "TypeScript", "API", "REST", "NextAuth", "PostgreSQL", "Docker", "Router", "Git", "GitHub", "Prisma", "Responsive Design", "SEO", "Cursor", "React Lightbox", "Confluence", "Jira" ]
   }
