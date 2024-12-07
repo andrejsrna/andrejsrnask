@@ -179,13 +179,13 @@ export function Hero() {
           {/* Button */}
           <motion.div
             variants={buttonVariants}
-            className="mt-4 space-x-4"
+            className="mt-4"
           >
             <Button asChild className="px-6 py-3 text-lg bg-orange-600 hover:bg-orange-700 text-white">
               <a href="#contact">Kontaktujte ma</a>
             </Button>
             
-            <div className="inline-block relative">
+            <div className="inline-block relative ml-0 md:ml-4 mt-4 md:mt-0">
               <motion.button
                 variants={crazyButtonVariants}
                 animate={isCrazy ? "crazy" : "normal"}
