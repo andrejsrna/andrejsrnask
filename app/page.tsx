@@ -17,7 +17,6 @@ export default function Home() {
       <References />
       <Testimonials/>
       <Contact />
-      <Footer/>
       {/* Add more sections as needed */}
     </>
   );
