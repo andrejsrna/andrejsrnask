@@ -5,7 +5,6 @@ import Services from "@/components/Services";
 import References from '@/components/References';
 import Testimonials from '@/components/TheySay';
 import Contact from '@/components/Contact';
-import Footer from '@/components/Footer';
 
 
 export default function Home() {

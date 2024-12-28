@@ -2,6 +2,7 @@ import { fetchPosts } from "@/lib/payload";
 import Link from "next/link";
 import { format } from "date-fns";
 import { sk } from "date-fns/locale";
+import Image from "next/image";
 
 interface Post {
   id: string;
@@ -35,10 +36,12 @@ export default async function BlogPage() {
             <article className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300">
               {post.coverImage && (
                 <div className="relative h-48 w-full overflow-hidden">
-                  <img
+                  <Image
                     src={post.coverImage.url}
                     alt={post.title}
                     className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+                    width={800}
+                    height={400}
                   />
                 </div>
               )}

@@ -4,20 +4,41 @@ interface Post {
   id: string;
   title: string;
   excerpt?: string;
-  coverImage?: string;
+  coverImage?: {
+    url: string;
+  };
+  featuredImage?: {
+    url: string;
+  };
   createdAt: string;
   slug: string;
   content?: {
     root?: {
-      children?: Array<any>;
+      children?: Array<{
+        type: string;
+        tag?: string;
+        text?: string;
+        listType?: 'number' | 'bullet';
+        children?: Array<{
+          text?: string;
+          children?: Array<{
+            text?: string;
+          }>;
+        }>;
+      }>;
     };
   };
-  featured_image?: {
-    url: string;
+  meta?: {
+    title?: string;
+    description?: string;
   };
 }
 
-export async function fetchPosts() {
+interface PayloadResponse {
+  docs: Post[];
+}
+
+export async function fetchPosts(): Promise<Post[]> {
   const response = await fetch(`${PAYLOAD_API_URL}/posts?depth=1`, {
     next: { revalidate: 60 },
   });
@@ -26,39 +47,23 @@ export async function fetchPosts() {
     throw new Error('Failed to fetch posts');
   }
 
-  const data = await response.json();
-  return data.docs.map((post: any) => ({
-    id: post.id,
-    title: post.title,
-    excerpt: post.excerpt,
-    coverImage: post.coverImage,
-    createdAt: post.createdAt,
-    slug: post.slug
-  }));
+  const data: PayloadResponse = await response.json();
+  return data.docs;
 }
 
-export async function fetchPost(slug: string) {
+export async function fetchPost(slug: string): Promise<Post | null> {
   try {
-    const url = `${PAYLOAD_API_URL}/posts?where[slug][equals]=${slug}&depth=1`;
-    console.log('Fetching post from:', url);
-
-    const response = await fetch(url, {
+    const response = await fetch(`${PAYLOAD_API_URL}/posts?where[slug][equals]=${slug}&depth=1`, {
       next: { revalidate: 60 },
-      headers: {
-        'Accept': 'application/json'
-      }
     });
 
     if (!response.ok) {
       console.error(`Failed to fetch post: ${response.status} ${response.statusText}`);
-      const errorText = await response.text();
-      console.error('Error response:', errorText);
       return null;
     }
 
-    const data = await response.json();
-    // Payload returns an array of docs, we want the first match
-    return data.docs?.[0] || null;
+    const data: PayloadResponse = await response.json();
+    return data.docs[0] || null;
   } catch (error) {
     console.error('Error fetching post:', error);
     return null;

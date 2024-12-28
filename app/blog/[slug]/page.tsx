@@ -4,13 +4,10 @@ import { format } from "date-fns";
 import { sk } from "date-fns/locale";
 import { Card } from "@/components/ui/card";
 import { Metadata } from 'next';
+import Image from "next/image";
+//import type { ResolvingMetadata } from 'next'
 
-type Params = {
-  params: {
-    slug: Promise<string> | string;
-  };
-};
-
+// Define the Post interface as before
 interface Post {
   slug: string;
   title: string;
@@ -42,16 +39,25 @@ interface Post {
 
 export async function generateStaticParams() {
   const posts = await fetchPosts();
-  
+
   return posts.map((post: Post) => ({
-    slug: post.slug
+    slug: post.slug,
   }));
 }
 
-export async function generateMetadata({ params }: Params): Promise<Metadata> {
-  const slug = await params.slug;
+export async function generateMetadata(
+  { params }: { params: Promise<{ slug: string }> }
+): Promise<Metadata> {
+  const { slug } = await params;
+
+  if (!slug) {
+    return {
+      title: 'Post Not Found',
+    };
+  }
+
   const post = await fetchPost(slug);
-  
+
   if (!post) {
     return {
       title: 'Post Not Found',
@@ -65,25 +71,36 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
       title: post.meta?.title || post.title,
       description: post.meta?.description || post.content?.root?.children?.[0]?.text,
       url: `https://andrejsrna.sk/blog/${slug}`,
-      images: post.featuredImage ? [{
-        url: `https://admin.andrejsrna.sk/${post.featuredImage.url}`,
-        width: 1200,
-        height: 630,
-        alt: post.title
-      }] : undefined,
+      images: post.featuredImage
+        ? [
+            {
+              url: `https://admin.andrejsrna.sk/${post.featuredImage.url}`,
+              width: 1200,
+              height: 630,
+              alt: post.title,
+            },
+          ]
+        : undefined,
       type: 'article',
     },
     twitter: {
       card: 'summary_large_image',
       title: post.meta?.title || post.title,
       description: post.meta?.description || post.content?.root?.children?.[0]?.text,
-      images: post.featuredImage ? [`https://admin.andrejsrna.sk/${post.featuredImage.url}`] : undefined,
-    }
+      images: post.featuredImage
+        ? [`https://admin.andrejsrna.sk/${post.featuredImage.url}`]
+        : undefined,
+    },
   };
 }
 
-export default async function BlogPost({ params }: Params) {
-  const slug = await params.slug;
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+
+  if (!slug) {
+    notFound();
+  }
+
   const post = await fetchPost(slug);
 
   if (!post) {
@@ -92,7 +109,7 @@ export default async function BlogPost({ params }: Params) {
 
   return (
     <article className="container mx-auto px-4 py-12">
-      {/* Hero sekcia */}
+      {/* Hero section */}
       <div className="max-w-4xl mx-auto mb-16">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
           {post.title}
@@ -104,31 +121,23 @@ export default async function BlogPost({ params }: Params) {
         </div>
         {post.featuredImage && (
           <div className="relative w-full h-[400px] mb-8">
-            <img
+            <Image
               src={`https://admin.andrejsrna.sk/${post.featuredImage.url}`}
               alt={post.title}
               className="object-cover w-full h-full rounded-lg"
+              width={1200}
+              height={630}
+              priority
             />
           </div>
         )}
       </div>
 
-      {/* Obsah */}
+      {/* Content */}
       <div className="max-w-3xl mx-auto">
         <Card className="p-8">
           <div className="prose prose-lg max-w-none">
-            {post.content?.root?.children?.map((node: {
-              type: string;
-              tag?: string;
-              text?: string;
-              listType?: 'number' | 'bullet';
-              children?: Array<{
-                text?: string;
-                children?: Array<{
-                  text?: string;
-                }>;
-              }>;
-            }, i) => {
+            {post.content?.root?.children?.map((node, i) => {
               if (node.type === 'paragraph') {
                 return <p key={i}>{node.children?.[0]?.text}</p>;
               }
@@ -153,4 +162,4 @@ export default async function BlogPost({ params }: Params) {
       </div>
     </article>
   );
-} 
+}
