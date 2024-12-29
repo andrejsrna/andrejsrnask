@@ -122,7 +122,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         {post.featuredImage && (
           <div className="relative w-full h-[400px] mb-8">
             <Image
-              src={`https://admin.andrejsrna.sk/${post.featuredImage.url}`}
+              src={`https://admin.andrejsrna.sk${post.featuredImage.url}`}
               alt={post.title}
               className="object-cover w-full h-full rounded-lg"
               width={1200}
