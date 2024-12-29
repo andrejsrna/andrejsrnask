@@ -1,11 +1,12 @@
 import LandingHero from "@/components/LandingHero";
 import Services from "@/components/Services"; // Upravte sekciu Služieb pre Pezinok podľa potreby
 import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
 import AboutMe from "@/components/AboutMe";
 import Testimonials from "@/components/TheySay";
 import References from "@/components/References";
-
+import Problems from "@/components/Problems";
+import LatestPosts from "@/components/LatestPosts";
+import Pricing from "@/components/Pricing";
 export const metadata = {
   title: 'Tvorba web stránok Pezinok | Andrej Srna',
   description: 'Profesionálna tvorba web stránok v Pezinku. Moderný dizajn, SEO optimalizácia a bezproblémová funkčnosť. Kontaktujte nás pre cenovú ponuku.',
@@ -37,12 +38,14 @@ export default function TvorbaWebStranokPezinok() {
   return (
     <div>
       <LandingHero />
+      <Problems />
       <AboutMe/>
       <Services />
       <References />
+      <Pricing />
+      <LatestPosts />
       <Testimonials/>
       <Contact />
-      <Footer/>
     </div>
   );
 }

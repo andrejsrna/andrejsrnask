@@ -39,16 +39,38 @@ interface PayloadResponse {
 }
 
 export async function fetchPosts(): Promise<Post[]> {
-  const response = await fetch(`${PAYLOAD_API_URL}/posts?depth=1`, {
-    next: { revalidate: 60 },
-  });
+  try {
+    const response = await fetch(`${PAYLOAD_API_URL}/posts?depth=1`, {
+      method: 'GET',
+      cache: 'no-store',
+      headers: {
+        'Accept': 'application/json',
+      },
+      credentials: 'omit',
+    });
 
-  if (!response.ok) {
-    throw new Error('Failed to fetch posts');
+    if (!response.ok) {
+      throw new Error(`Failed to fetch posts: ${response.status} ${response.statusText}`);
+    }
+
+    let data;
+    try {
+      data = await response.json();
+    } catch (e) {
+      console.error('Failed to parse JSON:', e);
+      throw new Error('Failed to parse server response');
+    }
+
+    if (!data || typeof data !== 'object' || !Array.isArray(data.docs)) {
+      console.error('Invalid response data:', data);
+      throw new Error('Invalid response format from API');
+    }
+
+    return data.docs;
+  } catch (error) {
+    console.error('Error fetching posts:', error);
+    throw error;
   }
-
-  const data: PayloadResponse = await response.json();
-  return data.docs;
 }
 
 export async function fetchPost(slug: string): Promise<Post | null> {

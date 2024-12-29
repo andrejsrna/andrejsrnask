@@ -62,6 +62,9 @@ export function Footer() {
             <li>
               <Link href="/tvorba-web-stranok-pezinok" className="hover:text-orange-600 transition-colors duration-300">Tvorba web stránok Pezinok</Link>
             </li>
+            <li>
+              <Link href="/tvorba-web-stranok-cennik" className="hover:text-orange-600 transition-colors duration-300">Cenník</Link>
+            </li>
           </ul>
         </details>
         
