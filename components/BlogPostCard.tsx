@@ -29,7 +29,7 @@ export default function BlogPostCard({ post }: { post: Post }) {
         {post.featuredImage && (
           <div className="relative w-full h-48">
             <Image
-              src={post.featuredImage.url}
+              src={`https://admin.andrejsrna.sk/${post.featuredImage.url}`}
               alt={post.title}
               fill
               className="object-cover"
