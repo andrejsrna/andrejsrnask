@@ -70,7 +70,7 @@ export default function Pricing() {
           <div className="text-center">
             <div className="text-blue-600 font-semibold mb-2">Odporúčané</div>
             <h3 className="text-2xl font-bold mb-2">Mesačné predplatné</h3>
-            <div className="text-4xl font-bold mb-4">25€/mesiac</div>
+            <div className="text-4xl font-bold mb-4">od 25€/mesiac</div>
             <p className="text-gray-600 mb-6">Nulové počiatočné náklady a pravidelná údržba</p>
           </div>
           <ul className="space-y-3 mb-8">
