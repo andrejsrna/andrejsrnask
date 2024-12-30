@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="sk">
       <body className={inter.className}>
         <Header />
-        <main>
+        <main className="mt-16">
           {children}
         </main>
         <Footer />
