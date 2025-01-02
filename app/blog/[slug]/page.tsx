@@ -6,7 +6,6 @@ import { sk } from "date-fns/locale";
 import { Card } from "@/components/ui/card";
 import { Metadata } from 'next';
 import Image from "next/image";
-//import type { ResolvingMetadata } from 'next'
 
 interface LexicalBaseNode {
   type: string;
@@ -88,10 +87,12 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata(
-  { params }: { params: Promise<{ slug: string }> }
-): Promise<Metadata> {
-  const { slug } = await params;
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string }
+}): Promise<Metadata> {
+  const { slug } = params;
 
   if (!slug) {
     return {
@@ -291,14 +292,13 @@ function renderLexicalNode(node: LexicalNode): React.ReactNode {
   }
 }
 
-export default async function BlogPost({ params }: { params: { slug: string } }) {
-  const { slug } = params;
-
-  if (!slug) {
-    notFound();
+export default async function BlogPost(
+  props: {
+    params: Promise<{ slug: string }>;
   }
-
-  const post = await fetchPost(slug);
+) {
+  const params = await props.params;
+  const post = await fetchPost(params.slug);
 
   if (!post) {
     notFound();
