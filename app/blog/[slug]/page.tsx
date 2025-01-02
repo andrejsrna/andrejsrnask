@@ -87,11 +87,12 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string }
-}): Promise<Metadata> {
+export async function generateMetadata(
+  props: {
+    params: Promise<{ slug: string }>
+  }
+): Promise<Metadata> {
+  const params = await props.params;
   const { slug } = params;
 
   if (!slug) {
@@ -178,39 +179,33 @@ function renderLexicalNode(node: LexicalNode): React.ReactNode {
       const ListTag = node.listType === 'number' ? 'ol' : 'ul';
       return (
         <ListTag className="list-disc space-y-2">
-          {node.children?.map(item => renderLexicalNode(item))}
+          {node.children?.map((item, index) => (
+            <React.Fragment key={index}>{renderLexicalNode(item)}</React.Fragment>
+          ))}
         </ListTag>
       );
 
     case 'listitem':
-      // If this list item only contains a single list as a child, return just the list
-      if (node.children?.length === 1 && isListNode(node.children[0])) {
-        return renderLexicalNode(node.children[0]);
-      }
-
       return (
         <li className="mb-2">
           {node.children?.map((child, index) => {
             if (isListNode(child)) {
-              return renderLexicalNode(child);
+              return <React.Fragment key={index}>{renderLexicalNode(child)}</React.Fragment>;
             }
             if (isTextNode(child)) {
               if (node.children?.length === 2 && isTextNode(node.children[1])) {
-                // Handle the case where we have two text nodes (label and content)
                 if (index === 0) {
                   return <strong key={index}>{child.text}</strong>;
                 }
                 return <span key={index}> {child.text}</span>;
               }
-              return child.text;
+              return <React.Fragment key={index}>{child.text}</React.Fragment>;
             }
             if (isBlockquoteNode(child)) {
               return (
                 <blockquote key={index} className="border-l-4 border-gray-300 pl-4 my-4 italic">
                   {child.children?.map((quoteChild, quoteIndex) => (
-                    <React.Fragment key={quoteIndex}>
-                      {renderLexicalNode(quoteChild)}
-                    </React.Fragment>
+                    <React.Fragment key={quoteIndex}>{renderLexicalNode(quoteChild)}</React.Fragment>
                   ))}
                   {child.citation && (
                     <cite className="block text-sm text-gray-600 mt-2 not-italic">
@@ -220,7 +215,7 @@ function renderLexicalNode(node: LexicalNode): React.ReactNode {
                 </blockquote>
               );
             }
-            return renderLexicalNode(child);
+            return <React.Fragment key={index}>{renderLexicalNode(child)}</React.Fragment>;
           })}
         </li>
       );
@@ -292,13 +287,9 @@ function renderLexicalNode(node: LexicalNode): React.ReactNode {
   }
 }
 
-export default async function BlogPost(
-  props: {
-    params: Promise<{ slug: string }>;
-  }
-) {
-  const params = await props.params;
-  const post = await fetchPost(params.slug);
+const BlogPost = async ({ params }: { params: Promise<{ slug: string }> }) => {
+  const { slug } = await params;
+  const post = await fetchPost(slug);
 
   if (!post) {
     notFound();
@@ -345,4 +336,6 @@ export default async function BlogPost(
       </div>
     </article>
   );
-}
+};
+
+export default BlogPost;

@@ -35,6 +35,13 @@ export default function Header() {
     if (href?.startsWith('/#')) {
       e.preventDefault();
       const targetId = href.replace('/#', '');
+
+      if (pathname !== '/') {
+        // If not on homepage, navigate to homepage with hash
+        window.location.href = href;
+        return;
+      }
+
       const element = document.getElementById(targetId);
       if (element) {
         const headerOffset = 64;
