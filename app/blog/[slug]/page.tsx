@@ -1,3 +1,4 @@
+import React from 'react';
 import { fetchPost, fetchPosts } from "@/lib/payload";
 import { notFound } from "next/navigation";
 import { format } from "date-fns";
@@ -7,40 +8,82 @@ import { Metadata } from 'next';
 import Image from "next/image";
 //import type { ResolvingMetadata } from 'next'
 
-// Define the Post interface as before
-interface Post {
-  slug: string;
-  title: string;
-  createdAt: string;
-  featuredImage?: {
-    url: string;
-  };
-  content?: {
-    root?: {
-      children?: Array<{
-        type: string;
-        tag?: string;
-        text?: string;
-        listType?: 'number' | 'bullet';
-        children?: Array<{
-          text?: string;
-          children?: Array<{
-            text?: string;
-          }>;
-        }>;
-      }>;
-    };
-  };
-  meta?: {
-    title?: string;
-    description?: string;
-  };
+interface LexicalBaseNode {
+  type: string;
+  children?: LexicalNode[];
+}
+
+interface LexicalTextNode extends LexicalBaseNode {
+  type: 'text';
+  text: string;
+  format?: number;
+}
+
+interface LexicalHeadingNode extends LexicalBaseNode {
+  type: 'heading';
+  tag: string;
+}
+
+interface LexicalListNode extends LexicalBaseNode {
+  type: 'list';
+  listType: 'number' | 'bullet';
+}
+
+interface LexicalImageNode extends LexicalBaseNode {
+  type: 'image';
+  src: string;
+  altText?: string;
+  caption?: string;
+}
+
+interface LexicalLinkNode extends LexicalBaseNode {
+  type: 'link';
+  url: string;
+  target?: string;
+}
+
+interface LexicalBlockquoteNode extends LexicalBaseNode {
+  type: 'quote';
+  citation?: string;
+}
+
+type LexicalNode = 
+  | LexicalTextNode 
+  | LexicalHeadingNode 
+  | LexicalListNode 
+  | LexicalImageNode 
+  | LexicalLinkNode 
+  | LexicalBlockquoteNode
+  | LexicalBaseNode;
+
+function isTextNode(node: LexicalNode): node is LexicalTextNode {
+  return node.type === 'text';
+}
+
+function isHeadingNode(node: LexicalNode): node is LexicalHeadingNode {
+  return node.type === 'heading';
+}
+
+function isListNode(node: LexicalNode): node is LexicalListNode {
+  return node.type === 'list';
+}
+
+function isImageNode(node: LexicalNode): node is LexicalImageNode {
+  return node.type === 'image';
+}
+
+function isLinkNode(node: LexicalNode): node is LexicalLinkNode {
+  return node.type === 'link';
+}
+
+function isBlockquoteNode(node: LexicalNode): node is LexicalBlockquoteNode {
+  return node.type === 'quote';
 }
 
 export async function generateStaticParams() {
   const posts = await fetchPosts();
 
-  return posts.map((post: Post) => ({
+  return posts.map((post) => ({
     slug: post.slug,
   }));
 }
@@ -94,8 +137,162 @@ export async function generateMetadata(
   };
 }
 
-export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
+function renderLexicalNode(node: LexicalNode): React.ReactNode {
+  if (!node) return null;
+
+  switch (node.type) {
+    case 'paragraph':
+      return (
+        <p>
+          {node.children?.map((child, index) => {
+            if (isTextNode(child)) {
+              const content = child.text;
+              if (child.format && (child.format & 1)) {
+                return <strong key={index}>{content}</strong>;
+              }
+              if (child.format && (child.format & 2)) {
+                return <em key={index}>{content}</em>;
+              }
+              return <span key={index}>{content}</span>;
+            }
+            if (child.type === 'linebreak') return <br key={index} />;
+            return <React.Fragment key={index}>{renderLexicalNode(child)}</React.Fragment>;
+          })}
+        </p>
+      );
+
+    case 'heading':
+      if (!isHeadingNode(node)) return null;
+      const HeadingTag = node.tag as keyof JSX.IntrinsicElements;
+      return (
+        <HeadingTag>
+          {node.children?.map((child, index) => (
+            <React.Fragment key={index}>{renderLexicalNode(child)}</React.Fragment>
+          ))}
+        </HeadingTag>
+      );
+
+    case 'list':
+      if (!isListNode(node)) return null;
+      const ListTag = node.listType === 'number' ? 'ol' : 'ul';
+      return (
+        <ListTag className="list-disc space-y-2">
+          {node.children?.map(item => renderLexicalNode(item))}
+        </ListTag>
+      );
+
+    case 'listitem':
+      // If this list item only contains a single list as a child, return just the list
+      if (node.children?.length === 1 && isListNode(node.children[0])) {
+        return renderLexicalNode(node.children[0]);
+      }
+
+      return (
+        <li className="mb-2">
+          {node.children?.map((child, index) => {
+            if (isListNode(child)) {
+              return renderLexicalNode(child);
+            }
+            if (isTextNode(child)) {
+              if (node.children?.length === 2 && isTextNode(node.children[1])) {
+                // Handle the case where we have two text nodes (label and content)
+                if (index === 0) {
+                  return <strong key={index}>{child.text}</strong>;
+                }
+                return <span key={index}> {child.text}</span>;
+              }
+              return child.text;
+            }
+            if (isBlockquoteNode(child)) {
+              return (
+                <blockquote key={index} className="border-l-4 border-gray-300 pl-4 my-4 italic">
+                  {child.children?.map((quoteChild, quoteIndex) => (
+                    <React.Fragment key={quoteIndex}>
+                      {renderLexicalNode(quoteChild)}
+                    </React.Fragment>
+                  ))}
+                  {child.citation && (
+                    <cite className="block text-sm text-gray-600 mt-2 not-italic">
+                      — {child.citation}
+                    </cite>
+                  )}
+                </blockquote>
+              );
+            }
+            return renderLexicalNode(child);
+          })}
+        </li>
+      );
+
+    case 'quote':
+      if (!isBlockquoteNode(node)) return null;
+      return (
+        <blockquote className="border-l-4 border-gray-300 pl-4 my-4 italic">
+          {node.children?.map((child, index) => (
+            <React.Fragment key={index}>{renderLexicalNode(child)}</React.Fragment>
+          ))}
+          {node.citation && (
+            <cite className="block text-sm text-gray-600 mt-2 not-italic">
+              — {node.citation}
+            </cite>
+          )}
+        </blockquote>
+      );
+
+    case 'text':
+      if (!isTextNode(node)) return null;
+      const content = node.text;
+      if (node.format && (node.format & 1)) {
+        return <strong>{content}</strong>;
+      }
+      if (node.format && (node.format & 2)) {
+        return <em>{content}</em>;
+      }
+      return content;
+
+    case 'image':
+      if (!isImageNode(node)) return null;
+      return (
+        <figure className="my-8">
+          <div className="relative w-full aspect-video">
+            <Image
+              src={node.src}
+              alt={node.altText || ''}
+              fill
+              className="object-cover rounded-lg"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 60vw"
+            />
+          </div>
+          {node.caption && (
+            <figcaption className="text-center text-sm text-gray-600 mt-2">
+              {node.caption}
+            </figcaption>
+          )}
+        </figure>
+      );
+
+    case 'link':
+      if (!isLinkNode(node)) return null;
+      return (
+        <a 
+          href={node.url} 
+          target={node.target || '_blank'} 
+          rel="noopener noreferrer"
+          className="text-blue-600 hover:text-blue-800 underline"
+        >
+          {node.children?.map((child, index) => (
+            <React.Fragment key={index}>{renderLexicalNode(child)}</React.Fragment>
+          ))}
+        </a>
+      );
+
+    default:
+      return null;
+  }
+}
+
+export default async function BlogPost({ params }: { params: { slug: string } }) {
+  const { slug } = params;
 
   if (!slug) {
     notFound();
@@ -106,6 +303,11 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   if (!post) {
     notFound();
   }
+
+  const content = post.content?.root?.children?.map((node, index) => {
+    const lexicalNode = node as unknown as LexicalNode;
+    return <React.Fragment key={index}>{renderLexicalNode(lexicalNode)}</React.Fragment>;
+  });
 
   return (
     <article className="container mx-auto px-4 py-12">
@@ -137,26 +339,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
       <div className="max-w-3xl mx-auto">
         <Card className="p-8">
           <div className="prose prose-lg max-w-none">
-            {post.content?.root?.children?.map((node, i) => {
-              if (node.type === 'paragraph') {
-                return <p key={i}>{node.children?.[0]?.text}</p>;
-              }
-              if (node.type === 'heading' && node.tag) {
-                const HeadingTag = `h${node.tag.slice(1)}` as keyof JSX.IntrinsicElements;
-                return <HeadingTag key={i}>{node.children?.[0]?.text}</HeadingTag>;
-              }
-              if (node.type === 'list') {
-                const ListTag = node.listType === 'number' ? 'ol' : 'ul';
-                return (
-                  <ListTag key={i}>
-                    {node.children?.map((item, j) => (
-                      <li key={j}>{item.children?.[0]?.text}</li>
-                    ))}
-                  </ListTag>
-                );
-              }
-              return null;
-            })}
+            {content}
           </div>
         </Card>
       </div>
