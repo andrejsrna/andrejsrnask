@@ -1,5 +1,4 @@
 'use client';
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { motion, Variants } from "framer-motion";
 import { useState } from "react";
@@ -93,67 +92,37 @@ export function Hero() {
   const handleCrazyClick = () => {
     setIsCrazy(true);
     setClickCount(prev => prev + 1);
+    
+    // Smooth scroll to contact section with header offset
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      const headerOffset = 64;
+      const elementPosition = contactSection.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
   };
 
   return (
-    <section className="relative py-16 bg-gradient-to-r from-orange-50 to-yellow-100 overflow-hidden">
+    <section className="relative py-20 -mt-16 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-950 overflow-hidden">
       
-      {/* Abstraktné Oranžové Tvarov Pozadie */}
+      {/* Modern Abstract Background Shapes */}
       <div className="absolute inset-0">
-        {/* Tvar 1 */}
-        <svg 
-          className="absolute top-10 left-10 w-40 h-40 text-orange-300 opacity-70"
-          xmlns="http://www.w3.org/2000/svg" 
-          viewBox="0 0 100 100"
-          fill="currentColor"
-          aria-hidden="true"
-        >
-          <circle cx="50" cy="50" r="50" />
+        {/* Floating circles */}
+        <div className="absolute top-10 left-10 w-40 h-40 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float"></div>
+        <div className="absolute bottom-10 right-10 w-60 h-60 bg-red-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float-delayed"></div>
+        
+        {/* Geometric shapes */}
+        <svg className="absolute top-1/4 right-1/4 w-32 h-32 text-blue-300 opacity-20 animate-spin-slow" viewBox="0 0 100 100">
+          <polygon points="50,0 100,86.6 0,86.6" fill="currentColor"/>
         </svg>
         
-        {/* Tvar 2 */}
-        <svg 
-          className="absolute bottom-20 right-10 w-24 h-24 text-orange-400 opacity-60"
-          xmlns="http://www.w3.org/2000/svg" 
-          viewBox="0 0 100 100"
-          fill="currentColor"
-          aria-hidden="true"
-        >
-          <polygon points="50,0 100,100 0,100" />
-        </svg>
-        
-        {/* Tvar 3 */}
-        <svg 
-          className="absolute top-1/2 left-1/3 w-32 h-32 text-orange-200 opacity-50"
-          xmlns="http://www.w3.org/2000/svg" 
-          viewBox="0 0 100 100"
-          fill="currentColor"
-          aria-hidden="true"
-        >
-          <rect width="100" height="100" rx="20" />
-        </svg>
-        
-        {/* Tvar 4 */}
-        <svg 
-          className="absolute bottom-10 left-1/2 w-20 h-20 text-orange-500 opacity-40"
-          xmlns="http://www.w3.org/2000/svg" 
-          viewBox="0 0 100 100"
-          fill="currentColor"
-          aria-hidden="true"
-        >
-          <ellipse cx="50" cy="50" rx="50" ry="25" />
-        </svg>
-        
-        {/* Tvar 5 */}
-        <svg 
-          className="absolute top-3/4 right-1/4 w-28 h-28 text-orange-350 opacity-55"
-          xmlns="http://www.w3.org/2000/svg" 
-          viewBox="0 0 100 100"
-          fill="currentColor"
-          aria-hidden="true"
-        >
-          <polygon points="50,0 61,35 98,35 68,57 79,91 50,70 21,91 32,57 2,35 39,35" />
-        </svg>
+        {/* Decorative lines */}
+        <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(59,130,246,0.1)_50%,transparent_75%)] bg-[length:20px_20px]"></div>
       </div>
       
       <motion.div 
@@ -167,46 +136,47 @@ export function Hero() {
           variants={textVariants}
           className="w-full md:w-1/2 mb-8 md:mb-0"
         >
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-4">
-            Ahoj, som <span className="text-orange-600">Andrej Srna</span>
-          </h1>
+          <div className="space-y-6">
+            <h1 className="text-5xl sm:text-6xl font-extrabold">
+              <span className="text-white">Ahoj, som </span>
+              <span className="bg-gradient-to-r from-red-500 to-red-600 text-transparent bg-clip-text">
+                Andrej Srna
+              </span>
+            </h1>
 
-          <p className="text-lg sm:text-xl text-gray-700 mb-6">
-            Som vášnivý webový vývojár so špecializáciou na moderné, 
-            užívateľsky prívetivé webové aplikácie. <i>Vytvorme spolu niečo úžasné!</i>
-          </p>
+            <p className="text-xl text-blue-100 leading-relaxed">
+              Som vášnivý webový vývojár so špecializáciou na moderné, 
+              užívateľsky prívetivé webové aplikácie. <i>Vytvorme spolu niečo úžasné!</i>
+            </p>
 
-          {/* Button */}
-          <motion.div
-            variants={buttonVariants}
-            className="mt-4"
-          >
-            <Button asChild className="px-6 py-3 text-lg bg-orange-600 hover:bg-orange-700 text-white">
-              <a href="#contact">Kontaktujte ma</a>
-            </Button>
-            
-            <div className="inline-block relative ml-0 md:ml-4 mt-4 md:mt-0">
-              <motion.button
-                variants={crazyButtonVariants}
-                animate={isCrazy ? "crazy" : "normal"}
-                onClick={handleCrazyClick}
-                onAnimationComplete={() => setIsCrazy(false)}
-                className="px-4 py-1.5 text-lg bg-purple-600 hover:bg-purple-700 text-white rounded-md"
-              >
-                Toto tlačítko určite nechcete stlačiť
-              </motion.button>
-              {clickCount >= 3 && (
-                <motion.p
-                  key={getCurrentMessage()}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="absolute -bottom-8 left-1/2 -translate-x-1/2 text-sm text-purple-600 font-semibold whitespace-nowrap"
+            {/* Single Interactive Button */}
+            <motion.div
+              variants={buttonVariants}
+              className="pt-4"
+            >
+              <div className="relative inline-block">
+                <motion.button
+                  variants={crazyButtonVariants}
+                  animate={isCrazy ? "crazy" : "normal"}
+                  onClick={handleCrazyClick}
+                  onAnimationComplete={() => setIsCrazy(false)}
+                  className="px-8 py-4 text-lg bg-gradient-to-r from-red-600 to-blue-600 hover:from-red-700 hover:to-blue-700 text-white rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                 >
-                  {getCurrentMessage()}
-                </motion.p>
-              )}
-            </div>
-          </motion.div>
+                  Kontaktujte ma
+                </motion.button>
+                {clickCount >= 3 && (
+                  <motion.p
+                    key={getCurrentMessage()}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="absolute -bottom-8 left-1/2 -translate-x-1/2 text-sm text-blue-300 font-semibold whitespace-nowrap"
+                  >
+                    {getCurrentMessage()}
+                  </motion.p>
+                )}
+              </div>
+            </motion.div>
+          </div>
         </motion.div>
 
         {/* Image */}
@@ -214,16 +184,17 @@ export function Hero() {
           variants={imageVariants}
           className="w-full md:w-1/2 flex justify-center"
         >
-          <div className="relative w-72 h-72 sm:w-80 sm:h-80">
+          <div className="relative w-72 h-72 sm:w-96 sm:h-96">
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-red-500 rounded-full animate-spin-slow opacity-20"></div>
             <Image
               src="/zombo-andrej.jpeg"
               alt="Andrej Srna"
               layout="fill"
               objectFit="cover"
-              className="rounded-full shadow-lg border-4 border-white"
+              className="rounded-full shadow-2xl border-4 border-white/10 relative z-10"
             />
-            {/* Dekoratívny Element */}
-            <div className="absolute top-0 left-0 w-full h-full rounded-full border-4 border-transparent bg-gradient-to-tr from-orange-400 to-yellow-600 animate-pulse opacity-20"></div>
+            {/* Glow effect */}
+            <div className="absolute -inset-4 bg-gradient-to-r from-blue-500 to-red-500 rounded-full opacity-20 blur-2xl animate-pulse"></div>
           </div>
         </motion.div>
       </motion.div>

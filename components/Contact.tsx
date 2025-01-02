@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Building2, Mail, Phone, MapPin, Globe } from "lucide-react";
+import { Building2, Mail, Phone, MapPin, Globe, ExternalLink } from "lucide-react";
 
 const contactVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -17,43 +17,71 @@ const contactVariants = {
   }
 };
 
-const ContactItem = ({ icon: Icon, label, value }: { icon: React.ComponentType<{ className?: string }>, label: string, value: string }) => (
-  <div className="flex items-start space-x-3 mb-4">
-    <Icon className="w-5 h-5 text-blue-500 mt-1" />
+const ContactItem = ({ icon: Icon, label, value, link }: { icon: React.ComponentType<{ className?: string }>, label: string, value: string, link?: string }) => (
+  <div className="flex items-start space-x-3 mb-6">
+    <div className="w-10 h-10 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 flex items-center justify-center flex-shrink-0">
+      <Icon className="w-5 h-5 text-blue-600" />
+    </div>
     <div>
-      <div className="font-medium text-gray-500">{label}</div>
-      <div className="text-gray-900">{value}</div>
+      <div className="text-sm font-medium text-gray-500 mb-1">{label}</div>
+      {link ? (
+        <a 
+          href={link} 
+          className="text-gray-900 hover:text-blue-600 transition-colors duration-300 flex items-center gap-1 group"
+        >
+          {value}
+          <ExternalLink className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
+        </a>
+      ) : (
+        <div className="text-gray-900">{value}</div>
+      )}
     </div>
   </div>
 );
 
 export function Contact() {
   return (
-    <section id="contact" className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <motion.h2
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-4xl font-bold text-center mb-12 text-gray-800"
-        >
-          Kontakt
-        </motion.h2>
+    <section id="contact" className="relative py-24 bg-white overflow-hidden">
+      {/* Modern Abstract Background */}
+      <div className="absolute inset-0">
+        {/* Grid pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:14px_24px]"></div>
+      </div>
 
-        <div className="max-w-3xl mx-auto">
+      <div className="container mx-auto px-4 relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-gray-900 to-gray-700 text-transparent bg-clip-text">
+            Kontakt
+          </h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Rád vám pomôžem s vaším projektom. Neváhajte ma kontaktovať.
+          </p>
+        </motion.div>
+
+        <div className="max-w-4xl mx-auto">
           <motion.div
             variants={contactVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-2xl">Fakturačné údaje</CardTitle>
+            <Card className="bg-white/80 backdrop-blur-sm hover:shadow-lg transition-all duration-300 border-gray-200/50">
+              <CardHeader className="border-b border-gray-100">
+                <CardTitle className="text-2xl bg-gradient-to-r from-gray-900 to-gray-700 text-transparent bg-clip-text">
+                  Fakturačné údaje
+                </CardTitle>
               </CardHeader>
-              <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8">
                 <div>
-                  <h3 className="text-lg font-semibold mb-4 text-gray-800">Spoločnosť</h3>
+                  <h3 className="text-lg font-semibold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text">
+                    Spoločnosť
+                  </h3>
                   <ContactItem
                     icon={Building2}
                     label="Názov spoločnosti"
@@ -77,33 +105,54 @@ export function Contact() {
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-semibold mb-4 text-gray-800">Kontaktné údaje</h3>
+                  <h3 className="text-lg font-semibold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text">
+                    Kontaktné údaje
+                  </h3>
                   <ContactItem
                     icon={Phone}
                     label="Telefón"
                     value="+421 914 230 321"
+                    link="tel:+421914230321"
                   />
                   <ContactItem
                     icon={Mail}
                     label="Email"
                     value="ahoj@andrejsrna.sk"
+                    link="mailto:ahoj@andrejsrna.sk"
                   />
-                  <div className="mt-6">
-                    <h4 className="font-medium text-gray-500 mb-2">Bankové spojenie</h4>
-                    <div className="bg-gray-50 p-4 rounded-lg">
-                      <p className="text-sm text-gray-700">IBAN: SK53 1100 0000 0029 4212 1294</p>
-                      <p className="text-sm text-gray-700">SWIFT: TATRSKBX</p>
-                      <p className="text-sm text-gray-700">Tatra banka, a.s.</p>
+                  <div className="mt-8">
+                    <h4 className="text-sm font-medium text-gray-500 mb-3">Bankové spojenie</h4>
+                    <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-xl border border-gray-200">
+                      <div className="space-y-2">
+                        <p className="text-sm text-gray-700 flex justify-between">
+                          <span className="text-gray-500">IBAN:</span>
+                          <span className="font-medium">SK53 1100 0000 0029 4212 1294</span>
+                        </p>
+                        <p className="text-sm text-gray-700 flex justify-between">
+                          <span className="text-gray-500">SWIFT:</span>
+                          <span className="font-medium">TATRSKBX</span>
+                        </p>
+                        <p className="text-sm text-gray-700 flex justify-between">
+                          <span className="text-gray-500">Banka:</span>
+                          <span className="font-medium">Tatra banka, a.s.</span>
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
-            <div className="mt-6 text-center text-sm text-gray-500">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="mt-6 text-center text-sm text-gray-500 bg-gradient-to-br from-gray-50 to-gray-100 p-4 rounded-xl border border-gray-200"
+            >
               <p>Spoločnosť je zapísaná v Obchodnom registri Okresného súdu Bratislava III,</p>
               <p>oddiel: Sro, vložka č.: 157956/B</p>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>

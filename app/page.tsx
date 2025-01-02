@@ -4,7 +4,6 @@ import Services from "@/components/Services";
 import References from '@/components/References';
 import Testimonials from '@/components/TheySay';
 import Contact from '@/components/Contact';
-import Problems from "@/components/Problems";
 import LatestPosts from '@/components/LatestPosts';
 import Pricing from '@/components/Pricing';
 
@@ -13,7 +12,6 @@ export default function Home() {
     <>
       <Hero />
       <AboutMe/>
-      <Problems />
       <Services />
       <References />
       <Pricing />

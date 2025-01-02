@@ -41,24 +41,59 @@ const testimonialVariants: Variants = {
 
 export function Testimonials() {
   return (
-    <section id="testimonials" className="py-16 bg-gray-100">
-      <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center mb-12">Hovoria o mne</h2>
+    <section id="testimonials" className="relative py-24 bg-white overflow-hidden">
+      {/* Modern Abstract Background */}
+      <div className="absolute inset-0">
+        {/* Grid pattern */}
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-gray-900 to-gray-700 text-transparent bg-clip-text">
+            Hovoria o mne
+          </h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Prečítajte si, čo o mojej práci hovoria klienti
+          </p>
+        </motion.div>
+
         <motion.div 
           variants={sectionVariants}
           initial="hidden"
-          animate="visible"
-          className="flex flex-col md:flex-row md:space-x-6 space-y-6 md:space-y-0"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid md:grid-cols-3 gap-8"
         >
           {testimonialsData.map((testimonial, index) => (
             <motion.div
               key={index}
               variants={testimonialVariants}
-              className="bg-white p-6 rounded-lg shadow-lg flex-1"
+              className="relative"
             >
-              <FaQuoteLeft className="text-orange-600 text-2xl mb-4" />
-              <p className="text-gray-700 italic mb-4">&quot;{testimonial.quote}&quot;</p>
-              <p className="text-gray-900 font-semibold text-right">- {testimonial.author}</p>
+              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 h-full">
+                <div className="absolute top-0 left-0 transform -translate-x-3 -translate-y-3">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 flex items-center justify-center">
+                    <FaQuoteLeft className="text-blue-600 text-xl" />
+                  </div>
+                </div>
+                <div className="pt-6">
+                  <p className="text-gray-700 mb-6 relative z-10 leading-relaxed">
+                    {testimonial.quote}
+                  </p>
+                  <div className="flex items-center justify-end">
+                    <div className="text-right">
+                      <p className="font-semibold text-gray-900">{testimonial.author}</p>
+                      <div className="h-1 w-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full ml-auto mt-2"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </motion.div>
           ))}
         </motion.div>

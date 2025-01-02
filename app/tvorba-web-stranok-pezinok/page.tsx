@@ -4,7 +4,6 @@ import Contact from "@/components/Contact";
 import AboutMe from "@/components/AboutMe";
 import Testimonials from "@/components/TheySay";
 import References from "@/components/References";
-import Problems from "@/components/Problems";
 import LatestPosts from "@/components/LatestPosts";
 import Pricing from "@/components/Pricing";
 export const metadata = {
@@ -38,7 +37,6 @@ export default function TvorbaWebStranokPezinok() {
   return (
     <div>
       <LandingHero />
-      <Problems />
       <AboutMe/>
       <Services />
       <References />

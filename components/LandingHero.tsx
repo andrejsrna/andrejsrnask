@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { motion, Variants } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 
 const landingHeroVariants: Variants = {
   hidden: { opacity: 0, y: -50 },
@@ -28,114 +29,125 @@ const landingButtonVariants: Variants = {
   }
 };
 
+const floatingVariants: Variants = {
+  initial: { y: 0 },
+  animate: {
+    y: [-10, 10, -10],
+    transition: {
+      duration: 6,
+      repeat: Infinity,
+      ease: "easeInOut"
+    }
+  }
+};
+
 export function LandingHero() {
   return (
-    <section className="relative py-16 bg-gradient-to-r from-orange-50 to-yellow-100 overflow-hidden">
+    <section className="relative py-24 -mt-16 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-950 overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 bg-grid-gray-100/[0.03] bg-[size:30px_30px]" />
       
-      {/* Abstraktné Oranžové Tvarov Pozadie */}
-      <div className="absolute inset-0 -z-20">
-        {/* Tvar 1 */}
-        <svg 
-          className="absolute top-10 left-10 w-40 h-40 text-orange-300 opacity-70"
-          xmlns="http://www.w3.org/2000/svg" 
-          viewBox="0 0 100 100"
-          fill="currentColor"
-          aria-hidden="true"
-        >
-          <circle cx="50" cy="50" r="50" />
-        </svg>
-        
-        {/* Tvar 2 */}
-        <svg 
-          className="absolute bottom-20 right-10 w-24 h-24 text-orange-400 opacity-60"
-          xmlns="http://www.w3.org/2000/svg" 
-          viewBox="0 0 100 100"
-          fill="currentColor"
-          aria-hidden="true"
-        >
-          <polygon points="50,0 100,100 0,100" />
-        </svg>
-        
-        {/* Tvar 3 */}
-        <svg 
-          className="absolute top-1/2 left-1/3 w-32 h-32 text-orange-200 opacity-50"
-          xmlns="http://www.w3.org/2000/svg" 
-          viewBox="0 0 100 100"
-          fill="currentColor"
-          aria-hidden="true"
-        >
-          <rect width="100" height="100" rx="20" />
-        </svg>
-        
-        {/* Tvar 4 */}
-        <svg 
-          className="absolute bottom-10 left-1/2 w-20 h-20 text-orange-500 opacity-40"
-          xmlns="http://www.w3.org/2000/svg" 
-          viewBox="0 0 100 100"
-          fill="currentColor"
-          aria-hidden="true"
-        >
-          <ellipse cx="50" cy="50" rx="50" ry="25" />
-        </svg>
-        
-        {/* Tvar 5 */}
-        <svg 
-          className="absolute top-3/4 right-1/4 w-28 h-28 text-orange-350 opacity-55"
-          xmlns="http://www.w3.org/2000/svg" 
-          viewBox="0 0 100 100"
-          fill="currentColor"
-          aria-hidden="true"
-        >
-          <polygon points="50,0 61,35 98,35 68,57 79,91 50,70 21,91 32,57 2,35 39,35" />
-        </svg>
+      {/* Gradient Orbs */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -top-40 -left-40 w-80 h-80 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob" />
+        <div className="absolute -bottom-40 -right-40 w-80 h-80 bg-red-400 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-2000" />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-4000" />
       </div>
-      
+
       <motion.div 
         variants={landingHeroVariants}
         initial="hidden"
         animate="visible"
         className="relative container mx-auto px-6 flex flex-col-reverse md:flex-row items-center justify-between z-10"
       >
-        {/* Textový obsah */}
+        {/* Text Content */}
         <motion.div
-          className="w-full md:w-1/2 mb-8 md:mb-0"
+          className="w-full md:w-1/2 mb-12 md:mb-0 md:pr-12"
         >
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-4">
-            Tvorba web stránok <span className="text-orange-600">Pezinok</span>
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-900/50 to-red-900/50 border border-blue-700/30 shadow-sm mb-6 backdrop-blur-sm">
+            <span className="text-blue-200 font-medium">Webové stránky pre váš biznis</span>
+            <ArrowRight className="w-4 h-4 ml-2 text-blue-300" />
+          </div>
+
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6">
+            Tvorba web stránok{" "}
+            <span className="relative">
+              <span className="relative z-10 bg-gradient-to-r from-blue-400 to-red-400 text-transparent bg-clip-text">
+                Pezinok
+              </span>
+              <span className="absolute -bottom-2 left-0 w-full h-3 bg-blue-500/20 -rotate-1" />
+            </span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-gray-700 mb-6">
-            Profesionálne a responzívne webové stránky priamo z Pezinka. Zameriavame sa na moderný dizajn, optimalizáciu pre vyhľadávače a bezproblémovú funkčnosť.
+          <p className="text-lg md:text-xl text-blue-100 mb-8 leading-relaxed">
+            Vytváram moderné a responzívne webové stránky, ktoré{" "}
+            <span className="font-semibold text-blue-300">zvýšia vašu online prezentáciu</span>{" "}
+            a pomôžu vám získať viac zákazníkov.
           </p>
 
-          {/* Button */}
+          {/* CTA Buttons */}
           <motion.div
             variants={landingButtonVariants}
-            className="mt-4"
+            className="flex flex-col sm:flex-row gap-4"
           >
-            <Button asChild className="px-6 py-3 text-lg bg-orange-600 hover:bg-orange-700 text-white">
-              <a href="#contact">Získať cenovú ponuku</a>
+            <Button asChild size="lg" className="bg-gradient-to-r from-blue-600 to-red-600 hover:from-blue-700 hover:to-red-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] text-lg">
+              <a href="#contact" className="flex items-center gap-2">
+                Získať cenovú ponuku
+                <ArrowRight className="w-5 h-5" />
+              </a>
+            </Button>
+            <Button asChild variant="outline" size="lg" className="border-2 border-blue-700/30 text-blue-900 hover:bg-blue-900/50 hover:text-white transition-all duration-300 text-lg backdrop-blur-sm">
+              <a href="#services">Zobraziť služby</a>
             </Button>
           </motion.div>
+
+          {/* Trust Indicators */}
+          <div className="mt-12 grid grid-cols-3 gap-6">
+            <div className="text-center">
+              <div className="text-2xl font-bold text-white">50+</div>
+              <div className="text-sm text-blue-200">Spokojných klientov</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl font-bold text-white">100%</div>
+              <div className="text-sm text-blue-200">Responzívny dizajn</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl font-bold text-white">24/7</div>
+              <div className="text-sm text-blue-200">Podpora</div>
+            </div>
+          </div>
         </motion.div>
 
-        {/* Obrázok */}
+        {/* Image */}
         <motion.div
+          variants={floatingVariants}
+          initial="initial"
+          animate="animate"
           className="w-full md:w-1/2 flex justify-center"
         >
-          <div className="relative w-72 h-72 sm:w-80 sm:h-80">
+          <div className="relative w-72 h-72 sm:w-96 sm:h-96">
+            <div className="absolute inset-0 bg-gradient-to-tr from-blue-400 to-red-400 rounded-2xl rotate-6 opacity-20" />
             <Image
-              src="/pezinok.jpeg" // Uistite sa, že obrázok existuje v priečinku public
+              src="/pezinok.jpeg"
               alt="Tvorba web stránok Pezinok"
               layout="fill"
               objectFit="cover"
-              className="rounded-lg shadow-lg border-4 border-white"
+              className="rounded-2xl shadow-2xl transform -rotate-3 transition-transform duration-300 hover:rotate-0"
             />
-            {/* Dekoratívny Element */}
-            <div className="absolute top-0 left-0 w-full h-full rounded-lg border-4 border-transparent bg-gradient-to-tr from-orange-400 to-yellow-600 animate-pulse opacity-20"></div>
+            {/* Decorative Elements */}
+            <div className="absolute -right-6 -bottom-6 w-24 h-24 bg-gradient-to-br from-blue-400 to-red-400 rounded-xl rotate-12 opacity-40 blur-lg" />
+            <div className="absolute -left-6 -top-6 w-20 h-20 bg-gradient-to-br from-red-400 to-blue-400 rounded-lg -rotate-12 opacity-40 blur-lg" />
           </div>
         </motion.div>
       </motion.div>
+
+      {/* Bottom Wave */}
+      <div className="absolute bottom-0 left-0 right-0">
+        <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 50L48 45.8333C96 41.6667 192 33.3333 288 29.1667C384 25 480 25 576 33.3333C672 41.6667 768 58.3333 864 62.5C960 66.6667 1056 58.3333 1152 45.8333C1248 33.3333 1344 16.6667 1392 8.33333L1440 0V100H1392C1344 100 1248 100 1152 100C1056 100 960 100 864 100C768 100 672 100 576 100C480 100 384 100 288 100C192 100 96 100 48 100H0V50Z" 
+                fill="white" fillOpacity="0.05"/>
+        </svg>
+      </div>
     </section>
   );
 }
