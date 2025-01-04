@@ -6,8 +6,9 @@ import Testimonials from '@/components/TheySay';
 import Contact from '@/components/Contact';
 import LatestPosts from '@/components/LatestPosts';
 import Pricing from '@/components/Pricing';
+import { Suspense } from "react";
 
-export default function Home() {
+export default async function Home() {
   return (
     <>
       <Hero />
@@ -15,7 +16,9 @@ export default function Home() {
       <Services />
       <References />
       <Pricing />
-      <LatestPosts />
+      <Suspense>
+        <LatestPosts />
+      </Suspense>
       <Testimonials/>
       <Contact />
     </>

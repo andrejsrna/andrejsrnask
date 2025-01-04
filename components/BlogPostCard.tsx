@@ -9,27 +9,32 @@ import Link from "next/link";
 interface Post {
   slug: string;
   title: string;
-  createdAt: string;
-  featuredImage?: {
-    url: string;
-  };
-  content?: {
-    root?: {
-      children?: Array<{
+  content: {
+    root: {
+      children: Array<{
         text?: string;
       }>;
     };
   };
+  createdAt: string;
+  featuredImage?: {
+    url: string;
+  };
 }
 
 export default function BlogPostCard({ post }: { post: Post }) {
+  const excerpt = post.content?.root?.children?.[0]?.text
+    ?.replace(/<[^>]*>/g, '')
+    ?.replace(/\[.*?\]/g, '')
+    ?.trim() || '';
+
   return (
     <Link href={`/blog/${post.slug}`}>
       <Card className="h-full overflow-hidden hover:shadow-lg transition-shadow">
         {post.featuredImage && (
           <div className="relative w-full h-48">
             <Image
-              src={`https://admin.andrejsrna.sk${post.featuredImage.url}`}
+              src={post.featuredImage.url}
               alt={post.title}
               fill
               className="object-cover"
@@ -44,7 +49,7 @@ export default function BlogPostCard({ post }: { post: Post }) {
             {post.title}
           </h3>
           <p className="text-gray-600 line-clamp-3">
-            {post.content?.root?.children?.[0]?.text}
+            {excerpt}
           </p>
           <div className="mt-4 text-blue-600 font-semibold">
             Čítať viac →
