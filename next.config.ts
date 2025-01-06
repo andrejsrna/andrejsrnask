@@ -74,7 +74,6 @@ const nextConfig: NextConfig = {
     }
     return config;
   },
-  optimizeFonts: true,
   experimental: {
     optimizeCss: true
   },
