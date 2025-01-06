@@ -2,6 +2,9 @@
 import Image from "next/image";
 import { useState, Suspense } from "react";
 
+// Pre-render text content
+const HERO_DESCRIPTION = "Som vášnivý webový vývojár so špecializáciou na moderné, užívateľsky prívetivé webové aplikácie. Vytvorme spolu niečo úžasné!";
+
 export function Hero() {
   const [clickCount, setClickCount] = useState(0);
 
@@ -54,14 +57,17 @@ export function Hero() {
           <div className="space-y-6">
             <h1 className="text-5xl sm:text-6xl font-extrabold">
               <span className="text-white">Ahoj, som </span>
-              <span className="bg-gradient-to-r from-red-500 to-red-600 text-transparent bg-clip-text">
+              <span className="inline-block bg-gradient-to-r from-red-500 to-red-600 text-transparent bg-clip-text">
                 Andrej Srna
               </span>
             </h1>
 
-            <p className="text-xl text-blue-100 leading-relaxed">
-              Som vášnivý webový vývojár so špecializáciou na moderné, 
-              užívateľsky prívetivé webové aplikácie. <i>Vytvorme spolu niečo úžasné!</i>
+            <p className="text-xl text-blue-100 leading-relaxed" suppressHydrationWarning>
+              {HERO_DESCRIPTION.split('.').map((sentence, i) => (
+                <span key={i} className="inline-block">
+                  {sentence.trim()}{i < HERO_DESCRIPTION.split('.').length - 1 ? '. ' : ''}
+                </span>
+              ))}
             </p>
 
             <div className="pt-4">
