@@ -41,7 +41,6 @@ export default function RootLayout({
           as="image"
           href="/zombo-andrej.jpeg"
           type="image/webp"
-          fetchpriority="high"
           imageSrcSet="/zombo-andrej.jpeg?w=384&q=90&f=webp 384w, /zombo-andrej.jpeg?w=640&q=90&f=webp 640w"
           sizes="(max-width: 768px) 256px, 320px"
         />

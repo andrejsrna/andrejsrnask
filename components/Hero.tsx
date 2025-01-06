@@ -17,10 +17,6 @@ import {
   crazyButtonVariants 
 } from '../lib/animations';
 
-const ImageSkeleton = () => (
-  <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full bg-gray-200 animate-pulse" />
-);
-
 export function Hero() {
   const [isCrazy, setIsCrazy] = useState(false);
   const [clickCount, setClickCount] = useState(0);
