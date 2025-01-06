@@ -49,15 +49,17 @@ export default function LatestPosts() {
         </div>
 
         {isLoading ? (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {[1, 2, 3].map((i) => (
-              <div key={i} className="h-96 bg-gray-100 rounded-lg animate-pulse" />
+              <div key={i} className="min-w-0">
+                <div className="h-96 bg-gray-100 rounded-lg animate-pulse" />
+              </div>
             ))}
           </div>
         ) : (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {posts.slice(0, 3).map((post) => (
-              <div key={post.slug}>
+              <div key={post.slug} className="min-w-0">
                 <BlogPostCard post={post} />
               </div>
             ))}

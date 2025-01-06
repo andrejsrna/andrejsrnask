@@ -105,10 +105,10 @@ const BlogPost = async ({ params }: { params: Promise<{ slug: string }> }) => {
       </div>
 
       {/* Content */}
-      <div className="max-w-3xl mx-auto">
-        <Card className="p-8">
+      <div className="w-full max-w-none md:max-w-3xl mx-auto px-0 md:px-4">
+        <Card className="p-4 md:p-8">
           <div 
-            className="prose prose-lg max-w-none prose-img:rounded-lg prose-img:mx-auto prose-pre:overflow-x-auto prose-pre:max-w-full prose-headings:break-words"
+            className="prose prose-lg max-w-none prose-img:rounded-lg prose-img:mx-auto prose-pre:max-w-full prose-pre:overflow-x-auto prose-pre:p-0 prose-code:text-sm prose-headings:break-words"
             dangerouslySetInnerHTML={{ __html: content }}
           />
         </Card>

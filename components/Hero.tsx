@@ -1,72 +1,25 @@
 'use client';
 import Image from "next/image";
-import { motion, Variants } from "framer-motion";
-import { useState } from "react";
+import dynamic from 'next/dynamic';
+import { useState, Suspense } from "react";
 
-const containerVariants: Variants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.3
-    }
-  }
-};
+// Dynamically import Framer Motion components
+const MotionDiv = dynamic(() => import('framer-motion').then((mod) => mod.motion.div), {
+  ssr: false
+});
 
-const textVariants: Variants = {
-  hidden: { opacity: 0, x: -50 },
-  visible: { 
-    opacity: 1, 
-    x: 0,
-    transition: {
-      duration: 0.8,
-      ease: "easeOut"
-    }
-  }
-};
+// Import variants
+import { 
+  containerVariants,
+  textVariants,
+  imageVariants,
+  buttonVariants,
+  crazyButtonVariants 
+} from '@/lib/animations';
 
-const imageVariants: Variants = {
-  hidden: { opacity: 0, x: 50 },
-  visible: { 
-    opacity: 1, 
-    x: 0,
-    transition: {
-      duration: 0.8,
-      ease: "easeOut"
-    }
-  }
-};
-
-const buttonVariants: Variants = {
-  hidden: { opacity: 0, scale: 0.8 },
-  visible: { 
-    opacity: 1, 
-    scale: 1,
-    transition: {
-      duration: 0.8,
-      delay: 0.5,
-      ease: "easeOut"
-    }
-  }
-};
-
-const crazyButtonVariants: Variants = {
-  normal: { 
-    scale: 1,
-    rotate: 0,
-    x: 0,
-    y: 0
-  },
-  crazy: {
-    scale: [1, 1.2, 0.8, 1.4, 0.9, 1],
-    rotate: [0, 45, -45, 180, -180, 0],
-    x: [0, 50, -50, 20, -20, 0],
-    y: [0, -30, 30, -15, 15, 0],
-    transition: {
-      duration: 1.5,
-      ease: "easeInOut",
-    }
-  }
-};
+const ImageSkeleton = () => (
+  <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full bg-gray-200 animate-pulse" />
+);
 
 export function Hero() {
   const [isCrazy, setIsCrazy] = useState(false);
@@ -125,14 +78,14 @@ export function Hero() {
         <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(59,130,246,0.1)_50%,transparent_75%)] bg-[length:20px_20px]"></div>
       </div>
       
-      <motion.div 
+      <MotionDiv 
         variants={containerVariants}
         initial="hidden"
         animate="visible"
         className="relative container mx-auto px-6 flex flex-col-reverse md:flex-row items-center justify-between z-10"
       >
         {/* Text Content */}
-        <motion.div
+        <MotionDiv
           variants={textVariants}
           className="w-full md:w-1/2 mb-8 md:mb-0"
         >
@@ -150,12 +103,12 @@ export function Hero() {
             </p>
 
             {/* Single Interactive Button */}
-            <motion.div
+            <MotionDiv
               variants={buttonVariants}
               className="pt-4"
             >
               <div className="relative inline-block">
-                <motion.button
+                <MotionDiv
                   variants={crazyButtonVariants}
                   animate={isCrazy ? "crazy" : "normal"}
                   onClick={handleCrazyClick}
@@ -163,41 +116,44 @@ export function Hero() {
                   className="px-8 py-4 text-lg bg-gradient-to-r from-red-600 to-blue-600 hover:from-red-700 hover:to-blue-700 text-white rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                 >
                   Kontaktujte ma
-                </motion.button>
+                </MotionDiv>
                 {clickCount >= 3 && (
-                  <motion.p
+                  <MotionDiv
                     key={getCurrentMessage()}
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     className="absolute -bottom-8 left-1/2 -translate-x-1/2 text-sm text-blue-300 font-semibold whitespace-nowrap"
                   >
                     {getCurrentMessage()}
-                  </motion.p>
+                  </MotionDiv>
                 )}
               </div>
-            </motion.div>
+            </MotionDiv>
           </div>
-        </motion.div>
+        </MotionDiv>
 
         {/* Image */}
-        <motion.div
+        <MotionDiv
           variants={imageVariants}
           className="w-full md:w-1/2 flex justify-center"
         >
-          <div className="relative w-72 h-72 sm:w-96 sm:h-96">
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-red-500 rounded-full animate-spin-slow opacity-20"></div>
-            <Image
-              src="/zombo-andrej.jpeg"
-              alt="Andrej Srna"
-              layout="fill"
-              objectFit="cover"
-              className="rounded-full shadow-2xl border-4 border-white/10 relative z-10"
-            />
+          <div className="relative w-64 h-64 md:w-80 md:h-80">
+            <Suspense fallback={<ImageSkeleton />}>
+              <Image
+                src="/zombo-andrej.jpeg"
+                alt="Andrej Srna"
+                fill
+                priority={true}
+                className="rounded-full shadow-2xl border-4 border-white/10 relative z-10 object-cover"
+                sizes="(max-width: 768px) 256px, 320px"
+                quality={90}
+              />
+            </Suspense>
             {/* Glow effect */}
             <div className="absolute -inset-4 bg-gradient-to-r from-blue-500 to-red-500 rounded-full opacity-20 blur-2xl animate-pulse"></div>
           </div>
-        </motion.div>
-      </motion.div>
+        </MotionDiv>
+      </MotionDiv>
     </section>
   );
 };

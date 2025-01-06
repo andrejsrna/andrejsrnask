@@ -52,8 +52,7 @@ async function fetchFeaturedMedia(mediaId: number): Promise<{ source_url: string
       source_url: media.source_url,
       alt_text: media.alt_text || ''
     };
-  } catch (error) {
-    console.error('Error fetching media:', error);
+  } catch {
     return null;
   }
 }
@@ -93,7 +92,6 @@ function convertWPPostToPost(wpPost: WPPost): Post {
 
 export async function fetchPosts(): Promise<Post[]> {
   try {
-    // First, fetch the posts
     const response = await fetch(`${WP_API_URL}/posts?_embed=wp:featuredmedia&per_page=10&orderby=date&order=desc`, {
       next: { revalidate: 3600 } // Cache for 1 hour
     });
@@ -104,15 +102,6 @@ export async function fetchPosts(): Promise<Post[]> {
 
     const wpPosts: WPPost[] = await response.json();
     
-    // Debug the WordPress response
-    console.log('WordPress Posts Response:', JSON.stringify({
-      firstPost: wpPosts[0] ? {
-        featured_media: wpPosts[0].featured_media,
-        _embedded: wpPosts[0]._embedded
-      } : null,
-      totalPosts: wpPosts.length
-    }, null, 2));
-
     // If posts don't have embedded media, fetch it separately
     const postsWithMedia = await Promise.all(
       wpPosts.map(async (post) => {
@@ -132,8 +121,7 @@ export async function fetchPosts(): Promise<Post[]> {
     );
     
     return postsWithMedia.map(convertWPPostToPost);
-  } catch (error) {
-    console.error('Error fetching posts:', error);
+  } catch {
     return [];
   }
 }
@@ -154,8 +142,7 @@ export async function fetchPost(slug: string): Promise<Post | null> {
     }
 
     return convertWPPostToPost(wpPosts[0]);
-  } catch (error) {
-    console.error('Error fetching post:', error);
+  } catch {
     return null;
   }
 } 

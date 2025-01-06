@@ -114,8 +114,11 @@ export default function Header() {
             transition={{ duration: 0.5 }}
             className="md:hidden relative w-10 h-10 bg-gray-800/50 backdrop-blur-sm rounded-lg flex items-center justify-center border border-gray-700/50 transition-colors duration-300 hover:border-gray-600/50"
             onClick={() => setIsOpen(!isOpen)}
+            aria-expanded={isOpen}
+            aria-label={isOpen ? "Zavrieť menu" : "Otvoriť menu"}
+            aria-controls="mobile-menu"
           >
-            {isOpen ? <X className="w-5 h-5 text-gray-300" /> : <Menu className="w-5 h-5 text-gray-300" />}
+            {isOpen ? <X className="w-5 h-5 text-gray-300" aria-hidden="true" /> : <Menu className="w-5 h-5 text-gray-300" aria-hidden="true" />}
           </motion.button>
         </div>
 
@@ -123,6 +126,9 @@ export default function Header() {
         <AnimatePresence>
           {isOpen && (
             <motion.div
+              id="mobile-menu"
+              role="navigation"
+              aria-label="Mobilné menu"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
