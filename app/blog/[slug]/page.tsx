@@ -82,7 +82,7 @@ const BlogPost = async ({ params }: { params: Promise<{ slug: string }> }) => {
     <article className="container mx-auto px-4 py-12">
       {/* Hero section */}
       <div className="max-w-4xl mx-auto mb-16">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 break-words">
           {post.title}
         </h1>
         <div className="flex items-center text-gray-600 mb-8">
@@ -91,14 +91,14 @@ const BlogPost = async ({ params }: { params: Promise<{ slug: string }> }) => {
           </time>
         </div>
         {post.featuredImage && (
-          <div className="relative w-full h-[400px] mb-8">
+          <div className="relative aspect-[16/9] w-full mb-8">
             <Image
               src={post.featuredImage.url}
               alt={post.title}
-              className="object-cover w-full h-full rounded-lg"
-              width={1200}
-              height={630}
+              className="rounded-lg object-cover"
+              fill
               priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
             />
           </div>
         )}
@@ -108,7 +108,7 @@ const BlogPost = async ({ params }: { params: Promise<{ slug: string }> }) => {
       <div className="max-w-3xl mx-auto">
         <Card className="p-8">
           <div 
-            className="prose prose-lg max-w-none"
+            className="prose prose-lg max-w-none prose-img:rounded-lg prose-img:mx-auto prose-pre:overflow-x-auto prose-pre:max-w-full prose-headings:break-words"
             dangerouslySetInnerHTML={{ __html: content }}
           />
         </Card>

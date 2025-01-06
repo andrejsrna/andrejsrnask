@@ -30,9 +30,9 @@ export default function BlogPostCard({ post }: { post: Post }) {
 
   return (
     <Link href={`/blog/${post.slug}`}>
-      <Card className="h-full overflow-hidden hover:shadow-lg transition-shadow">
+      <Card className="h-full overflow-hidden hover:shadow-lg transition-shadow flex flex-col">
         {post.featuredImage && (
-          <div className="relative w-full h-48">
+          <div className="relative w-full h-48 shrink-0">
             <Image
               src={post.featuredImage.url}
               alt={post.title}
@@ -41,17 +41,17 @@ export default function BlogPostCard({ post }: { post: Post }) {
             />
           </div>
         )}
-        <div className="p-6">
+        <div className="p-6 flex flex-col flex-grow">
           <time className="text-sm text-gray-500 mb-2 block">
             {format(new Date(post.createdAt), "d. MMMM yyyy", { locale: sk })}
           </time>
-          <h3 className="text-xl font-semibold mb-2 line-clamp-2">
+          <h3 className="text-xl font-semibold mb-2 line-clamp-2 min-h-[3.5rem]">
             {post.title}
           </h3>
-          <p className="text-gray-600 line-clamp-3">
+          <p className="text-gray-600 line-clamp-3 mb-4 flex-grow">
             {excerpt}
           </p>
-          <div className="mt-4 text-blue-600 font-semibold">
+          <div className="text-blue-600 font-semibold mt-auto">
             Čítať viac →
           </div>
         </div>
