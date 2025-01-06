@@ -39,9 +39,9 @@ export default function RootLayout({
         <link
           rel="preload"
           as="image"
-          href="/zombo-andrej.jpeg"
+          href="/zombo-andrej.webp"
           type="image/webp"
-          imageSrcSet="/zombo-andrej.jpeg?w=384&q=90&f=webp 384w, /zombo-andrej.jpeg?w=640&q=90&f=webp 640w"
+          imageSrcSet="/zombo-andrej.webp?w=384&q=90 384w, /zombo-andrej.webp?w=640&q=90 640w"
           sizes="(max-width: 768px) 256px, 320px"
         />
         <link

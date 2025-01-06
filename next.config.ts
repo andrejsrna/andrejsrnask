@@ -16,7 +16,7 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
-        source: '/zombo-andrej.jpeg',
+        source: '/zombo-andrej.webp',
         headers: [
           {
             key: 'Cache-Control',

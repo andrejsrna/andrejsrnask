@@ -138,7 +138,7 @@ export function Hero() {
               <div className="w-full h-full rounded-full bg-gray-800 content-placeholder" />
             }>
               <Image
-                src="/zombo-andrej.jpeg"
+                src="/zombo-andrej.webp"
                 alt="Andrej Srna"
                 fill
                 priority={true}
@@ -147,6 +147,8 @@ export function Hero() {
                 className="rounded-full shadow-2xl border-4 border-white/10 relative z-10 object-cover"
                 sizes="(max-width: 768px) 256px, 320px"
                 quality={90}
+                placeholder="blur"
+                blurDataURL="data:image/webp;base64,..."
               />
             </Suspense>
             {/* Glow effect */}
