@@ -57,7 +57,7 @@ export function Hero() {
   };
 
   return (
-    <section className="relative py-20 min-section-height -mt-16 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-950 overflow-hidden">
+    <section className="relative min-h-[calc(100vh-4rem)] flex items-center -mt-16 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-950 overflow-hidden">
       
       {/* Modern Abstract Background Shapes */}
       <div className="absolute inset-0">
@@ -131,7 +131,7 @@ export function Hero() {
         {/* Image */}
         <MotionDiv
           variants={imageVariants}
-          className="w-full md:w-1/2 flex justify-center"
+          className="hidden md:flex w-full md:w-1/2 justify-center"
         >
           <div className="relative w-64 h-64 md:w-80 md:h-80">
             <Suspense fallback={

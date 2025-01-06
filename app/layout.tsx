@@ -44,13 +44,6 @@ export default function RootLayout({
           imageSrcSet="/zombo-andrej.webp?w=384&q=90 384w, /zombo-andrej.webp?w=640&q=90 640w"
           sizes="(max-width: 768px) 256px, 320px"
         />
-        <link
-          rel="preload"
-          href="/_next/static/media/[font-file-name].woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
       </head>
       <body className={inter.className}>
         <Header />
