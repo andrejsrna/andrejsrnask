@@ -15,7 +15,7 @@ import {
   imageVariants,
   buttonVariants,
   crazyButtonVariants 
-} from '@/lib/animations';
+} from '../lib/animations';
 
 const ImageSkeleton = () => (
   <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full bg-gray-200 animate-pulse" />
@@ -61,7 +61,7 @@ export function Hero() {
   };
 
   return (
-    <section className="relative py-20 -mt-16 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-950 overflow-hidden">
+    <section className="relative py-20 min-section-height -mt-16 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-950 overflow-hidden">
       
       {/* Modern Abstract Background Shapes */}
       <div className="absolute inset-0">
@@ -138,12 +138,16 @@ export function Hero() {
           className="w-full md:w-1/2 flex justify-center"
         >
           <div className="relative w-64 h-64 md:w-80 md:h-80">
-            <Suspense fallback={<ImageSkeleton />}>
+            <Suspense fallback={
+              <div className="w-full h-full rounded-full bg-gray-800 content-placeholder" />
+            }>
               <Image
                 src="/zombo-andrej.jpeg"
                 alt="Andrej Srna"
                 fill
                 priority={true}
+                loading="eager"
+                fetchPriority="high"
                 className="rounded-full shadow-2xl border-4 border-white/10 relative z-10 object-cover"
                 sizes="(max-width: 768px) 256px, 320px"
                 quality={90}

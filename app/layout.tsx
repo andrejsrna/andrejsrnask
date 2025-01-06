@@ -33,12 +33,24 @@ export default function RootLayout({
     <html lang="sk">
       <head>
         <link
+          rel="preconnect"
+          href={process.env.NEXT_PUBLIC_SITE_URL}
+        />
+        <link
           rel="preload"
-          href="/zombo-andrej.jpeg"
           as="image"
+          href="/zombo-andrej.jpeg"
           type="image/webp"
+          fetchpriority="high"
           imageSrcSet="/zombo-andrej.jpeg?w=384&q=90&f=webp 384w, /zombo-andrej.jpeg?w=640&q=90&f=webp 640w"
           sizes="(max-width: 768px) 256px, 320px"
+        />
+        <link
+          rel="preload"
+          href="/_next/static/media/[font-file-name].woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
         />
       </head>
       <body className={inter.className}>

@@ -88,7 +88,7 @@ export function Services() {
   return (
     <section 
       id="services" 
-      className="relative py-24 bg-gradient-to-br from-gray-900 to-gray-950 overflow-hidden"
+      className="relative py-24 min-section-height bg-gradient-to-br from-gray-900 to-gray-950 overflow-hidden"
     >
       {/* Modern Abstract Background */}
       <div className="absolute inset-0">

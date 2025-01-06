@@ -7,9 +7,11 @@ const nextConfig: NextConfig = {
     unoptimized: false,
     domains: ['admin.andrejsrna.sk'],
     formats: ['image/avif', 'image/webp'],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
+    deviceSizes: [256, 320, 384, 640],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 31536000,
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
   async headers() {
     return [
@@ -71,7 +73,11 @@ const nextConfig: NextConfig = {
       };
     }
     return config;
-  }
+  },
+  optimizeFonts: true,
+  experimental: {
+    optimizeCss: true
+  },
 };
 
 export default nextConfig;
