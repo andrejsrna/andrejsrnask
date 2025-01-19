@@ -40,6 +40,10 @@ const quickLinks = [
     label: "Tvorba web stránok Pezinok"
   },
   {
+    href: "/woocommerce-wordpress",
+    label: "WooCommerce WordPress E-shop"
+  },
+  {
     href: "/tvorba-web-stranok-cennik",
     label: "Cenník"
   }
