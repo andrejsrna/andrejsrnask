@@ -48,7 +48,7 @@ export default function CV() {
         </div>
         <div className="w-36 h-36 relative overflow-hidden rounded-lg shadow-[4px_4px_8px_#d1d1d1,-4px_-4px_8px_#ffffff] print:shadow-none">
           <img
-            src="/srna.jpg"
+            src="/Srna.jpg"
             alt="Andrej Srna"
             className="w-full h-full object-cover"
           />
