@@ -17,9 +17,6 @@ const References = dynamic(() => import('@/components/References'), {
   loading: () => <div className="h-96 animate-pulse bg-gray-100" />
 });
 
-const Pricing = dynamic(() => import('@/components/Pricing'), {
-  loading: () => <div className="h-96 animate-pulse bg-gray-100" />
-});
 
 const Testimonials = dynamic(() => import('@/components/TheySay'), {
   loading: () => <div className="h-96 animate-pulse bg-gray-100" />
@@ -39,7 +36,6 @@ export default function Home() {
       <AboutMe />
       <Services />
       <References />
-      <Pricing />
       <Suspense>
         <LatestPostsWrapper />
       </Suspense>

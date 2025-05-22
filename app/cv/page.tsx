@@ -43,12 +43,13 @@ export default function CV() {
             </a>
           </div>
           <h2 className="text-xl text-gray-800 font-medium">
-            Full Stack Developer | Web Development & Optimization Specialist | SEO & System Administration
+            Full Stack Vývojář | Specialista na Vývoj a Optimalizaci Webu | SEO
+            & Správa Systémů
           </h2>
         </div>
         <div className="w-36 h-36 relative overflow-hidden rounded-lg shadow-[4px_4px_8px_#d1d1d1,-4px_-4px_8px_#ffffff] print:shadow-none">
           <img
-            src="/Srna.jpg"
+            src="/srna.jpg"
             alt="Andrej Srna"
             className="w-full h-full object-cover"
           />
@@ -56,129 +57,132 @@ export default function CV() {
       </header>
 
       <section className="mb-12 mt-12 bg-white p-6 rounded-xl shadow-[8px_8px_16px_#d1d1d1,-8px_-8px_16px_#ffffff] print:shadow-none print:mt-0">
-        <h2 className="text-2xl font-semibold mb-4 border-b pb-2 text-gray-800">Summary</h2>
+        <h2 className="text-2xl font-semibold mb-4 border-b pb-2 text-gray-800">Shrnutí</h2>
         <p className="mb-6 text-gray-700 leading-relaxed">
-          Experienced Full Stack Developer with a strong focus on web development.
-          I am proficient in frontend technologies such as React, Next.js, jQuery, HTML/CSS
-          and backend solutions built on PHP.
+          Zkušený Full Stack vývojář se silným zaměřením na webový vývoj.
+          Ovládám frontendové technologie jako React, Next.js, jQuery, HTML/CSS
+          a backendová řešení postavená na PHP.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
           <div className="bg-gray-50 rounded-lg p-4 shadow-[inset_4px_4px_8px_#d1d1d1,inset_-4px_-4px_8px_#ffffff] print:shadow-none">
             <h3 className="font-bold mb-2 text-gray-800">SEO</h3>
-            <div className="text-gray-600">Website optimization for search engines</div>
+            <div className="text-gray-600">Optimalizace webových stránek pro vyhledávače</div>
           </div>
 
           <div className="bg-gray-50 rounded-lg p-4 shadow-[inset_4px_4px_8px_#d1d1d1,inset_-4px_-4px_8px_#ffffff] print:shadow-none">
-            <h3 className="font-bold mb-2 text-gray-800">Website Design</h3>
-            <div className="text-gray-600">Creating responsive and modern interfaces</div>
+            <h3 className="font-bold mb-2 text-gray-800">Webový Design</h3>
+            <div className="text-gray-600">Tvorba responzivních a moderních rozhraní</div>
           </div>
 
           <div className="bg-gray-50 rounded-lg p-4 shadow-[inset_4px_4px_8px_#d1d1d1,inset_-4px_-4px_8px_#ffffff] print:shadow-none">
-            <h3 className="font-bold mb-2 text-gray-800">Project Management</h3>
-            <div className="text-gray-600">Planning and execution of web projects</div>
+            <h3 className="font-bold mb-2 text-gray-800">Projektový Management</h3>
+            <div className="text-gray-600">Plánování a realizace webových projektů</div>
           </div>
         </div>
       </section>
 
       <section className="mb-12 bg-white p-6 rounded-xl shadow-[8px_8px_16px_#d1d1d1,-8px_-8px_16px_#ffffff] print:shadow-none print:page-break-before-auto">
-        <h2 className="text-2xl font-semibold mb-4 border-b pb-2 text-gray-800">Languages</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <h2 className="text-2xl font-semibold mb-4 border-b pb-2 text-gray-800">Jazyky</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="bg-gray-50 rounded-lg p-4 shadow-[inset_2px_2px_5px_#d1d1d1,inset_-2px_-2px_5px_#ffffff] print:shadow-none">
-            <span className="font-semibold">Slovak:</span> Native or Bilingual
+            <span className="font-semibold">Slovenština:</span> Rodilý mluvčí nebo dvojjazyčný
           </div>
           <div className="bg-gray-50 rounded-lg p-4 shadow-[inset_2px_2px_5px_#d1d1d1,inset_-2px_-2px_5px_#ffffff] print:shadow-none">
-            <span className="font-semibold">English:</span> Full Professional
+            <span className="font-semibold">Angličtina:</span> Plně profesionální
+          </div>
+          <div className="bg-gray-50 rounded-lg p-4 shadow-[inset_2px_2px_5px_#d1d1d1,inset_-2px_-2px_5px_#ffffff] print:shadow-none">
+            <span className="font-semibold">Čeština:</span> Plně profesionální
           </div>
         </div>
       </section>
 
       <section className="mb-12 bg-white p-6 rounded-xl shadow-[8px_8px_16px_#d1d1d1,-8px_-8px_16px_#ffffff] print:shadow-none">
-        <h2 className="text-2xl font-semibold mb-4 border-b pb-2 text-gray-800">Expertise</h2>
+        <h2 className="text-2xl font-semibold mb-4 border-b pb-2 text-gray-800">Odbornost</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
           <div className="bg-gray-50 rounded-lg p-4 shadow-[inset_2px_2px_5px_#d1d1d1,inset_-2px_-2px_5px_#ffffff] print:shadow-none">
             <h3 className="font-bold mb-2 text-gray-800">Frontend</h3>
-            <p className="text-gray-600">Creating responsive and interactive UIs using modern frameworks.</p>
+            <p className="text-gray-600">Tvorba responzivních a interaktivních UI pomocí moderních frameworků.</p>
           </div>
 
           <div className="bg-gray-50 rounded-lg p-4 shadow-[inset_2px_2px_5px_#d1d1d1,inset_-2px_-2px_5px_#ffffff] print:shadow-none">
             <h3 className="font-bold mb-2 text-gray-800">Backend</h3>
-            <p className="text-gray-600">Development and management of systems in PHP, API integration, working with headless CMS (WordPress, Strapi).</p>
+            <p className="text-gray-600">Vývoj a správa systémů v PHP, integrace API, práce s headless CMS (WordPress, Strapi).</p>
           </div>
 
           <div className="bg-gray-50 rounded-lg p-4 shadow-[inset_2px_2px_5px_#d1d1d1,inset_-2px_-2px_5px_#ffffff] print:shadow-none">
-            <h3 className="font-bold mb-2 text-gray-800">Web Administration</h3>
-            <p className="text-gray-600">SEO optimization, CI/CD deployment, server administration, caching and CDN.</p>
+            <h3 className="font-bold mb-2 text-gray-800">Správa Webu</h3>
+            <p className="text-gray-600">SEO optimalizace, CI/CD deployment, správa serverů, cachování a CDN.</p>
           </div>
 
           <div className="bg-gray-50 rounded-lg p-4 shadow-[inset_2px_2px_5px_#d1d1d1,inset_-2px_-2px_5px_#ffffff] print:shadow-none">
-            <h3 className="font-bold mb-2 text-gray-800">Project Management</h3>
-            <p className="text-gray-600">Planning, analysis, technology selection, reporting and communication with stakeholders.</p>
+            <h3 className="font-bold mb-2 text-gray-800">Projektový Management</h3>
+            <p className="text-gray-600">Plánování, analýza, výběr technologií, reporting a komunikace se zúčastněnými stranami.</p>
           </div>
         </div>
       </section>
 
       <section className="mb-12 bg-white p-6 rounded-xl shadow-[8px_8px_16px_#d1d1d1,-8px_-8px_16px_#ffffff] print:shadow-none print:page-break-before-always">
-        <h2 className="text-2xl font-semibold mb-4 border-b pb-2 text-gray-800">Work Experience</h2>
+        <h2 className="text-2xl font-semibold mb-4 border-b pb-2 text-gray-800">Pracovní Zkušenosti</h2>
 
         <div className="mb-8 bg-gray-50 rounded-lg p-5 shadow-[inset_2px_2px_5px_#d1d1d1,inset_-2px_-2px_5px_#ffffff] print:shadow-none">
           <div className="flex flex-col md:flex-row justify-between mb-2">
-            <h3 className="text-xl font-bold text-gray-800">Frontend Developer</h3>
-            <span className="text-gray-600 font-medium">February 2025 - April 2025</span>
+            <h3 className="text-xl font-bold text-gray-800">Frontend Vývojář</h3>
+            <span className="text-gray-600 font-medium">Únor 2025 - Duben 2025</span>
           </div>
           <div className="flex flex-col md:flex-row justify-between mb-3">
             <div className="font-medium text-gray-700">cognito.cz</div>
-            <div className="text-gray-600">Brno, South Moravia, Czechia</div>
+            <div className="text-gray-600">Brno, Jihomoravský kraj, Česko</div>
           </div>
           <p className="text-gray-600">
-            3 months of experience as a Frontend Developer at cognito.cz.
+            3 měsíce zkušeností jako Frontend Vývojář v cognito.cz.
           </p>
         </div>
 
         <div className="mb-8 bg-gray-50 rounded-lg p-5 shadow-[inset_2px_2px_5px_#d1d1d1,inset_-2px_-2px_5px_#ffffff] print:shadow-none">
           <div className="flex flex-col md:flex-row justify-between mb-2">
-            <h3 className="text-xl font-bold text-gray-800">Web Administration, Development and Application Security Specialist</h3>
-            <span className="text-gray-600 font-medium">September 2021 - January 2025</span>
+            <h3 className="text-xl font-bold text-gray-800">Specialista na Správu Webu, Vývoj a Bezpečnost Aplikací</h3>
+            <span className="text-gray-600 font-medium">Září 2021 - Leden 2025</span>
           </div>
           <div className="flex flex-col md:flex-row justify-between mb-3">
-            <div className="font-medium text-gray-700">Trnava Self-Governing Region</div>
+            <div className="font-medium text-gray-700">Trnavský samosprávný kraj</div>
             <div className="text-gray-600">Trnava</div>
           </div>
           <p className="text-gray-600">
-            Web Administration, Application Development and Security Specialist responsible for
-            the administration and optimization of the Office&apos;s web solutions. Main tasks included
-            the development and maintenance of web applications, implementation of security
-            measures, improving user experience and optimizing the performance of digital
-            services. The work also included SEO optimization, traffic analysis and ensuring
-            compliance of web solutions with current legislative and technological standards.
-            Cooperation with internal departments and external suppliers in the development and
-            integration of new functionalities in order to make the office&apos;s online communication more efficient.
+            Specialista na správu webu, vývoj aplikací a bezpečnost zodpovědný za
+            správu a optimalizaci webových řešení Úřadu. Hlavní úkoly zahrnovaly
+            vývoj a údržbu webových aplikací, implementaci bezpečnostních
+            opatření, zlepšování uživatelského zážitku a optimalizaci výkonu digitálních
+            služeb. Práce také zahrnovala SEO optimalizaci, analýzu návštěvnosti a zajištění
+            souladu webových řešení s aktuálními legislativními a technologickými standardy.
+            Spolupráce s interními odděleními a externími dodavateli na vývoji a
+            integraci nových funkcionalit s cílem zefektivnit online komunikaci úřadu.
           </p>
         </div>
 
         <div className="mb-6 bg-gray-50 rounded-lg p-5 shadow-[inset_2px_2px_5px_#d1d1d1,inset_-2px_-2px_5px_#ffffff] print:shadow-none">
           <div className="flex flex-col md:flex-row justify-between mb-2">
-            <h3 className="text-xl font-bold text-gray-800">Full-Stack Web Developer</h3>
-            <span className="text-gray-600 font-medium">May 2017 - September 2021</span>
+            <h3 className="text-xl font-bold text-gray-800">Full-Stack Webový Vývojář</h3>
+            <span className="text-gray-600 font-medium">Květen 2017 - Září 2021</span>
           </div>
           <div className="flex flex-col md:flex-row justify-between mb-3">
-            <div className="font-medium text-gray-700">QBSW, as</div>
+            <div className="font-medium text-gray-700">QBSW, a.s.</div>
             <div className="text-gray-600">Bratislava</div>
           </div>
           <p className="text-gray-600">
-            Web Developer with a focus on developing and managing web solutions in the
-            WordPress environment, including the implementation of modern web
-            technologies (HTML, CSS, JavaScript, PHP). Responsible for developing customized
-            web applications, optimizing the user experience and ensuring compatibility with
-            the latest standards and security requirements. Collaborating with clients to
-            design and implement custom web solutions, with an emphasis on performance,
-            SEO and responsive design.
+            Webový vývojář se zaměřením na vývoj a správu webových řešení v prostředí
+            WordPress, včetně implementace moderních webových
+            technologií (HTML, CSS, JavaScript, PHP). Zodpovědný za vývoj přizpůsobených
+            webových aplikací, optimalizaci uživatelského zážitku a zajištění kompatibility s
+            nejnovějšími standardy a bezpečnostními požadavky. Spolupráce s klienty na
+            návrhu a implementaci vlastních webových řešení s důrazem na výkon,
+            SEO a responzivní design.
           </p>
         </div>
       </section>
 
       <section className="mb-12 bg-white p-6 rounded-xl shadow-[8px_8px_16px_#d1d1d1,-8px_-8px_16px_#ffffff] print:shadow-none print:page-break-before-always">
-        <h2 className="text-2xl font-semibold mb-4 border-b pb-2 text-gray-800">Projects</h2>
+        <h2 className="text-2xl font-semibold mb-4 border-b pb-2 text-gray-800">Projekty</h2>
 
         <div className="mb-8 bg-gray-50 rounded-lg p-5 shadow-[inset_2px_2px_5px_#d1d1d1,inset_-2px_-2px_5px_#ffffff] print:shadow-none">
           <h3 className="text-xl font-bold mb-2">
@@ -188,14 +192,14 @@ export default function CV() {
               rel="noopener noreferrer"
               className="text-blue-600 hover:underline print:text-gray-800 print:no-underline"
             >
-              Trnava Self-Governing Region Website
+              Web Trnavského samosprávného kraje
               <span className="inline-block ml-1 print:hidden">↗</span>
             </a>
           </h3>
           <p className="mb-3 text-gray-600">
-            Comprehensive redesign of the website for Trnava Self-Governing Region, creating a modern, responsive interface with a focus on user-friendliness and information accessibility.
+            Komplexní redesign webové stránky pro Trnavský samosprávný kraj, vytvoření moderního, responzivního rozhraní se zaměřením na uživatelskou přívětivost a přístupnost informací.
           </p>
-          <div className="mb-2 font-semibold text-gray-700">Technologies Used:</div>
+          <div className="mb-2 font-semibold text-gray-700">Použité Technologie:</div>
           <div className="flex flex-wrap gap-2 mb-2">
             {["WordPress", "PHP", "Tailwind CSS", "Responsive Design", "SEO", "Google Analytics", "User Permissions",
               "UX/UI Design", "UX Research", "UX Testing", "CMS", "API", "REST", "Nginx", "MySQL", "jQuery", "AJAX", "Facebook API"].map((tech, index) => (
@@ -209,19 +213,19 @@ export default function CV() {
         <div className="mb-8 bg-gray-50 rounded-lg p-5 shadow-[inset_2px_2px_5px_#d1d1d1,inset_-2px_-2px_5px_#ffffff] print:shadow-none">
           <h3 className="text-xl font-bold mb-2">
             <a
-              href="https://majetok.trnava.sk"
+              href="https://smmt.trnava.sk"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-600 hover:underline print:text-gray-800 print:no-underline"
             >
-              Trnava City Property Management
+              Správa majetku města Trnava
               <span className="inline-block ml-1 print:hidden">↗</span>
             </a>
           </h3>
           <p className="mb-3 text-gray-600">
-            Development of a comprehensive web application for city property management, implementing advanced tools for efficient real estate administration.
+            Vývoj komplexní webové aplikace pro správu městského majetku, implementace pokročilých nástrojů pro efektivní správu nemovitostí.
           </p>
-          <div className="mb-2 font-semibold text-gray-700">Technologies Used:</div>
+          <div className="mb-2 font-semibold text-gray-700">Použité Technologie:</div>
           <div className="flex flex-wrap gap-2 mb-2">
             {["WordPress", "PHP", "CSS", "jQuery", "AJAX", "MySQL", "API", "REST", "Nginx", "Tailwind CSS",
               "Facebook API", "CMS", "SEO", "Google Analytics", "User Permissions", "Responsive Design",
@@ -236,19 +240,19 @@ export default function CV() {
         <div className="mb-8 bg-gray-50 rounded-lg p-5 shadow-[inset_2px_2px_5px_#d1d1d1,inset_-2px_-2px_5px_#ffffff] print:shadow-none">
           <h3 className="text-xl font-bold mb-2">
             <a
-              href="https://zdravazupa.trnava-vuc.sk"
+              href="https://zdravazupa.sk"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-600 hover:underline print:text-gray-800 print:no-underline"
             >
-              Healthy Region
+              Zdravá župa
               <span className="inline-block ml-1 print:hidden">↗</span>
             </a>
           </h3>
           <p className="mb-3 text-gray-600">
-            Development of a comprehensive web application for the Healthy Region initiative, implementing advanced tools for efficient management of health service information.
+            Vývoj komplexní webové aplikace pro iniciativu Zdravá župa, implementace pokročilých nástrojů pro efektivní správu informací o zdravotnických službách.
           </p>
-          <div className="mb-2 font-semibold text-gray-700">Technologies Used:</div>
+          <div className="mb-2 font-semibold text-gray-700">Použité Technologie:</div>
           <div className="flex flex-wrap gap-2 mb-2">
             {["React", "Tailwind", "Shadcn", "Next.js", "TypeScript", "API", "REST", "NextAuth", "PostgreSQL",
               "Docker", "Router", "Git", "GitHub", "Prisma", "Responsive Design", "SEO", "Cursor",
