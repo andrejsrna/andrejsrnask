@@ -1,3 +1,5 @@
+import { decodeHtmlEntities } from './utils';
+
 const WP_API_URL = 'https://admin.andrejsrna.sk/wp-json/wp/v2';
 
 interface WPPost {
@@ -71,7 +73,7 @@ function convertWPPostToPost(wpPost: WPPost): Post {
 
   return {
     slug: postSlug,
-    title: wpPost.title.rendered,
+    title: decodeHtmlEntities(wpPost.title.rendered),
     content: {
       root: {
         children: [
@@ -84,8 +86,8 @@ function convertWPPostToPost(wpPost: WPPost): Post {
     createdAt: wpPost.date,
     featuredImage,
     meta: {
-      title: wpPost.title.rendered,
-      description: wpPost.excerpt.rendered.replace(/<[^>]*>/g, '')
+      title: decodeHtmlEntities(wpPost.title.rendered),
+      description: decodeHtmlEntities(wpPost.excerpt.rendered.replace(/<[^>]*>/g, ''))
     }
   };
 }

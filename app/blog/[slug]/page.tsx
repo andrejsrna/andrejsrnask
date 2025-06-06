@@ -6,6 +6,7 @@ import { sk } from "date-fns/locale";
 import { Card } from "@/components/ui/card";
 import { Metadata } from 'next';
 import Image from "next/image";
+import { decodeHtmlEntities } from "@/lib/utils";
 
 export async function generateStaticParams() {
   const posts = await fetchPosts();
@@ -38,11 +39,11 @@ export async function generateMetadata(
   }
 
   return {
-    title: post.meta?.title || post.title,
-    description: post.meta?.description,
+    title: decodeHtmlEntities(post.meta?.title || post.title),
+    description: post.meta?.description ? decodeHtmlEntities(post.meta.description) : undefined,
     openGraph: {
-      title: post.meta?.title || post.title,
-      description: post.meta?.description,
+      title: decodeHtmlEntities(post.meta?.title || post.title),
+      description: post.meta?.description ? decodeHtmlEntities(post.meta.description) : undefined,
       url: `https://andrejsrna.sk/blog/${slug}`,
       images: post.featuredImage
         ? [
@@ -50,7 +51,7 @@ export async function generateMetadata(
               url: post.featuredImage.url,
               width: 1200,
               height: 630,
-              alt: post.title,
+              alt: decodeHtmlEntities(post.title),
             },
           ]
         : undefined,
@@ -58,8 +59,8 @@ export async function generateMetadata(
     },
     twitter: {
       card: 'summary_large_image',
-      title: post.meta?.title || post.title,
-      description: post.meta?.description,
+      title: decodeHtmlEntities(post.meta?.title || post.title),
+      description: post.meta?.description ? decodeHtmlEntities(post.meta.description) : undefined,
       images: post.featuredImage
         ? [post.featuredImage.url]
         : undefined,
@@ -83,7 +84,7 @@ const BlogPost = async ({ params }: { params: Promise<{ slug: string }> }) => {
       {/* Hero section */}
       <div className="max-w-4xl mx-auto mb-16">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 break-words">
-          {post.title}
+          {decodeHtmlEntities(post.title)}
         </h1>
         <div className="flex items-center text-gray-600 mb-8">
           <time dateTime={post.createdAt}>
