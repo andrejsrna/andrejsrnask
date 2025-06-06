@@ -46,6 +46,10 @@ const quickLinks = [
   {
     href: "/tvorba-web-stranok-cennik",
     label: "Cenník"
+  },
+  {
+    href: "/ochrana-osobnych-udajov",
+    label: "Ochrana osobných údajov"
   }
 ];
 
