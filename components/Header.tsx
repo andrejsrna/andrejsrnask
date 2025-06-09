@@ -30,32 +30,89 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleHashLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
+
+  const scrollToElement = (targetId: string) => {
+    const element = document.getElementById(targetId);
+    if (element) {
+      const headerOffset = 80; // Increased for mobile
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+      // For mobile devices, use a more reliable scrolling method
+      if (window.innerWidth < 768) {
+        // Use setTimeout to ensure smooth scrolling on mobile
+        setTimeout(() => {
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+          });
+        }, 100);
+      } else {
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
+    }
+  };
+
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     const href = e.currentTarget.getAttribute('href');
+    
+    // Always close mobile menu when any link is clicked
+    setIsOpen(false);
+    
     if (href?.startsWith('/#')) {
       e.preventDefault();
       const targetId = href.replace('/#', '');
 
       if (pathname !== '/') {
         // If not on homepage, navigate to homepage with hash
-        window.location.href = href;
+        // Store the target in sessionStorage for after redirect
+        sessionStorage.setItem('scrollToSection', targetId);
+        window.location.href = '/';
         return;
       }
 
-      const element = document.getElementById(targetId);
-      if (element) {
-        const headerOffset = 64;
-        const elementPosition = element.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth"
-        });
-      }
-      setIsOpen(false);
+      // Scroll to element immediately if on homepage
+      scrollToElement(targetId);
     }
+    // For regular links (like /blog), let the default Link behavior handle it
   };
+
+  // Handle scroll to section after page load (for redirects from other pages)
+  useEffect(() => {
+    const targetSection = sessionStorage.getItem('scrollToSection');
+    if (targetSection && pathname === '/') {
+      // Clear the stored section
+      sessionStorage.removeItem('scrollToSection');
+      
+      // Wait for page to fully load, then scroll
+      const timer = setTimeout(() => {
+        scrollToElement(targetSection);
+      }, 500);
+      
+      return () => clearTimeout(timer);
+    }
+  }, [pathname]);
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -85,7 +142,7 @@ export default function Header() {
               >
                 <Link
                   href={item.href}
-                  onClick={handleHashLinkClick}
+                  onClick={handleLinkClick}
                   className="px-4 py-2 text-white hover:text-blue-300 rounded-lg transition-colors duration-300"
                 >
                   {item.label}
@@ -99,7 +156,7 @@ export default function Header() {
             >
               <Link
                 href="/#contact"
-                onClick={handleHashLinkClick}
+                onClick={handleLinkClick}
                 className="ml-4 px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               >
                 Kontakt
@@ -125,22 +182,34 @@ export default function Header() {
         {/* Mobile Navigation */}
         <AnimatePresence>
           {isOpen && (
-            <motion.div
-              id="mobile-menu"
-              role="navigation"
-              aria-label="Mobilné menu"
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
-              className="md:hidden overflow-hidden bg-gray-900/95 backdrop-blur-lg rounded-b-2xl border-t border-gray-800"
-            >
+            <>
+              {/* Overlay */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className="fixed inset-0 bg-black/50 z-40 md:hidden"
+                onClick={() => setIsOpen(false)}
+              />
+              
+              {/* Menu */}
+              <motion.div
+                id="mobile-menu"
+                role="navigation"
+                aria-label="Mobilné menu"
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.3 }}
+                className="md:hidden overflow-hidden bg-gray-900/95 backdrop-blur-lg rounded-b-2xl border-t border-gray-800 relative z-50"
+              >
               <div className="px-4 py-6 space-y-4">
                 {menuItems.map((item) => (
                   <div key={item.href}>
                     <Link
                       href={item.href}
-                      onClick={handleHashLinkClick}
+                      onClick={handleLinkClick}
                       className="block px-4 py-2 text-gray-300 hover:text-white rounded-lg transition-colors duration-300"
                     >
                       {item.label}
@@ -150,7 +219,7 @@ export default function Header() {
                 <div>
                   <Link
                     href="/#contact"
-                    onClick={handleHashLinkClick}
+                    onClick={handleLinkClick}
                     className="block px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 text-center"
                   >
                     Kontakt
@@ -158,6 +227,7 @@ export default function Header() {
                 </div>
               </div>
             </motion.div>
+            </>
           )}
         </AnimatePresence>
       </div>
