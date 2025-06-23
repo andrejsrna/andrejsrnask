@@ -1,5 +1,4 @@
 import LandingHero from "@/components/LandingHero";
-import Services from "@/components/Services"; // Upravte sekciu Služieb pre Pezinok podľa potreby
 import Contact from "@/components/Contact";
 import AboutMe from "@/components/AboutMe";
 import Testimonials from "@/components/TheySay";
@@ -38,7 +37,6 @@ export default function TvorbaWebStranokPezinok() {
     <div>
       <LandingHero />
       <AboutMe/>
-      <Services />
       <References />
       <Pricing />
       <LatestPosts />
