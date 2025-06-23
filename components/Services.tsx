@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Code, PenTool, Server, Search, Globe, Smartphone, DownloadCloud, FileText, Layers } from "lucide-react";
+import { Zap, Code, Rocket } from "lucide-react";
 import { motion } from "framer-motion";
 
 const serviceVariants = {
@@ -11,8 +11,8 @@ const serviceVariants = {
     opacity: 1, 
     y: 0,
     transition: {
-      delay: delay * 0.2,
-      duration: 0.6,
+      delay: delay * 0.1,
+      duration: 0.5,
       ease: "easeOut"
     }
   })
@@ -20,67 +20,25 @@ const serviceVariants = {
 
 const servicesData = [
   {
-    icon: Code,
-    title: "Vývoj webových aplikácií",
-    description: "Vytváranie moderných, responzívnych a výkonných webových aplikácií využívajúcich najnovšie technológie.",
+    icon: Zap,
+    title: "Vývoj webových aplikácií na mieru",
+    description: "Tvorba rýchlych, bezpečných a škálovateľných webových aplikácií s využitím moderných technológií ako Next.js, React a TypeScript. Ideálne pre firemné systémy, SaaS platformy a komplexné weby, kde je dôraz na výkon a používateľský zážitok.",
     color: "text-blue-500",
-    gradient: "from-blue-500/20 to-blue-600/20"
+    gradient: "from-blue-50/50 to-white"
   },
   {
-    icon: PenTool,
-    title: "UI/UX dizajn",
-    description: "Navrhovanie intuitívnych a esteticky príťažlivých používateľských rozhraní, ktoré zlepšujú používateľský zážitok.",
-    color: "text-green-500",
-    gradient: "from-green-500/20 to-green-600/20"
+    icon: Code,
+    title: "Pokročilé WordPress riešenia",
+    description: "Posúvam hranice WordPressu. Tvorba vlastných tém a pluginov na mieru, integrácie s externými systémami a optimalizácia pre maximálny výkon a bezpečnosť. Od firemných webov po komplexné portály.",
+    color: "text-emerald-500",
+    gradient: "from-emerald-50/50 to-white"
   },
   {
-    icon: Server,
-    title: "Serverové riešenia",
-    description: "Návrh a implementácia škálovateľných backend riešení so zameraním na výkon a bezpečnosť.",
+    icon: Rocket,
+    title: "Zrýchlenie a optimalizácia webu (Performance & SEO)",
+    description: "Analýza a odstránenie technických problémov, ktoré brzdia váš web. Zlepšenie rýchlosti načítania (Core Web Vitals) a technická SEO optimalizácia pre lepšiu viditeľnosť v Google.",
     color: "text-purple-500",
-    gradient: "from-purple-500/20 to-purple-600/20"
-  },
-  {
-    icon: Search,
-    title: "SEO optimalizácia",
-    description: "Zlepšenie viditeľnosti vašej webovej stránky vo vyhľadávačoch a zvýšenie organického prenosu.",
-    color: "text-yellow-500",
-    gradient: "from-yellow-500/20 to-yellow-600/20"
-  },
-  {
-    icon: Globe,
-    title: "Administrácia webových stránok",
-    description: "Správa obsahu, aktualizácie a optimalizácie pre vaše webové stránky.",
-    color: "text-orange-500",
-    gradient: "from-orange-500/20 to-orange-600/20"
-  },
-  {
-    icon: Smartphone,
-    title: "Vývoj mobilných aplikácií",
-    description: "Tvorba natívnych a multiplatformových mobilných aplikácií pre Android a iOS.",
-    color: "text-red-500",
-    gradient: "from-red-500/20 to-red-600/20"
-  },
-  {
-    icon: DownloadCloud,
-    title: "Marketingový plán",
-    description: "Príprava komplexných marketingových stratégií a plánov na mieru podľa vašich cieľov.",
-    color: "text-cyan-500",
-    gradient: "from-cyan-500/20 to-cyan-600/20"
-  },
-  {
-    icon: FileText,
-    title: "CMS riešenia",
-    description: "Implementácia a správa redakčných systémov, ktoré vám umožnia jednoducho spravovať obsah.",
-    color: "text-teal-500",
-    gradient: "from-teal-500/20 to-teal-600/20"
-  },
-  {
-    icon: Layers,
-    title: "Moderný technologický stack",
-    description: "Použitie najnovších technológií pre robustné a udržateľné riešenia.",
-    color: "text-indigo-500",
-    gradient: "from-indigo-500/20 to-indigo-600/20"
+    gradient: "from-purple-50/50 to-white"
   }
 ];
 
@@ -88,37 +46,21 @@ export function Services() {
   return (
     <section 
       id="services" 
-      className="relative py-24 min-section-height bg-gradient-to-br from-gray-900 to-gray-950 overflow-hidden"
+      className="relative py-24 bg-white overflow-hidden"
     >
-      {/* Modern Abstract Background */}
-      <div className="absolute inset-0">
-        {/* Floating orbs */}
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500/30 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-float"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-purple-500/30 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-float-delayed"></div>
-        
-        {/* Grid pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:14px_24px]"></div>
-        
-        {/* Radial gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-gray-900/50 to-gray-950/50"></div>
-      </div>
-
       <div className="container mx-auto px-4 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 text-transparent bg-clip-text">
-            Moje služby
+        <div className="max-w-4xl mx-auto text-center mb-16">
+          <h2 className="text-4xl font-bold mb-4">
+            <span className="bg-gradient-to-r from-red-500 to-blue-600 text-transparent bg-clip-text">
+              S čím vám viem pomôcť
+            </span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Komplexné riešenia pre váš digitálny úspech
+          <p className="text-xl text-gray-600">
+            Špecializujem sa na tri kľúčové oblasti, v ktorých prinášam najväčšiu hodnotu.
           </p>
-        </motion.div>
+        </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
           {servicesData.map((service, index) => (
             <motion.div
               key={service.title}
@@ -127,15 +69,16 @@ export function Services() {
               whileInView="visible"
               viewport={{ once: true }}
               variants={serviceVariants}
+              className="h-full"
             >
-              <Card className={`group hover:scale-105 transition-all duration-300 bg-gradient-to-br ${service.gradient} backdrop-blur-sm bg-white/10 border-gray-800 hover:border-gray-700 h-full`}>
-                <CardHeader className="pb-2">
-                  <div className={`mb-4 ${service.color} transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3`}>
-                    <service.icon size={48} strokeWidth={1.5} />
+              <Card className={`group transition-all duration-300 bg-gradient-to-br ${service.gradient} border border-gray-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] h-full`}>
+                <CardHeader className="pb-4">
+                  <div className={`mb-4 inline-block p-3 rounded-xl bg-white border border-gray-100 shadow-sm`}>
+                    <service.icon size={28} className={service.color} strokeWidth={2} />
                   </div>
-                  <CardTitle className="text-xl text-white group-hover:text-gray-200">{service.title}</CardTitle>
+                  <CardTitle className="text-xl text-gray-900">{service.title}</CardTitle>
                 </CardHeader>
-                <CardContent className="text-gray-400 group-hover:text-gray-300">
+                <CardContent className="text-gray-500">
                   {service.description}
                 </CardContent>
               </Card>

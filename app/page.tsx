@@ -9,10 +9,6 @@ const AboutMe = dynamic(() => import('@/components/AboutMe'), {
   loading: () => <div className="h-96 animate-pulse bg-gray-100" />
 });
 
-const Services = dynamic(() => import('@/components/Services'), {
-  loading: () => <div className="h-96 animate-pulse bg-gray-100" />
-});
-
 const References = dynamic(() => import('@/components/References'), {
   loading: () => <div className="h-96 animate-pulse bg-gray-100" />
 });
@@ -34,7 +30,6 @@ export default function Home() {
     <>
       <Hero />
       <AboutMe />
-      <Services />
       <References />
       <Suspense>
         <LatestPostsWrapper />

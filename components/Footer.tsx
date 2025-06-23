@@ -19,7 +19,7 @@ const footerVariants = {
 const socialLinks = [
   {
     icon: FaLinkedin,
-    href: "https://www.linkedin.com/in/andrej-srna-937351111/",
+    href: "https://www.linkedin.com/in/andrej-srna-937351111/x",
     label: "LinkedIn"
   },
   {
