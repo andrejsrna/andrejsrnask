@@ -3,12 +3,46 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { usePathname } from 'next/navigation';
 
-const menuItems = [
+interface SubMenuItem {
+  href: string;
+  label: string;
+}
+
+interface BaseMenuItem {
+  label: string;
+}
+
+interface LinkMenuItem extends BaseMenuItem {
+  href: string;
+  submenu?: never;
+}
+
+interface SubmenuItem extends BaseMenuItem {
+  href?: never;
+  submenu: SubMenuItem[];
+}
+
+type MenuItem = LinkMenuItem | SubmenuItem;
+
+const isSubmenuItem = (item: MenuItem): item is SubmenuItem => {
+  return 'submenu' in item;
+};
+
+const menuItems: MenuItem[] = [
   { href: "/#about", label: "O mne" },
-  { href: "/#services", label: "Služby" },
+  {
+    label: "Služby",
+    submenu: [
+      { href: "/wordpress-vyvoj", label: "WordPress Vývoj" },
+      { href: "/woocommerce-wordpress", label: "WooCommerce E-shop" },
+      { href: "/wordpress-seo-audit", label: "WordPress SEO Audit" },
+      { href: "/tvorba-web-stranok-pezinok", label: "Tvorba web stránok" },
+      { href: "/tvorba-web-stranok-cennik", label: "Cenník" },
+    ]
+  },
   { href: "/#references", label: "Portfólio" },
   { href: "/blog", label: "Blog" },
 ];
@@ -16,6 +50,8 @@ const menuItems = [
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
+  const [submenuTimeout, setSubmenuTimeout] = useState<NodeJS.Timeout | null>(null);
   const pathname = usePathname();
   
   // Check if we're on a page that needs a solid header background
@@ -30,10 +66,37 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu when route changes
+  // Close mobile menu and submenu when route changes
   useEffect(() => {
     setIsOpen(false);
+    setActiveSubmenu(null);
   }, [pathname]);
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (submenuTimeout) {
+        clearTimeout(submenuTimeout);
+      }
+    };
+  }, [submenuTimeout]);
+
+  const handleSubmenuEnter = (item: MenuItem) => {
+    if (submenuTimeout) {
+      clearTimeout(submenuTimeout);
+      setSubmenuTimeout(null);
+    }
+    if (isSubmenuItem(item)) {
+      setActiveSubmenu(item.label);
+    }
+  };
+
+  const handleSubmenuLeave = () => {
+    const timeout = setTimeout(() => {
+      setActiveSubmenu(null);
+    }, 300); // 300ms delay before hiding
+    setSubmenuTimeout(timeout);
+  };
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -52,13 +115,11 @@ export default function Header() {
   const scrollToElement = (targetId: string) => {
     const element = document.getElementById(targetId);
     if (element) {
-      const headerOffset = 80; // Increased for mobile
+      const headerOffset = 80;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.scrollY - headerOffset;
 
-      // For mobile devices, use a more reliable scrolling method
       if (window.innerWidth < 768) {
-        // Use setTimeout to ensure smooth scrolling on mobile
         setTimeout(() => {
           window.scrollTo({
             top: offsetPosition,
@@ -77,35 +138,29 @@ export default function Header() {
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     const href = e.currentTarget.getAttribute('href');
     
-    // Always close mobile menu when any link is clicked
     setIsOpen(false);
+    setActiveSubmenu(null);
     
     if (href?.startsWith('/#')) {
       e.preventDefault();
       const targetId = href.replace('/#', '');
 
       if (pathname !== '/') {
-        // If not on homepage, navigate to homepage with hash
-        // Store the target in sessionStorage for after redirect
         sessionStorage.setItem('scrollToSection', targetId);
         window.location.href = '/';
         return;
       }
 
-      // Scroll to element immediately if on homepage
       scrollToElement(targetId);
     }
-    // For regular links (like /blog), let the default Link behavior handle it
   };
 
   // Handle scroll to section after page load (for redirects from other pages)
   useEffect(() => {
     const targetSection = sessionStorage.getItem('scrollToSection');
     if (targetSection && pathname === '/') {
-      // Clear the stored section
       sessionStorage.removeItem('scrollToSection');
       
-      // Wait for page to fully load, then scroll
       const timer = setTimeout(() => {
         scrollToElement(targetSection);
       }, 500);
@@ -116,7 +171,7 @@ export default function Header() {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled || needsSolidBg ? 'bg-gray-900/95 backdrop-blur-lg shadow-lg' : 'bg-transparent'
+      isScrolled || needsSolidBg || activeSubmenu ? 'bg-gray-900/95 backdrop-blur-lg shadow-lg' : 'bg-transparent'
     }`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
@@ -135,18 +190,62 @@ export default function Header() {
           <nav className="hidden md:flex items-center space-x-1">
             {menuItems.map((item, index) => (
               <motion.div
-                key={item.href}
+                key={item.label}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="relative group"
+                onMouseEnter={() => handleSubmenuEnter(item)}
+                onMouseLeave={handleSubmenuLeave}
               >
-                <Link
-                  href={item.href}
-                  onClick={handleLinkClick}
-                  className="px-4 py-2 text-white hover:text-blue-300 rounded-lg transition-colors duration-300"
-                >
-                  {item.label}
-                </Link>
+                {isSubmenuItem(item) ? (
+                  <>
+                    <button 
+                      className="px-4 py-2 text-white hover:text-blue-300 rounded-lg transition-colors duration-300 flex items-center gap-1 group"
+                      onClick={() => setActiveSubmenu(activeSubmenu === item.label ? null : item.label)}
+                    >
+                      {item.label}
+                      <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${activeSubmenu === item.label ? 'rotate-180' : ''} group-hover:text-blue-300`} />
+                    </button>
+
+                    <AnimatePresence>
+                      {activeSubmenu === item.label && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: 10 }}
+                          transition={{ duration: 0.2 }}
+                          className="absolute top-full left-0 pt-2"
+                        >
+                          {/* Invisible extension to prevent gap */}
+                          <div className="absolute h-2 -top-2 left-0 right-0 bg-transparent" />
+                          
+                          <div className="py-2 bg-gray-900/95 backdrop-blur-lg rounded-lg border border-gray-800 shadow-xl min-w-[240px] relative">
+                            {item.submenu.map((subItem) => (
+                              <Link
+                                key={subItem.href}
+                                href={subItem.href}
+                                className="block px-4 py-2.5 text-gray-300 hover:text-white hover:bg-gray-800/50 transition-colors duration-300"
+                              >
+                                {subItem.label}
+                              </Link>
+                            ))}
+                            {/* Gradient border effect */}
+                            <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-blue-500/50 via-purple-500/50 to-blue-500/50 rounded-b" />
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </>
+                ) : (
+                  <Link
+                    href={item.href}
+                    onClick={handleLinkClick}
+                    className="px-4 py-2 text-white hover:text-blue-300 rounded-lg transition-colors duration-300"
+                  >
+                    {item.label}
+                  </Link>
+                )}
               </motion.div>
             ))}
             <motion.div
@@ -206,14 +305,47 @@ export default function Header() {
               >
               <div className="px-4 py-6 space-y-4">
                 {menuItems.map((item) => (
-                  <div key={item.href}>
-                    <Link
-                      href={item.href}
-                      onClick={handleLinkClick}
-                      className="block px-4 py-2 text-gray-300 hover:text-white rounded-lg transition-colors duration-300"
-                    >
-                      {item.label}
-                    </Link>
+                  <div key={isSubmenuItem(item) ? item.label : item.href}>
+                    {isSubmenuItem(item) ? (
+                      <>
+                        <button
+                          onClick={() => setActiveSubmenu(activeSubmenu === item.label ? null : item.label)}
+                          className="flex items-center justify-between w-full px-4 py-2 text-gray-300 hover:text-white rounded-lg transition-colors duration-300"
+                        >
+                          {item.label}
+                          <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${activeSubmenu === item.label ? 'rotate-180' : ''}`} />
+                        </button>
+                        <AnimatePresence>
+                          {activeSubmenu === item.label && (
+                            <motion.div
+                              initial={{ opacity: 0, height: 0 }}
+                              animate={{ opacity: 1, height: "auto" }}
+                              exit={{ opacity: 0, height: 0 }}
+                              transition={{ duration: 0.2 }}
+                              className="pl-4 space-y-2 mt-2"
+                            >
+                              {item.submenu.map((subItem) => (
+                                <Link
+                                  key={subItem.href}
+                                  href={subItem.href}
+                                  className="block px-4 py-2 text-gray-400 hover:text-white rounded-lg transition-colors duration-300"
+                                >
+                                  {subItem.label}
+                                </Link>
+                              ))}
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        onClick={handleLinkClick}
+                        className="block px-4 py-2 text-gray-300 hover:text-white rounded-lg transition-colors duration-300"
+                      >
+                        {item.label}
+                      </Link>
+                    )}
                   </div>
                 ))}
                 <div>

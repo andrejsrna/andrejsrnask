@@ -233,7 +233,7 @@ export default function WordpressSeoAuditPage() {
           <div className="w-full md:w-1/2 flex justify-center">
             <div className="relative w-full max-w-lg aspect-square">
               <Image
-                src="/wordpress-seo-audit-hero.webp" // Placeholder, ideálne nový obrázok
+                src="/audit.jpeg" // Placeholder, ideálne nový obrázok
                 alt="WordPress SEO Audit"
                 fill
                 priority
