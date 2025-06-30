@@ -1,6 +1,6 @@
 'use client';
 
-import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaTwitter, FaYoutube, FaInstagram, FaTiktok } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Link from 'next/link';
 
@@ -29,8 +29,23 @@ const socialLinks = [
   },
   {
     icon: FaTwitter,
-    href: "https://twitter.com/andrejsrna",
-    label: "Twitter"
+    href: "https://x.com/AndrejSrna",
+    label: "X (Twitter)"
+  },
+  {
+    icon: FaYoutube,
+    href: "https://www.youtube.com/channel/UCtjCCncCi8XQjKiqNk5c_mg/",
+    label: "YouTube"
+  },
+  {
+    icon: FaInstagram,
+    href: "https://www.instagram.com/andrej.srna",
+    label: "Instagram"
+  },
+  {
+    icon: FaTiktok,
+    href: "https://www.tiktok.com/@andrejsrna",
+    label: "TikTok"
   }
 ];
 
@@ -79,7 +94,7 @@ export function Footer() {
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto">
           {/* Social Links */}
-          <div className="flex justify-center space-x-6 mb-8">
+          <div className="flex justify-center flex-wrap gap-4 mb-8">
             {socialLinks.map((social) => (
               <motion.a
                 key={social.label}
