@@ -110,7 +110,75 @@ const BlogPost = async ({ params }: { params: Promise<{ slug: string }> }) => {
       <div className="w-full max-w-none md:max-w-3xl mx-auto px-0 md:px-4">
         <Card className="p-4 md:p-8">
           <div 
-            className="prose prose-lg max-w-none prose-img:rounded-lg prose-img:mx-auto prose-pre:max-w-full prose-pre:overflow-x-auto prose-pre:p-0 prose-code:text-sm prose-headings:break-words"
+            className="prose prose-lg max-w-none 
+              prose-img:rounded-lg prose-img:mx-auto 
+              prose-pre:max-w-full prose-pre:overflow-x-auto prose-pre:p-0 
+              prose-code:text-sm prose-headings:break-words
+              prose-iframe:rounded-lg prose-iframe:shadow-lg
+              prose-iframe:mx-auto prose-iframe:my-8
+              prose-iframe:max-w-full prose-iframe:w-full
+              prose-iframe:aspect-video
+              prose-embed:rounded-lg prose-embed:shadow-lg
+              prose-embed:mx-auto prose-embed:my-8
+              prose-embed:max-w-full prose-embed:w-full
+              prose-embed:aspect-video
+              prose-figure:my-8 prose-figure:mx-auto
+              prose-figure:max-w-full prose-figure:w-full
+              prose-figure:rounded-lg prose-figure:shadow-lg
+              prose-blockquote:border-l-4 prose-blockquote:border-blue-500
+              prose-blockquote:pl-6 prose-blockquote:bg-blue-50
+              prose-blockquote:py-4 prose-blockquote:rounded-r-lg
+              prose-strong:text-gray-900 prose-strong:font-semibold
+              prose-a:text-blue-600 prose-a:no-underline
+              prose-a:border-b prose-a:border-blue-300
+              prose-a:hover:border-blue-600 prose-a:transition-colors
+              prose-ul:list-disc prose-ul:pl-6
+              prose-ol:list-decimal prose-ol:pl-6
+              prose-li:my-1
+              prose-h2:text-2xl prose-h2:font-bold prose-h2:text-gray-900
+              prose-h2:border-b prose-h2:border-gray-200 prose-h2:pb-2
+              prose-h3:text-xl prose-h3:font-semibold prose-h3:text-gray-900
+              prose-h4:text-lg prose-h4:font-medium prose-h4:text-gray-900
+              prose-p:text-gray-700 prose-p:leading-relaxed
+              prose-table:border-collapse prose-table:w-full
+              prose-table:my-6 prose-table:rounded-lg prose-table:overflow-hidden
+              prose-table:shadow-sm
+              prose-th:bg-gray-50 prose-th:text-gray-900 prose-th:font-semibold
+              prose-th:p-3 prose-th:border prose-th:border-gray-200
+              prose-td:p-3 prose-td:border prose-td:border-gray-200
+              prose-td:text-gray-700
+              [&_iframe]:rounded-lg [&_iframe]:shadow-lg
+              [&_iframe]:mx-auto [&_iframe]:my-8
+              [&_iframe]:max-w-full [&_iframe]:w-full
+              [&_iframe]:aspect-video
+              [&_.wp-block-embed]:rounded-lg [&_.wp-block-embed]:shadow-lg
+              [&_.wp-block-embed]:mx-auto [&_.wp-block-embed]:my-8
+              [&_.wp-block-embed]:max-w-full [&_.wp-block-embed]:w-full
+              [&_.wp-block-embed]:aspect-video
+              [&_.wp-block-embed_iframe]:rounded-lg [&_.wp-block-embed_iframe]:shadow-lg
+              [&_.wp-block-embed_iframe]:mx-auto [&_.wp-block-embed_iframe]:my-8
+              [&_.wp-block-embed_iframe]:max-w-full [&_.wp-block-embed_iframe]:w-full
+              [&_.wp-block-embed_iframe]:aspect-video
+              [&_.wp-block-video]:rounded-lg [&_.wp-block-video]:shadow-lg
+              [&_.wp-block-video]:mx-auto [&_.wp-block-video]:my-8
+              [&_.wp-block-video]:max-w-full [&_.wp-block-video]:w-full
+              [&_.wp-block-video]:aspect-video
+              [&_.wp-block-youtube]:rounded-lg [&_.wp-block-youtube]:shadow-lg
+              [&_.wp-block-youtube]:mx-auto [&_.wp-block-youtube]:my-8
+              [&_.wp-block-youtube]:max-w-full [&_.wp-block-youtube]:w-full
+              [&_.wp-block-youtube]:aspect-video
+              [&_.wp-block-youtube_iframe]:rounded-lg [&_.wp-block-youtube_iframe]:shadow-lg
+              [&_.wp-block-youtube_iframe]:mx-auto [&_.wp-block-youtube_iframe]:my-8
+              [&_.wp-block-youtube_iframe]:max-w-full [&_.wp-block-youtube_iframe]:w-full
+              [&_.wp-block-youtube_iframe]:aspect-video
+              [&_.wp-block-embed__wrapper]:rounded-lg [&_.wp-block-embed__wrapper]:shadow-lg
+              [&_.wp-block-embed__wrapper]:mx-auto [&_.wp-block-embed__wrapper]:my-8
+              [&_.wp-block-embed__wrapper]:max-w-full [&_.wp-block-embed__wrapper]:w-full
+              [&_.wp-block-embed__wrapper]:aspect-video
+              [&_.wp-block-embed__wrapper_iframe]:rounded-lg [&_.wp-block-embed__wrapper_iframe]:shadow-lg
+              [&_.wp-block-embed__wrapper_iframe]:mx-auto [&_.wp-block-embed__wrapper_iframe]:my-8
+              [&_.wp-block-embed__wrapper_iframe]:max-w-full [&_.wp-block-embed__wrapper_iframe]:w-full
+              [&_.wp-block-embed__wrapper_iframe]:aspect-video"
             dangerouslySetInnerHTML={{ __html: content }}
           />
         </Card>
@@ -134,27 +202,27 @@ const BlogPost = async ({ params }: { params: Promise<{ slug: string }> }) => {
                 neváhajte ma kontaktovať. Rád prediskutujem vaše potreby a pomôžem nájsť najlepšie riešenie.
               </p>
               
-                             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                 <Link
-                   href="/#contact"
-                   className="inline-flex items-center px-8 py-4 bg-white text-blue-700 font-semibold rounded-full hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
-                 >
-                   <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                   </svg>
-                   Začať diskusiu
-                 </Link>
-                 
-                 <Link
-                   href="/tvorba-web-stranok-cennik"
-                   className="inline-flex items-center px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-blue-700 transition-all duration-300 transform hover:scale-105"
-                 >
-                   <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                   </svg>
-                   Pozrieť cenník
-                 </Link>
-               </div>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Link
+                  href="/#contact"
+                  className="inline-flex items-center px-8 py-4 bg-white text-blue-700 font-semibold rounded-full hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                >
+                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                  </svg>
+                  Začať diskusiu
+                </Link>
+                
+                <Link
+                  href="/tvorba-web-stranok-cennik"
+                  className="inline-flex items-center px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-blue-700 transition-all duration-300 transform hover:scale-105"
+                >
+                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                  Pozrieť cenník
+                </Link>
+              </div>
               
               <div className="mt-6 flex justify-center space-x-6 text-blue-100">
                 <div className="flex items-center">
