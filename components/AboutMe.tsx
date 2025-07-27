@@ -1,8 +1,7 @@
 'use client';
 
 import { motion, Variants } from "framer-motion";
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaDatabase } from "react-icons/fa";
-import { RiSpeedFill, RiSearchEyeLine, RiSmartphoneLine, RiShieldCheckLine } from "react-icons/ri";
+import { TrendingUp, Users, Target, BarChart3, Globe, Megaphone } from "lucide-react";
 
 const contentVariants: Variants = {
   hidden: { opacity: 0, y: 50 },
@@ -30,26 +29,59 @@ const skillsVariants: Variants = {
 };
 
 export function AboutMe() {
-  const solutions = [
+  const challenges = [
     {
-      icon: RiSpeedFill,
-      title: "Pomalý web",
-      description: "Optimalizujem rýchlosť načítania vášho webu, aby ste nestrácali potenciálnych zákazníkov kvôli dlhému čakaniu."
+      icon: Users,
+      title: "Málo zákazníkov z webu",
+      description: "Váš web má návštevníkov, ale nekonvertujú na zákazníkov. Nastavím stratégiu a systémy pre efektívnu konverziu."
     },
     {
-      icon: RiSearchEyeLine,
-      title: "Slabá viditeľnosť v Google",
-      description: "Implementujem SEO best practices a technické vylepšenia pre lepšie umiestnenie vo výsledkoch vyhľadávania."
+      icon: BarChart3,
+      title: "Chýba vám digitálna stratégia",
+      description: "Míňate peniaze na náhodné aktivity bez jasného plánu. Vytvorím stratégiu založenú na dátach a merateľných cieľoch."
     },
     {
-      icon: RiSmartphoneLine,
-      title: "Nefunkčnosť na mobiloch",
-      description: "Vytváram responzívne weby, ktoré fungujú bezchybne na všetkých zariadeniach - od mobilov až po veľké monitory."
+      icon: Target,
+      title: "Nevieme kto sú vaši zákazníci",
+      description: "Komunikujete so všetkými rovnako namiesto cielenej komunikácie. Definujeme cieľové skupiny a vytvoríme relevantnú komunikáciu."
     },
     {
-      icon: RiShieldCheckLine,
-      title: "Bezpečnostné riziká",
-      description: "Zabezpečujem web proti hackerským útokom a implementujem najnovšie bezpečnostné štandardy."
+      icon: TrendingUp,
+      title: "Nízka online viditeľnosť",
+      description: "Vaša konkurencia vás predbieha online. Zvýšim vašu viditeľnosť v Google a na sociálnych sieťach."
+    }
+  ];
+
+  const services = [
+    {
+      icon: Globe,
+      name: "Digitálna stratégia",
+      description: "Plán rastu založený na dátach"
+    },
+    {
+      icon: Megaphone,
+      name: "Online marketing",
+      description: "Cielená komunikácia s výsledkami"
+    },
+    {
+      icon: Target,
+      name: "Konverzná optimalizácia",
+      description: "Premena návštevníkov na zákazníkov"
+    },
+    {
+      icon: BarChart3,
+      name: "Analytika & reporting",
+      description: "Meranie a zlepšovanie výsledkov"
+    },
+    {
+      icon: Users,
+      name: "Automatizácia procesov",
+      description: "Systémy ktoré pracujú 24/7"
+    },
+    {
+      icon: TrendingUp,
+      name: "SEO & obsahový marketing",
+      description: "Organický rast návštevnosti"
     }
   ];
 
@@ -64,54 +96,48 @@ export function AboutMe() {
         >
           <h2 className="text-4xl font-bold text-center mb-4">
             <span className="bg-gradient-to-r from-red-500 to-blue-600 text-transparent bg-clip-text">
-              Riešim vaše problémy s webom
+              Riešim vaše digitálne výzvy
             </span>
           </h2>
           <p className="text-xl text-gray-600 text-center mb-12">
-            Pomáham firmám premeniť ich web na efektívny nástroj pre získavanie zákazníkov
+            Pomáham firmám vybudovať silnú online prítomnosť a získať viac zákazníkov cez web a marketing
           </p>
 
           <div className="grid md:grid-cols-2 gap-8 mb-20">
-            {solutions.map((solution, index) => (
+            {challenges.map((challenge, index) => (
               <motion.div
                 key={index}
                 whileHover={{ scale: 1.02 }}
                 className="p-6 rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200 hover:border-gray-300 transition-all duration-300"
               >
-                <solution.icon className="text-3xl mb-4 text-blue-600" />
-                <h3 className="text-xl font-semibold mb-2 text-gray-900">{solution.title}</h3>
-                <p className="text-gray-600">{solution.description}</p>
+                <challenge.icon className="w-8 h-8 mb-4 text-blue-600" />
+                <h3 className="text-xl font-semibold mb-2 text-gray-900">{challenge.title}</h3>
+                <p className="text-gray-600">{challenge.description}</p>
               </motion.div>
             ))}
           </div>
         </motion.div>
 
-        {/* Technologies section */}
+        {/* Services section */}
         <motion.div 
           variants={skillsVariants}
           initial="hidden"
           animate="visible"
           className="max-w-4xl mx-auto"
         >
-          <h3 className="text-2xl font-bold text-center mb-12">Technológie ktoré používam</h3>
-          <div className="grid grid-cols-3 md:grid-cols-6 gap-6">
-            {[
-              { icon: FaHtml5, name: "HTML5", color: "text-red-500", bgColor: "bg-red-50" },
-              { icon: FaCss3Alt, name: "CSS3", color: "text-blue-500", bgColor: "bg-blue-50" },
-              { icon: FaJs, name: "JavaScript", color: "text-yellow-500", bgColor: "bg-yellow-50" },
-              { icon: FaReact, name: "React", color: "text-blue-400", bgColor: "bg-blue-50" },
-              { icon: FaNodeJs, name: "Node.js", color: "text-green-500", bgColor: "bg-green-50" },
-              { icon: FaDatabase, name: "Databázy", color: "text-purple-500", bgColor: "bg-purple-50" }
-            ].map((skill, index) => (
+          <h3 className="text-2xl font-bold text-center mb-12">Čo pre vás môžem urobiť</h3>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+            {services.map((service, index) => (
               <motion.div 
                 key={index}
                 whileHover={{ scale: 1.05, y: -5 }}
-                className="flex flex-col items-center p-4"
+                className="flex flex-col items-center p-6 text-center bg-white rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all duration-300"
               >
-                <div className={`relative p-3 ${skill.bgColor} rounded-full mb-2`}>
-                  <skill.icon className={`text-2xl ${skill.color}`} />
+                <div className="relative p-3 bg-blue-50 rounded-full mb-4">
+                  <service.icon className="w-6 h-6 text-blue-600" />
                 </div>
-                <span className="text-sm text-gray-600 font-medium">{skill.name}</span>
+                <span className="text-sm font-semibold text-gray-900 mb-2">{service.name}</span>
+                <span className="text-xs text-gray-600">{service.description}</span>
               </motion.div>
             ))}
           </div>
