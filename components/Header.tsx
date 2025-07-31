@@ -40,7 +40,7 @@ const menuItems: MenuItem[] = [
       { href: "/woocommerce-wordpress", label: "WooCommerce E-shop" },
       { href: "/wordpress-seo-audit", label: "WordPress SEO Audit" },
       { href: "/tvorba-web-stranok-pezinok", label: "Tvorba web stránok" },
-      { href: "/tvorba-web-stranok-cennik", label: "Cenník" },
+      { href: "https://synthbit.cz", label: "Agentúra" },
     ]
   },
   { href: "/#references", label: "Portfólio" },
