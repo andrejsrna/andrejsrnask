@@ -1,35 +1,7 @@
-'use client';
-
-import { motion, Variants } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, TrendingUp, Target, Search, ShoppingCart, Zap, BarChart3, Globe, Megaphone, Settings, FileText, Mail, ChevronDown, Quote } from "lucide-react";
 import Contact from "@/components/Contact";
 import Image from "next/image";
-
-const heroVariants: Variants = {
-  hidden: { opacity: 0, y: -50 },
-  visible: { 
-    opacity: 1, 
-    y: 0,
-    transition: {
-      duration: 0.8,
-      ease: "easeOut"
-    }
-  }
-};
-
-const buttonVariants: Variants = {
-  hidden: { opacity: 0, scale: 0.8 },
-  visible: { 
-    opacity: 1, 
-    scale: 1,
-    transition: {
-      duration: 0.8,
-      delay: 0.5,
-      ease: "easeOut"
-    }
-  }
-};
 
 const stats = [
   {
@@ -174,12 +146,7 @@ export default function ZiskatViacZakaznikov() {
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-indigo-400 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-4000" />
         </div>
 
-        <motion.div 
-          variants={heroVariants}
-          initial="hidden"
-          animate="visible"
-          className="relative container mx-auto px-6 text-center z-10"
-        >
+        <div className="relative container mx-auto px-6 text-center z-10">
           <div className="max-w-4xl mx-auto">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-900/50 to-purple-900/50 border border-blue-700/30 shadow-sm mb-6 backdrop-blur-sm">
               <span className="text-blue-200 font-medium">Stratégia pre váš rast</span>
@@ -201,36 +168,30 @@ export default function ZiskatViacZakaznikov() {
               <span className="font-semibold text-blue-300">web, marketing a automatizáciu</span>.
             </p>
 
-            <motion.div
-              variants={buttonVariants}
-              className="mb-16"
-            >
+            <div className="mb-16">
               <Button asChild size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] text-lg px-8 py-6">
                 <a href="mailto:ahoj@andrejsrna.sk" className="flex items-center gap-2">
                   Napíšte mi email
                   <ArrowRight className="w-5 h-5" />
                 </a>
               </Button>
-            </motion.div>
+            </div>
 
             {/* Stats */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-2xl mx-auto">
               {stats.map((stat, index) => (
-                <motion.div
+                <div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.7 + index * 0.1 }}
                   className="text-center p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10"
                 >
                   <stat.icon className="w-8 h-8 text-blue-400 mx-auto mb-3" />
                   <div className="text-2xl font-bold text-white">{stat.number}</div>
                   <div className="text-sm text-blue-200">{stat.label}</div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
-        </motion.div>
+        </div>
 
         {/* Bottom Wave */}
         <div className="absolute bottom-0 left-0 right-0">
@@ -244,11 +205,11 @@ export default function ZiskatViacZakaznikov() {
       {/* Problem Identification Section */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+          <div
+             
+             
+             
+             
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold mb-6">
@@ -256,16 +217,16 @@ export default function ZiskatViacZakaznikov() {
                 Prečo sa vašim stránkam darí menej, než by mohlo?
               </span>
             </h2>
-          </motion.div>
+          </div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {problems.map((problem, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
+                 
+                 
+                 
+                 
                 className="flex items-start space-x-4 p-6 bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl border border-red-100 hover:border-red-200 transition-all duration-300 hover:shadow-md"
               >
                 <div className="flex-shrink-0">
@@ -277,7 +238,7 @@ export default function ZiskatViacZakaznikov() {
                   <h3 className="text-xl font-semibold mb-3 text-gray-900">{problem.title}</h3>
                   <p className="text-gray-600">{problem.description}</p>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -286,11 +247,11 @@ export default function ZiskatViacZakaznikov() {
       {/* Solutions Section */}
       <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+          <div
+             
+             
+             
+             
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold mb-6">
@@ -298,17 +259,17 @@ export default function ZiskatViacZakaznikov() {
                 Spolu môžeme zmeniť hru
               </span>
             </h2>
-          </motion.div>
+          </div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {solutions.map((solution, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.02 }}
+                 
+                 
+                 
+                 
+                 
                 className="p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg border border-gray-100 hover:border-blue-200 transition-all duration-300"
               >
                 <div className="flex items-start space-x-6">
@@ -322,43 +283,22 @@ export default function ZiskatViacZakaznikov() {
                     <p className="text-gray-600 leading-relaxed">{solution.description}</p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
 
-          {/* CTA Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ once: true }}
-            className="text-center mt-16"
-          >
-            <div className="bg-gradient-to-r from-blue-600 to-green-600 rounded-2xl p-8 text-white">
-              <h3 className="text-2xl font-bold mb-4">Pripravený začať?</h3>
-              <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-                Nemusíte riešiť všetko naraz. Začneme spolu s jednou oblasťou a postupne 
-                vybudujeme systém, ktorý vám bude skutočne fungovať.
-              </p>
-              <Button asChild size="lg" className="bg-white text-blue-600 hover:bg-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] text-lg">
-                <a href="mailto:ahoj@andrejsrna.sk" className="flex items-center gap-2">
-                  Napíšte mi email
-                  <ArrowRight className="w-5 h-5" />
-                </a>
-              </Button>
-            </div>
-          </motion.div>
+
         </div>
       </section>
 
       {/* Case Studies Section */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+          <div
+             
+             
+             
+             
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold mb-6">
@@ -369,17 +309,17 @@ export default function ZiskatViacZakaznikov() {
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Nie sú to len sľuby - toto sú skutočné čísla a výsledky, ktoré som dosiahol pre svojich klientov
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {caseStudies.map((study, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.02 }}
+                 
+                 
+                 
+                 
+                 
                 className="p-8 bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl border border-gray-200 hover:border-green-300 transition-all duration-300 hover:shadow-lg"
               >
                 <div className="flex items-start space-x-6">
@@ -409,16 +349,16 @@ export default function ZiskatViacZakaznikov() {
                     </p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
 
           {/* Additional Results */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ once: true }}
+          <div
+             
+             
+             
+             
             className="mt-16 text-center"
           >
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto">
@@ -439,18 +379,18 @@ export default function ZiskatViacZakaznikov() {
                 <div className="text-sm text-gray-600">Úspešnosť projektov</div>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* About Me Section */}
       <section className="py-24 bg-gradient-to-br from-gray-50 to-gray-100">
         <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+          <div
+             
+             
+             
+             
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold mb-6">
@@ -458,21 +398,21 @@ export default function ZiskatViacZakaznikov() {
                 Kto som a prečo to robím
               </span>
             </h2>
-          </motion.div>
+          </div>
 
           <div className="max-w-4xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
+            <div
+               
+               
+               
+               
               className="flex flex-col md:flex-row items-center gap-12"
             >
               {/* Profile Photo */}
               <div className="flex-shrink-0">
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
+                <div
+                   
+                   
                   className="relative w-64 h-64 rounded-2xl overflow-hidden shadow-2xl"
                 >
                   <Image
@@ -483,16 +423,16 @@ export default function ZiskatViacZakaznikov() {
                     sizes="256px"
                   />
                   <div className="absolute inset-0 bg-gradient-to-tr from-purple-600/20 to-blue-600/20"></div>
-                </motion.div>
+                </div>
               </div>
 
               {/* Content */}
               <div className="flex-1 text-center md:text-left">
-                <motion.div
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                  viewport={{ once: true }}
+                <div
+                   
+                   
+                   
+                   
                 >
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">
                     Som Andrej Srna
@@ -528,9 +468,9 @@ export default function ZiskatViacZakaznikov() {
                   </div>
 
                   {/* CTA */}
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
+                  <div
+                     
+                     
                   >
                     <a 
                       href="/cv" 
@@ -539,10 +479,10 @@ export default function ZiskatViacZakaznikov() {
                       Viac o mne a mojej práci
                       <ArrowRight className="w-4 h-4" />
                     </a>
-                  </motion.div>
-                </motion.div>
+                  </div>
+                </div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -551,11 +491,11 @@ export default function ZiskatViacZakaznikov() {
       <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-6">
           {/* Testimonials */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+          <div
+             
+             
+             
+             
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold mb-6">
@@ -566,17 +506,17 @@ export default function ZiskatViacZakaznikov() {
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-16">
               Pozrite si, čo hovoria klienti o spolupráci so mnou
             </p>
-          </motion.div>
+          </div>
 
           {/* Testimonials Grid */}
           <div className="grid md:grid-cols-3 gap-8 mb-24 max-w-6xl mx-auto">
             {testimonials.map((testimonial, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
+                 
+                 
+                 
+                 
                 className="relative p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200"
               >
                 <div className="absolute -top-3 -left-3 w-8 h-8 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center">
@@ -589,16 +529,16 @@ export default function ZiskatViacZakaznikov() {
                   <div className="font-semibold text-gray-900">{testimonial.author}</div>
                   <div className="text-sm text-gray-500">{testimonial.company}</div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
 
           {/* FAQ Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+          <div
+             
+             
+             
+             
             className="max-w-4xl mx-auto"
           >
             <h3 className="text-3xl font-bold text-center mb-12 text-gray-900">
@@ -607,12 +547,8 @@ export default function ZiskatViacZakaznikov() {
             
             <div className="space-y-4">
               {faqs.map((faq, index) => (
-                <motion.details
+                                <details
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
                   className="group bg-white rounded-2xl border border-gray-200 overflow-hidden hover:border-orange-300 transition-all duration-300"
                 >
                   <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
@@ -628,10 +564,10 @@ export default function ZiskatViacZakaznikov() {
                       {faq.answer}
                     </div>
                   </div>
-                </motion.details>
+                </details>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -647,34 +583,34 @@ export default function ZiskatViacZakaznikov() {
         </div>
 
         <div className="container mx-auto px-6 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+          <div
+             
+             
+             
+             
             className="text-center max-w-4xl mx-auto"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Získaj konkrétne návrhy pre svoj biznis
+              Získajte konkrétne informácie pre váš biznis
             </h2>
             <p className="text-xl text-blue-100 mb-12 leading-relaxed">
-              Nemusíš čakať na zázrak. Dohodnime si 30-minútové stretnutie a ukážem ti, 
-              čo konkrétne môžeš zmeniť už zajtra.
+              Môžeme si dohodnúť stretnutie a ukážem vám, 
+              čo konkrétne sa môže zmeniť.
             </p>
 
             <div className="flex flex-col lg:flex-row items-center justify-center gap-8">
               {/* Primary CTA */}
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+              <div
+                 
+                 
                 className="flex-1 max-w-md"
               >
                 <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
                   <h3 className="text-2xl font-bold text-white mb-4">
-                    Bezplatná konzultácia
+                    Kontaktujte ma
                   </h3>
                   <p className="text-blue-100 mb-6">
-                    30 minút, kde sa dozvieš konkrétne kroky pre svoj biznis
+                    Napíšte mi a odpoviem na vaše otázky
                   </p>
                   <a
                     href="mailto:ahoj@andrejsrna.sk"
@@ -684,7 +620,7 @@ export default function ZiskatViacZakaznikov() {
                     <ArrowRight className="w-5 h-5" />
                   </a>
                 </div>
-              </motion.div>
+              </div>
 
               {/* Divider */}
               <div className="flex items-center gap-4 lg:flex-col">
@@ -694,17 +630,17 @@ export default function ZiskatViacZakaznikov() {
               </div>
 
               {/* Secondary CTA */}
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+              <div
+                 
+                 
                 className="flex-1 max-w-md"
               >
                 <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
                   <h3 className="text-2xl font-bold text-white mb-4">
-                    Napíš mi priamo
+                    Napíšte mi priamo
                   </h3>
                   <p className="text-blue-100 mb-6">
-                    Rád ti odpoviem na otázky a pošlem užitočné rady
+                    Rád odpoviem na otázky a pošlem užitočné informácie
                   </p>
                   <a
                     href="mailto:ahoj@andrejsrna.sk"
@@ -714,15 +650,15 @@ export default function ZiskatViacZakaznikov() {
                     <Mail className="w-5 h-5" />
                   </a>
                 </div>
-              </motion.div>
+              </div>
             </div>
 
             {/* Trust Signals */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              viewport={{ once: true }}
+            <div
+               
+               
+               
+               
               className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-2xl mx-auto"
             >
               <div className="text-center">
@@ -737,8 +673,8 @@ export default function ZiskatViacZakaznikov() {
                 <div className="text-2xl font-bold text-white mb-2">🎯</div>
                 <div className="text-sm text-blue-100">Zamerané na výsledky</div>
               </div>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </div>
       </section>
 
