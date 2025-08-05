@@ -139,22 +139,11 @@ export function Hero() {
                 className="pt-4"
               >
                 <div className="flex flex-col sm:flex-row gap-4">
-                  {/* Primary CTA - Calendly */}
-                  <a
-                    href="https://calendly.com/ahoj-andrejsrna/30min"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-8 py-4 text-lg bg-gradient-to-r from-red-600 to-purple-600 hover:from-red-700 hover:to-purple-700 text-white rounded-full transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-xl"
-                  >
-                    Rezervovať konzultáciu
-                    <ArrowRight className="w-5 h-5" />
-                  </a>
-
-                  {/* Secondary CTA - Contact */}
+                  {/* Primary CTA - Contact */}
                   <div className="relative">
                     <button
                       onClick={handleClick}
-                      className="inline-flex items-center justify-center gap-2 px-8 py-4 text-lg bg-white/10 hover:bg-white/20 text-white border border-white/20 hover:border-white/30 rounded-full transition-all duration-300 transform hover:scale-[1.02] backdrop-blur-sm"
+                      className="inline-flex items-center justify-center gap-2 px-8 py-4 text-lg bg-gradient-to-r from-red-600 to-purple-600 hover:from-red-700 hover:to-purple-700 text-white rounded-full transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-xl"
                     >
                       Kontaktujte ma
                       <ArrowRight className="w-5 h-5" />

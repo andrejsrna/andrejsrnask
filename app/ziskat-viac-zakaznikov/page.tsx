@@ -206,8 +206,8 @@ export default function ZiskatViacZakaznikov() {
               className="mb-16"
             >
               <Button asChild size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] text-lg px-8 py-6">
-                <a href="https://calendly.com/ahoj-andrejsrna/30min" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                  Rezervujte si bezplatnú konzultáciu
+                <a href="mailto:ahoj@andrejsrna.sk" className="flex items-center gap-2">
+                  Napíšte mi email
                   <ArrowRight className="w-5 h-5" />
                 </a>
               </Button>
@@ -341,8 +341,8 @@ export default function ZiskatViacZakaznikov() {
                 vybudujeme systém, ktorý vám bude skutočne fungovať.
               </p>
               <Button asChild size="lg" className="bg-white text-blue-600 hover:bg-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] text-lg">
-                <a href="https://calendly.com/ahoj-andrejsrna/30min" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                  Dohodnime si stretnutie
+                <a href="mailto:ahoj@andrejsrna.sk" className="flex items-center gap-2">
+                  Napíšte mi email
                   <ArrowRight className="w-5 h-5" />
                 </a>
               </Button>
@@ -677,12 +677,10 @@ export default function ZiskatViacZakaznikov() {
                     30 minút, kde sa dozvieš konkrétne kroky pre svoj biznis
                   </p>
                   <a
-                    href="https://calendly.com/ahoj-andrejsrna/30min"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="mailto:ahoj@andrejsrna.sk"
                     className="w-full inline-flex items-center justify-center gap-2 bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.02]"
                   >
-                    Rezervovať konzultáciu
+                    Napíšte mi email
                     <ArrowRight className="w-5 h-5" />
                   </a>
                 </div>
