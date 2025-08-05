@@ -47,7 +47,7 @@ const stats = [
   }
 ];
 
-const HERO_DESCRIPTION = "Pomáham firmám rásť a vynikať v digitálnom svete. Zameriavam sa na riešenie vašich výziev a vytváram digitálne riešenia, ktoré skutočne pracujú pre váš úspech.";
+const HERO_DESCRIPTION = "Vitajte na mojom osobnom portfóliu. Je to priestor, kde skúmam a aplikujem nové technológie v oblasti web developmentu a marketingu. Prezentujem tu svoje projekty a myšlienky o tom, ako digitálne nástroje pomáhajú riešiť reálne problémy.";
 
 export function Hero() {
   const [clickCount, setClickCount] = useState(0);
@@ -115,10 +115,10 @@ export function Hero() {
 
               {/* Main Heading */}
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white">
-                Ahoj, som{" "}
+                Tvorba a inovácie v{" "}
                 <span className="relative">
                   <span className="relative z-10 bg-gradient-to-r from-red-400 to-purple-400 text-transparent bg-clip-text">
-                    Andrej Srna
+                    digitálnom svete
                   </span>
                   <span className="absolute -bottom-2 left-0 w-full h-3 bg-red-500/20 -rotate-1" />
                 </span>
@@ -145,7 +145,7 @@ export function Hero() {
                       onClick={handleClick}
                       className="inline-flex items-center justify-center gap-2 px-8 py-4 text-lg bg-gradient-to-r from-red-600 to-purple-600 hover:from-red-700 hover:to-purple-700 text-white rounded-full transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-xl"
                     >
-                      Kontaktujte ma
+                      Spojme sa
                       <ArrowRight className="w-5 h-5" />
                     </button>
                     {clickCount >= 3 && (

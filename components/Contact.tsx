@@ -50,20 +50,6 @@ export function Contact() {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-gray-900 to-gray-700 text-transparent bg-clip-text">
-            Začnime spoluprácu
-          </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Som tu pre vás, aby som vašim nápadom dal digitálnu podobu. Poďme spolu vytvoriť niečo výnimočné.
-          </p>
-        </motion.div>
 
         <div className="max-w-6xl mx-auto">
           <motion.div
@@ -88,7 +74,7 @@ export function Contact() {
               <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-full max-w-sm">
                 <div className="bg-white/80 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-gray-200/50 text-center">
                   <p className="text-lg font-semibold text-gray-900">Andrej Srna</p>
-                  <p className="text-sm text-gray-600">Webový vývojár & konzultant</p>
+                  <p className="text-sm text-gray-600">Web Developer & Marketér</p>
                 </div>
               </div>
             </div>

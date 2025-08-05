@@ -1,8 +1,7 @@
 'use client';
 
-import { FaLinkedin, FaGithub, FaTwitter, FaYoutube, FaInstagram, FaTiktok } from "react-icons/fa";
+import { FaGithub, FaTwitter, FaYoutube, FaInstagram, FaTiktok } from "react-icons/fa";
 import { motion } from "framer-motion";
-import Link from 'next/link';
 
 const footerVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -17,11 +16,6 @@ const footerVariants = {
 };
 
 const socialLinks = [
-  {
-    icon: FaLinkedin,
-    href: "https://www.linkedin.com/in/andrej-srna-937351111/x",
-    label: "LinkedIn"
-  },
   {
     icon: FaGithub,
     href: "https://github.com/andrejsrna",
@@ -46,25 +40,6 @@ const socialLinks = [
     icon: FaTiktok,
     href: "https://www.tiktok.com/@andrejsrna",
     label: "TikTok"
-  }
-];
-
-const quickLinks = [
-  {
-    href: "/tvorba-web-stranok-pezinok",
-    label: "Tvorba web stránok Pezinok"
-  },
-  {
-    href: "/woocommerce-wordpress",
-    label: "WooCommerce WordPress E-shop"
-  },
-  {
-    href: "/tvorba-web-stranok-cennik",
-    label: "Cenník"
-  },
-  {
-    href: "/ochrana-osobnych-udajov",
-    label: "Ochrana osobných údajov"
   }
 ];
 
@@ -113,40 +88,6 @@ export function Footer() {
               </motion.a>
             ))}
           </div>
-
-          {/* Quick Links */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="mb-8"
-          >
-            <details className="group">
-              <summary className="cursor-pointer text-sm font-semibold mb-4 flex items-center justify-center gap-2 text-gray-400 hover:text-gray-200 transition-colors duration-300">
-                <span>Ďalšie odkazy</span>
-                <svg 
-                  className="w-4 h-4 transform transition-transform duration-300 group-open:rotate-180" 
-                  fill="none" 
-                  viewBox="0 0 24 24" 
-                  stroke="currentColor"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </summary>
-              <div className="flex flex-col md:flex-row justify-center md:space-x-6 space-y-2 md:space-y-0 mt-4">
-                {quickLinks.map((link) => (
-                  <Link 
-                    key={link.href}
-                    href={link.href} 
-                    className="text-gray-400 hover:text-gray-200 transition-colors duration-300"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </div>
-            </details>
-          </motion.div>
 
           {/* Copyright */}
           <motion.div 

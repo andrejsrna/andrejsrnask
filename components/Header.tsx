@@ -33,16 +33,6 @@ const isSubmenuItem = (item: MenuItem): item is SubmenuItem => {
 
 const menuItems: MenuItem[] = [
   { href: "/#about", label: "O mne" },
-  {
-    label: "Služby",
-    submenu: [
-      { href: "/wordpress-vyvoj", label: "WordPress Vývoj" },
-      { href: "/woocommerce-wordpress", label: "WooCommerce E-shop" },
-      { href: "/wordpress-seo-audit", label: "WordPress SEO Audit" },
-      { href: "/tvorba-web-stranok-pezinok", label: "Tvorba web stránok" },
-      { href: "https://synthbit.cz", label: "Agentúra" },
-    ]
-  },
   { href: "/#references", label: "Portfólio" },
   { href: "/blog", label: "Blog" },
 ];
