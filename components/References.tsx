@@ -61,7 +61,10 @@ const referencesData = [
     imageUrl: "/ttsk.jpg",
     websiteUrl: "https://www.trnava-vuc.sk",
     imagePosition: "right",
-    technologies: ["WordPress", "PHP", "Tailwind CSS", "Responsive Design", "SEO", "Google Analytics", "User Permissions", "UX/UI Design", "UX Research", "UX Testing", "CMS", "API", "REST", "Nginx", "MySQL", "jQuery", "AJAX", "Facebook API"]
+    technologies: ["WordPress", "PHP", "Tailwind CSS", "Responsive Design", "SEO", "Google Analytics", "User Permissions", "UX/UI Design", "UX Research", "UX Testing", "CMS", "API", "REST", "Nginx", "MySQL", "jQuery", "AJAX", "Facebook API"],
+    anonymize: true,
+    anonymizedTitle: "Verejný sektor: portál kraja",
+    anonymizedDescription: "Redesign verejného portálu so zameraním na prístupnosť, prehľadnú navigáciu a výkon."
   },
   {
     title: "Správa majetku mesta Trnava",
@@ -69,7 +72,10 @@ const referencesData = [
     imageUrl: "/smmt.jpg",
     websiteUrl: "https://smmt.trnava.sk/",
     imagePosition: "left",
-    technologies: ["WordPress", "PHP", "CSS", "jQuery", "AJAX", "MySQL", "API", "REST", "Nginx", "Tailwind CSS", "Facebook API", "CMS", "SEO", "Google Analytics", "User Permissions", "Responsive Design", "UX/UI Design", "UX Research", "UX Testing"]
+    technologies: ["WordPress", "PHP", "CSS", "jQuery", "AJAX", "MySQL", "API", "REST", "Nginx", "Tailwind CSS", "Facebook API", "CMS", "SEO", "Google Analytics", "User Permissions", "Responsive Design", "UX/UI Design", "UX Research", "UX Testing"],
+    anonymize: true,
+    anonymizedTitle: "Mestský interný systém",
+    anonymizedDescription: "Webová aplikácia pre správu majetku so zameraním na prehľadnosť, stabilitu a práva používateľov."
   },
   {
     title: "Zdravá župa",
@@ -77,7 +83,10 @@ const referencesData = [
     imageUrl: "/zz.jpg",
     websiteUrl: "https://www.zdravazupa.sk/",
     imagePosition: "right",
-    technologies: ["React", "Tailwind", "Shadcn", "Next.js", "TypeScript", "API", "REST", "NextAuth", "PostgreSQL", "Docker", "Router", "Git", "GitHub", "Prisma", "Responsive Design", "SEO", "Cursor", "React Lightbox", "Confluence", "Jira"]
+    technologies: ["React", "Tailwind", "Shadcn", "Next.js", "TypeScript", "API", "REST", "NextAuth", "PostgreSQL", "Docker", "Router", "Git", "GitHub", "Prisma", "Responsive Design", "SEO", "Cursor", "React Lightbox", "Confluence", "Jira"],
+    anonymize: true,
+    anonymizedTitle: "Zdravotnícky portál",
+    anonymizedDescription: "Portál so sieťou poskytovateľov a vyhľadávaním, nasadenie s dôrazom na výkon a dostupnosť."
   },
   {
     title: "AllSoftCorp",
@@ -122,11 +131,11 @@ export function References() {
         <div className="max-w-4xl mx-auto text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">
             <span className="bg-gradient-to-r from-red-500 to-blue-600 text-transparent bg-clip-text">
-              Moje projekty
+              Vybrané projekty
             </span>
           </h2>
           <p className="text-xl text-gray-600">
-            Pozrite si výber z mojich najúspešnejších projektov, ktoré pomáhajú klientom rásť
+            Výsledky a úlohy, na ktorých som sa podieľal. Citlivé údaje sú zjednodušené.
           </p>
         </div>
 
@@ -157,9 +166,9 @@ export function References() {
 
                     {/* Image Container */}
                     <div className="relative aspect-[16/9] overflow-hidden bg-gray-50">
-                      <Image 
-                        src={reference.imageUrl}
-                        alt={reference.title}
+                        <Image 
+                          src={reference.imageUrl}
+                          alt={reference.anonymize ? (reference.anonymizedTitle || reference.title) : reference.title}
                         fill
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -171,11 +180,14 @@ export function References() {
                     <div className="p-6 flex flex-col flex-grow">
                       <div className="mb-6">
                         <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                          {reference.title}
+                          {reference.anonymize ? (reference.anonymizedTitle || reference.title) : reference.title}
                         </h3>
                         <p className="text-gray-500 text-sm leading-relaxed">
-                          {reference.description}
+                          {reference.anonymize ? (reference.anonymizedDescription || reference.description) : reference.description}
                         </p>
+                         <div className="mt-4 text-sm text-gray-600">
+                           <span className="font-medium text-gray-800">Moja úloha:</span> návrh riešenia, performance, technická SEO
+                         </div>
                       </div>
 
                       <div className="mt-auto">
@@ -204,16 +216,18 @@ export function References() {
                           </AnimatePresence>
                         </div>
 
-                        <Button 
-                          variant="outline"
-                          className="w-full bg-white hover:bg-gray-50 border-gray-200 text-gray-600 transition-all duration-200 group/button"
-                          onClick={() => window.open(reference.websiteUrl, '_blank')}
-                        >
-                          <span className="flex items-center justify-center gap-2">
-                            Navštíviť stránku
-                            <ExternalLink className="w-4 h-4 transition-transform duration-200 group-hover/button:translate-x-0.5" />
-                          </span>
-                        </Button>
+                        {reference.websiteUrl && (
+                          <Button 
+                            variant="outline"
+                            className="w-full bg-white hover:bg-gray-50 border-gray-200 text-gray-600 transition-all duration-200 group/button"
+                            onClick={() => window.open(reference.websiteUrl, '_blank')}
+                          >
+                            <span className="flex items-center justify-center gap-2">
+                              Navštíviť stránku
+                              <ExternalLink className="w-4 h-4 transition-transform duration-200 group-hover/button:translate-x-0.5" />
+                            </span>
+                          </Button>
+                        )}
                       </div>
                     </div>
                   </div>

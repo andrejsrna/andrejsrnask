@@ -21,22 +21,22 @@ const serviceVariants = {
 const servicesData = [
   {
     icon: Zap,
-    title: "Vývoj webových aplikácií na mieru",
-    description: "Tvorba rýchlych, bezpečných a škálovateľných webových aplikácií s využitím moderných technológií ako Next.js, React a TypeScript. Ideálne pre firemné systémy, SaaS platformy a komplexné weby, kde je dôraz na výkon a používateľský zážitok.",
+    title: "Weby a aplikácie, ktoré šetria čas aj náklady",
+    description: "Audit rýchlosti a UX, návrh riešení a prioritizácia. Dôraz na Core Web Vitals, stabilitu a konverzie.",
     color: "text-blue-500",
     gradient: "from-blue-50/50 to-white"
   },
   {
     icon: Code,
-    title: "Pokročilé WordPress riešenia",
-    description: "Posúvam hranice WordPressu. Tvorba vlastných tém a pluginov na mieru, integrácie s externými systémami a optimalizácia pre maximálny výkon a bezpečnosť. Od firemných webov po komplexné portály.",
+    title: "WordPress na mieru bez limitov",
+    description: "Technické konzultácie, performance, bezpečnosť a integrácie. Odporúčania pre tému/pluginy a roadmapu zlepšení.",
     color: "text-emerald-500",
     gradient: "from-emerald-50/50 to-white"
   },
   {
     icon: Rocket,
-    title: "Zrýchlenie a optimalizácia webu (Performance & SEO)",
-    description: "Analýza a odstránenie technických problémov, ktoré brzdia váš web. Zlepšenie rýchlosti načítania (Core Web Vitals) a technická SEO optimalizácia pre lepšiu viditeľnosť v Google.",
+    title: "Zrýchlenie webu a rast organiky",
+    description: "Technická SEO, CWV, štruktúrované dáta a interné prelinkovanie. Zameranie na merateľné výsledky.",
     color: "text-purple-500",
     gradient: "from-purple-50/50 to-white"
   }
@@ -52,11 +52,11 @@ export function Services() {
         <div className="max-w-4xl mx-auto text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">
             <span className="bg-gradient-to-r from-red-500 to-blue-600 text-transparent bg-clip-text">
-              S čím vám viem pomôcť
+              Ako vám viem pomôcť
             </span>
           </h2>
           <p className="text-xl text-gray-600">
-            Špecializujem sa na tri kľúčové oblasti, v ktorých prinášam najväčšiu hodnotu.
+            Konzultácie a audity so zameraním na výkon, SEO a konverzie. Implementáciu riešim selektívne a mimo pracovného času.
           </p>
         </div>
 

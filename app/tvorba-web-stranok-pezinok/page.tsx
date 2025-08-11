@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { FaRocket, FaSearch, FaMobile, FaShieldAlt, FaChartLine, FaUsers } from "react-icons/fa";
 import { RiSpeedFill, RiSearchEyeLine, RiSmartphoneLine, RiShieldCheckLine } from "react-icons/ri";
 import LandingHero from "@/components/LandingHero";
@@ -10,13 +11,16 @@ import Testimonials from "@/components/TheySay";
 import References from "@/components/References";
 import LatestPosts from "@/components/LatestPosts";
 import Pricing from "@/components/Pricing";
+import LeadMagnet from "@/components/LeadMagnet";
+import FAQ from "@/components/FAQ";
+import Script from "next/script";
 
 export default function TvorbaWebStranokPezinok() {
   const services = [
     {
       icon: FaRocket,
       title: "Moderné webové stránky",
-      description: "Tvorba web stránok Pezinok s najnovšími technológiami a trendmi v dizajne. Responzívne riešenia pre všetky zariadenia."
+      description: "Výkonné a rýchle weby s dôrazom na Core Web Vitals, SEO a konverzie. Responzívne pre všetky zariadenia."
     },
     {
       icon: FaSearch,
@@ -26,7 +30,7 @@ export default function TvorbaWebStranokPezinok() {
     {
       icon: FaMobile,
       title: "Mobilné riešenia",
-      description: "Tvorba web stránok Pezinok s dôrazom na mobilné zariadenia. Väčšina návštevníkov prichádza z mobilov - vaša stránka musí byť pripravená."
+      description: "Optimalizované pre mobil s výborným UX a rýchlosťou. Zelené CWV aj na 4G."
     },
     {
       icon: FaShieldAlt,
@@ -39,7 +43,7 @@ export default function TvorbaWebStranokPezinok() {
     {
       icon: RiSpeedFill,
       title: "Rýchle načítanie",
-      description: "Tvorba web stránok Pezinok s optimalizovaným kódom pre maximálnu rýchlosť načítania. Vaši zákazníci nebudú čakať."
+      description: "Optimalizácia kódu a obrázkov, lazy‑load a CDN. Cieľ: zelené Core Web Vitals."
     },
     {
       icon: RiSearchEyeLine,
@@ -54,7 +58,7 @@ export default function TvorbaWebStranokPezinok() {
     {
       icon: RiShieldCheckLine,
       title: "Bezpečnosť",
-      description: "Zabezpečené webové stránky s pravidelnými aktualizáciami a monitoringom. Ochrana vašich dát a dát vašich zákazníkov."
+      description: "Bezpečnostné zásady, aktualizácie a monitoring. Stabilita bez výpadkov."
     }
   ];
 
@@ -62,31 +66,39 @@ export default function TvorbaWebStranokPezinok() {
     {
       step: 1,
       title: "Konzultácia a analýza",
-      description: "Spoločne preberieme vaše potreby a ciele. Analyzujeme konkurenciu a navrhneme najlepšie riešenie pre tvorbu web stránok Pezinok."
+      description: "Spoločne preberieme ciele, konkurenciu a dáta. Výstup: mini audit a prioritizácia. 1–2 dni."
     },
     {
       step: 2,
       title: "Návrh a dizajn",
-      description: "Vytvoríme moderný a funkčný dizajn vašej webovej stránky. Dôraz kladieme na používateľský zážitok a konverzie."
+      description: "Návrh štruktúry, UX a obsahu so zameraním na konverzie a SEO. 3–5 dní."
     },
     {
       step: 3,
       title: "Vývoj a implementácia",
-      description: "Profesionálna tvorba web stránok Pezinok s najnovšími technológiami. Čistý kód a optimalizovaný výkon."
+      description: "Implementácia a optimalizácia výkonu (CWV, obrázky, CDN). 2–4 týždne podľa rozsahu."
     },
     {
       step: 4,
       title: "Spustenie a podpora",
-      description: "Spustenie webovej stránky a zaškolenie. Následná technická podpora a údržba pre bezproblémový chod."
+      description: "Spustenie, zaškolenie a meranie (GA4, GSC). Následná podpora dohodou. 1–2 dni."
     }
+  ];
+
+  const pezFaqItems = [
+    { q: 'Aké sú termíny pre Pezinok a okolie?', a: 'Konzultáciu viem spraviť do 24 hodín, implementáciu riešim selektívne mimo pracovného času (2–4 týždne podľa rozsahu).' },
+    { q: 'Koľko stojí web pre lokálny biznis?', a: 'Základná prezentačná stránka od 800 €, prepracovanejšie riešenia individuálne podľa auditu a požiadaviek.' },
+    { q: 'Čo je v cene?', a: 'Návrh štruktúry, technická SEO, optimalizácia rýchlosti, nasadenie a základné meranie (GA4, Search Console).' },
+    { q: 'Ako prebieha spolupráca?', a: 'Krátka konzultácia → mini audit → návrh riešení → implementácia → spustenie a meranie.' }
   ];
 
   return (
     <div>
       <LandingHero />
+      <LeadMagnet />
       
       {/* Services Section */}
-      <section className="py-24 bg-white">
+      <section id="services" className="py-24 bg-white">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -101,7 +113,9 @@ export default function TvorbaWebStranokPezinok() {
               </span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Profesionálna tvorba web stránok v Pezinku a okolí. Moderné riešenia pre váš úspech online.
+              Profesionálna tvorba web stránok v Pezinku a okolí. Moderné riešenia pre váš úspech online. 
+              <Link href="/tvorba-web-stranok-cennik" className="text-blue-700 hover:underline">Pozrieť cenník</Link> · 
+              <Link href="/#references" className="text-blue-700 hover:underline">Portfólio</Link>
             </p>
           </motion.div>
 
@@ -119,6 +133,36 @@ export default function TvorbaWebStranokPezinok() {
                 <service.icon className="text-3xl mb-4 text-blue-600" />
                 <h3 className="text-xl font-semibold mb-2 text-gray-900">{service.title}</h3>
                 <p className="text-gray-600">{service.description}</p>
+                <ul className="mt-3 text-sm text-gray-600 list-disc pl-5 space-y-1">
+                  {index === 0 && (
+                    <>
+                      <li>Zelené Core Web Vitals</li>
+                      <li>Optimalizované obrázky a CDN</li>
+                      <li>GA4 a Search Console</li>
+                    </>
+                  )}
+                  {index === 1 && (
+                    <>
+                      <li>Technická SEO (schema, sitemap)</li>
+                      <li>On‑page (H1–H3, interné linky)</li>
+                      <li>Lokálne signály (GBP, NAP)</li>
+                    </>
+                  )}
+                  {index === 2 && (
+                    <>
+                      <li>LCP &lt; 2.5 s na 4G</li>
+                      <li>CLS &lt; 0.1</li>
+                      <li>Tap targets a čitateľnosť</li>
+                    </>
+                  )}
+                  {index === 3 && (
+                    <>
+                      <li>HTTPS a HSTS</li>
+                      <li>Aktualizácie a zálohy</li>
+                      <li>Monitoring dostupnosti</li>
+                    </>
+                  )}
+                </ul>
               </motion.div>
             ))}
           </div>
@@ -128,6 +172,27 @@ export default function TvorbaWebStranokPezinok() {
       {/* Why Choose Us Section */}
       <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-6">
+          <Script id="localbusiness-pezinok-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'LocalBusiness',
+              name: 'Andrej Srna – Tvorba web stránok',
+              image: 'https://andrejsrna.sk/andrej-srna-cover.jpg',
+              url: 'https://andrejsrna.sk/tvorba-web-stranok-pezinok',
+              telephone: '+421914230321',
+              address: {
+                '@type': 'PostalAddress',
+                streetAddress: '1. mája 33',
+                addressLocality: 'Báhoň',
+                postalCode: '900 84',
+                addressCountry: 'SK'
+              },
+              areaServed: {
+                '@type': 'AdministrativeArea',
+                name: 'Pezinok'
+              }
+            }),
+          }} />
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -164,6 +229,13 @@ export default function TvorbaWebStranokPezinok() {
                 </div>
               </motion.div>
             ))}
+          </div>
+          <div className="mt-8 grid">
+            <div className="p-6 bg-white rounded-2xl border border-gray-200 text-center">
+              <div className="text-sm text-gray-500 mb-1">Mini case</div>
+              <div className="text-gray-900 font-semibold">Lokálny remeselník</div>
+              <div className="text-gray-600">+32 % telefonátov do 4 týždňov po zrýchlení webu</div>
+            </div>
           </div>
         </div>
       </section>
@@ -265,16 +337,43 @@ export default function TvorbaWebStranokPezinok() {
                 <p className="text-gray-600">Sledovanie návštevnosti a konverzií</p>
               </div>
             </div>
+            <div className="mt-10">
+              <Link href="#contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-gray-900 text-white hover:bg-gray-800 transition-colors">Skontrolovať váš lokálny profil</Link>
+            </div>
           </motion.div>
         </div>
       </section>
 
       <AboutMe/>
       <References />
+      <FAQ items={pezFaqItems} />
+
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-6 text-center">
+          <div className="inline-flex flex-col sm:flex-row gap-3 items-center justify-center">
+            <Link href="/tvorba-web-stranok-cennik" className="px-6 py-3 rounded-lg bg-gray-900 text-white hover:bg-gray-800 transition-colors">Pozrieť cenník</Link>
+            <Link href="#contact" className="px-6 py-3 rounded-lg border border-gray-200 text-gray-800 hover:bg-gray-50 transition-colors">Nezáväzná konzultácia</Link>
+          </div>
+        </div>
+      </section>
       <Pricing />
       <LatestPosts />
       <Testimonials/>
       <Contact />
+      <Script id="faq-pezinok-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: pezFaqItems.map((qa) => ({
+            '@type': 'Question',
+            name: qa.q,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: qa.a,
+            },
+          })),
+        }),
+      }} />
     </div>
   );
 }

@@ -47,7 +47,7 @@ const stats = [
   }
 ];
 
-const HERO_DESCRIPTION = "Vitajte na mojom osobnom portfóliu. Je to priestor, kde skúmam a aplikujem nové technológie v oblasti web developmentu a marketingu. Prezentujem tu svoje projekty a myšlienky o tom, ako digitálne nástroje pomáhajú riešiť reálne problémy.";
+const HERO_DESCRIPTION = "Osobné portfólio a konzultácie v oblastiach webu, performance a SEO. Spolupráce po dohode, mimo pracovného času.";
 
 export function Hero() {
   const [clickCount, setClickCount] = useState(0);
@@ -115,10 +115,10 @@ export function Hero() {
 
               {/* Main Heading */}
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white">
-                Tvorba a inovácie v{" "}
+                Tvorím rýchle weby a e‑shopy, ktoré prinášajú{" "}
                 <span className="relative">
                   <span className="relative z-10 bg-gradient-to-r from-red-400 to-purple-400 text-transparent bg-clip-text">
-                    digitálnom svete
+                    zákazníkov
                   </span>
                   <span className="absolute -bottom-2 left-0 w-full h-3 bg-red-500/20 -rotate-1" />
                 </span>
@@ -145,7 +145,7 @@ export function Hero() {
                       onClick={handleClick}
                       className="inline-flex items-center justify-center gap-2 px-8 py-4 text-lg bg-gradient-to-r from-red-600 to-purple-600 hover:from-red-700 hover:to-purple-700 text-white rounded-full transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-xl"
                     >
-                      Spojme sa
+                      Nezáväzná konzultácia
                       <ArrowRight className="w-5 h-5" />
                     </button>
                     {clickCount >= 3 && (
@@ -158,6 +158,12 @@ export function Hero() {
                       </motion.p>
                     )}
                   </div>
+                  <a
+                    href="#references"
+                    className="inline-flex items-center justify-center gap-2 px-8 py-4 text-lg border border-white/20 text-white rounded-full transition-all duration-300 hover:bg-white/10"
+                  >
+                    Pozrieť projekty
+                  </a>
                 </div>
               </motion.div>
             </div>

@@ -68,6 +68,9 @@ export function Footer() {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto">
+          <div className="text-center text-xs text-gray-500 mb-6">
+            Táto stránka je osobné portfólio. Názory sú moje vlastné. Externé spolupráce riešim výhradne mimo pracovného času a v súlade so zmluvnými podmienkami.
+          </div>
           {/* Social Links */}
           <div className="flex justify-center flex-wrap gap-4 mb-8">
             {socialLinks.map((social) => (

@@ -1,12 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
+import Script from "next/script";
 import { ShoppingCart, Settings, Users, CreditCard, Truck, Palette, Lock, LineChart } from "lucide-react";
 import References from "@/components/References";
 import LatestPosts from "@/components/LatestPosts";
 import Contact from "@/components/Contact";
 export const metadata = {
   title: "WooCommerce WordPress E-shop | Andrej Srna",
-  description: "Profesionálne riešenia pre váš e-shop s WooCommerce. Vytvorím moderný, funkčný a bezpečný e-shop na platforme WordPress a WooCommerce.",
+  description: "Výkonný a bezpečný WooCommerce e‑shop so zameraním na rýchlosť, SEO a konverzie. Nezáväzná konzultácia; externé spolupráce mimo pracovného času.",
 };
 
 interface Service {
@@ -75,45 +76,45 @@ export default function WooCommercePage() {
   const services: Service[] = [
     {
       title: "Tvorba e-shopu na mieru",
-      description: "Kompletné riešenie od návrhu až po spustenie",
+      description: "Kompletné riešenie od návrhu až po spustenie s dôrazom na výkon a konverzie",
       features: [
-        "Responzívny dizajn pre všetky zariadenia",
-        "Nastavenie produktov a kategórií",
-        "Konfigurácia platobných metód",
-        "Optimalizácia pre vyhľadávače (SEO)",
+        "Rýchla checkout cesta a UX",
+        "Zelené Core Web Vitals",
+        "GA4 a Search Console",
+        "Technická SEO (schema, sitemap)",
       ],
       gradient: "from-blue-500 to-purple-500"
     },
     {
       title: "Optimalizácia existujúceho e-shopu",
-      description: "Vylepšenie výkonu a používateľského zážitku",
+      description: "Zrýchlenie načítania a zvýšenie konverzií bez navýšenia reklám",
       features: [
-        "Analýza a zrýchlenie načítania",
-        "Bezpečnostné vylepšenia",
-        "SEO optimalizácia",
-        "Vylepšenie konverzného pomeru",
+        "−40 % LCP/TTFB (cieľ)",
+        "Jednoduchší checkout (nižší drop-off)",
+        "Technická SEO (interné linky)",
+        "Cachovanie a CDN",
       ],
       gradient: "from-purple-500 to-pink-500"
     },
     {
       title: "Integrácie a rozšírenia",
-      description: "Prepojenie s externými službami a systémami",
+      description: "Platby, doprava a ERP bez plugin bloatu",
       features: [
-        "Platobné brány a dopravcovia",
-        "ERP a skladové systémy",
-        "Marketingové nástroje",
-        "Analytické nástroje",
+        "TatraPay, CardPay, PayPal",
+        "Packeta, GLS, Slovenská pošta",
+        "ERP/sklady a marketingové nástroje",
+        "Minimalizácia pluginov",
       ],
       gradient: "from-pink-500 to-red-500"
     },
     {
       title: "Technická podpora a údržba",
-      description: "Pravidelná starostlivosť o váš e-shop",
+      description: "Stabilita, bezpečnosť a monitoring",
       features: [
-        "Pravidelné aktualizácie systému",
-        "Zálohovanie dát",
-        "Monitoring bezpečnosti",
-        "Technická podpora",
+        "Aktualizácie a zálohy",
+        "Monitoring a alerting",
+        "Bezpečnostné revízie",
+        "Podpora podľa dohody",
       ],
       gradient: "from-red-500 to-orange-500"
     }
@@ -123,7 +124,7 @@ export default function WooCommercePage() {
     {
       step: 1,
       title: "Úvodná konzultácia",
-      description: "Spoločne preberieme vaše potreby, ciele a predstavy o e-shope. Analyzujeme konkurenciu a definujeme kľúčové funkcie.",
+      description: "1 hod. call: ciele, konkurencia, technický rámec. Výstup: krátky plán.",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
@@ -133,7 +134,7 @@ export default function WooCommercePage() {
     {
       step: 2,
       title: "Návrh riešenia",
-      description: "Pripravím detailný návrh dizajnu, štruktúry a funkcionalít. Vytvoríme plán implementácie a časový harmonogram.",
+      description: "1–3 dni: audit, návrh štruktúry, UX a priorít. Roadmapa a odhad.",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
@@ -143,7 +144,7 @@ export default function WooCommercePage() {
     {
       step: 3,
       title: "Implementácia",
-      description: "Vývoj e-shopu podľa dohodnutých špecifikácií. Pravidelné konzultácie a testovanie jednotlivých funkcionalít.",
+      description: "2–4 týždne: implementácia, optimalizácia výkonu (CWV, TTFB), testovanie checkoutu.",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
@@ -153,7 +154,7 @@ export default function WooCommercePage() {
     {
       step: 4,
       title: "Spustenie a podpora",
-      description: "Finálne testovanie, spustenie e-shopu a zaškolenie. Následná technická podpora a pravidelná údržba systému.",
+      description: "1–2 dni: spustenie, GA4/GTM, GSC, školenie. Podpora a údržba dohodou.",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7M9 19h12a2 2 0 002-2V7a2 2 0 00-2-2H9a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -182,6 +183,26 @@ export default function WooCommercePage() {
     {
       question: "Je WooCommerce vhodný aj pre väčšie e-shopy?",
       answer: "Áno, WooCommerce je škálovateľný a zvládne aj tisíce produktov a objednávok. Mnoho úspešných e-shopov používa práve WooCommerce. Systém je možné optimalizovať a rozšíriť podľa rastúcich potrieb vášho podnikania."
+    },
+    {
+      question: "Ako prebieha migrácia zo Shopify/Wix?",
+      answer: "Najprv urobím audit a plán migrácie. Prenos produktov, objednávok a zákazníkov riešim skriptami a testovaním bez straty dát a SEO."
+    },
+    {
+      question: "Ako riešite rýchlosť pri veľkom katalógu?",
+      answer: "Cachovanie, CDN, optimalizácia databázových dopytov a lazy‑load. Cieľ: zelené CWV a nízky TTFB aj pri tisícoch produktov."
+    },
+    {
+      question: "Ako zabezpečujete bezpečnosť platieb?",
+      answer: "Platby prebiehajú cez certifikované brány (CardPay, TatraPay, PayPal). HTTPS, HSTS, bezpečnostné zásady a pravidelné aktualizácie."
+    },
+    {
+      question: "Koľko pluginov používate?",
+      answer: "Minimum potrebné. Preferujem ľahké riešenia a vlastné úpravy bez plugin bloatu."
+    },
+    {
+      question: "Viete dodať headless/Next.js frontend?",
+      answer: "Áno, podľa rozsahu. Headless riešenia prinášajú rýchlosť a flexibilitu, najmä pri vysokom trafiku."
     }
   ];
 
@@ -208,17 +229,24 @@ export default function WooCommercePage() {
               </h1>
 
               <p className="text-xl text-blue-100 leading-relaxed">
-                Vytvorím moderný, funkčný a bezpečný e-shop na platforme WordPress a WooCommerce.
+                Rýchly a bezpečný e‑shop na WooCommerce so zameraním na výkon, SEO a konverzie.
               </p>
 
-              <div className="pt-4">
+              <div className="pt-4 flex flex-col sm:flex-row gap-3 items-start sm:items-center">
                 <Link
                   href="/#contact"
-                  className="inline-block px-8 py-4 text-lg bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                  className="px-8 py-4 text-lg bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                 >
-                  Získať cenovú ponuku
+                  Nezáväzná konzultácia
+                </Link>
+                <Link
+                  href="mailto:ahoj@andrejsrna.sk?subject=Bezplatn%C3%BD%20mini%20audit%20checkoutu&body=URL%20e-shopu:%20"
+                  className="px-8 py-4 text-lg border border-white/20 text-white rounded-full hover:bg-white/10 transition-all duration-300"
+                >
+                  Bezplatný audit checkoutu
                 </Link>
               </div>
+              <p className="text-sm text-blue-200 mt-3">Externé spolupráce riešim mimo pracovného času, v súlade so zmluvnými podmienkami.</p>
             </div>
           </div>
 
@@ -283,7 +311,9 @@ export default function WooCommercePage() {
               Čo vám môžem ponúknuť
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              Komplexné služby pre váš úspešný online predaj
+              Komplexné služby pre váš úspešný online predaj. {" "}
+              <Link href="/tvorba-web-stranok-cennik" className="text-blue-300 hover:underline">Pozrieť cenník</Link> · {" "}
+              <Link href="/#references" className="text-blue-300 hover:underline">Portfólio</Link>
             </p>
           </div>
 
@@ -326,6 +356,18 @@ export default function WooCommercePage() {
                 </div>
               </div>
             ))}
+          </div>
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="p-6 bg-gray-800/50 backdrop-blur-sm rounded-2xl border border-gray-700/50 text-center">
+              <div className="text-sm text-gray-400 mb-1">Mini case</div>
+              <div className="text-white font-semibold">E‑shop s 800+ produktmi</div>
+              <div className="text-gray-300">−45 % LCP, +18 % konverzií za 6 týždňov</div>
+            </div>
+            <div className="p-6 bg-gray-800/50 backdrop-blur-sm rounded-2xl border border-gray-700/50 text-center">
+              <div className="text-sm text-gray-400 mb-1">Mini case</div>
+              <div className="text-white font-semibold">Integrácie platieb a dopravy</div>
+              <div className="text-gray-300">−27 % opustených košíkov po CardPay + Packeta</div>
+            </div>
           </div>
         </div>
       </section>
@@ -439,7 +481,29 @@ export default function WooCommercePage() {
       <LatestPosts />
 
       <Contact />
+      <Script id="faq-woocommerce-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: faqs.map((qa) => ({
+            '@type': 'Question',
+            name: qa.question,
+            acceptedAnswer: { '@type': 'Answer', text: qa.answer },
+          })),
+        }),
+      }} />
 
+      <Script id="service-woocommerce-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          name: 'WooCommerce vývoj a optimalizácia',
+          serviceType: 'WooCommerce development',
+          provider: { '@type': 'Person', name: 'Andrej Srna', url: 'https://andrejsrna.sk' },
+          areaServed: 'Slovensko',
+          offers: { '@type': 'Offer', availability: 'https://schema.org/InStock', priceCurrency: 'EUR' }
+        }),
+      }} />
 
     </>
   );

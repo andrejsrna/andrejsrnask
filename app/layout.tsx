@@ -22,8 +22,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://andrejsrna.sk"),
-  title: "Andrej Srna | Tvorba web stránok",
-  description: "Tvorba moderných web stránok a e-shopov na mieru. Pomôžem vám s online prezentáciou vášho podnikania.",
+  title: "Andrej Srna | Tvorba web stránok a e‑shopov",
+  description: "Moderné weby na Next.js a WordPress. Dôraz na rýchlosť, technickú SEO a konverzie. 50+ projektov. Nezáväzná konzultácia do 24h.",
 };
 
 export default function RootLayout({

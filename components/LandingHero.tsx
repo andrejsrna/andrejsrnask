@@ -92,12 +92,12 @@ export function LandingHero() {
           >
             <Button asChild size="lg" className="bg-gradient-to-r from-blue-600 to-red-600 hover:from-blue-700 hover:to-red-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] text-lg">
               <a href="#contact" className="flex items-center gap-2">
-                Získať cenovú ponuku
+                Nezáväzná konzultácia
                 <ArrowRight className="w-5 h-5" />
               </a>
             </Button>
             <Button asChild variant="outline" size="lg" className="border-2 border-blue-700/30 text-blue-900 hover:bg-blue-900/50 hover:text-white transition-all duration-300 text-lg backdrop-blur-sm">
-              <a href="#services">Zobraziť služby</a>
+              <a href="/tvorba-web-stranok-cennik">Pozrieť cenník</a>
             </Button>
           </motion.div>
 
@@ -109,13 +109,17 @@ export function LandingHero() {
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold text-white">100%</div>
-              <div className="text-sm text-blue-200">Responzívny dizajn</div>
+              <div className="text-sm text-blue-200">Zelené CWV</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-white">24/7</div>
-              <div className="text-sm text-blue-200">Podpora</div>
+              <div className="text-2xl font-bold text-white">24 h</div>
+              <div className="text-sm text-blue-200">Odpoveď</div>
             </div>
           </div>
+
+          <p className="mt-6 text-sm text-blue-200">
+            Externé spolupráce riešim mimo pracovného času, v súlade so zmluvnými podmienkami.
+          </p>
         </motion.div>
 
         {/* Image */}

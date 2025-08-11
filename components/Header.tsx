@@ -32,9 +32,11 @@ const isSubmenuItem = (item: MenuItem): item is SubmenuItem => {
 };
 
 const menuItems: MenuItem[] = [
-  { href: "/#about", label: "O mne" },
+  { href: "/#services", label: "Služby" },
   { href: "/#references", label: "Portfólio" },
+  { href: "/tvorba-web-stranok-cennik", label: "Cenník" },
   { href: "/blog", label: "Blog" },
+  { href: "/#about", label: "O mne" },
 ];
 
 export default function Header() {
@@ -248,7 +250,7 @@ export default function Header() {
                 onClick={handleLinkClick}
                 className="ml-4 px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               >
-                Kontakt
+                Nezáväzná konzultácia
               </Link>
             </motion.div>
           </nav>
@@ -344,7 +346,7 @@ export default function Header() {
                     onClick={handleLinkClick}
                     className="block px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 text-center"
                   >
-                    Kontakt
+                    Nezáväzná konzultácia
                   </Link>
                 </div>
               </div>

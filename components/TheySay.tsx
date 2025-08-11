@@ -56,10 +56,10 @@ export function Testimonials() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-gray-900 to-gray-700 text-transparent bg-clip-text">
-            Hovoria o mne
+            Referencie
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Prečítajte si, čo o mojej práci hovoria klienti
+            Vyjadrenia zo spoluprác. Niektoré detaily sú anonymizované.
           </p>
         </motion.div>
 
@@ -89,6 +89,7 @@ export function Testimonials() {
                   <div className="flex items-center justify-end">
                     <div className="text-right">
                       <p className="font-semibold text-gray-900">{testimonial.author}</p>
+                      <p className="text-xs text-gray-500">externá spolupráca</p>
                       <div className="h-1 w-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full ml-auto mt-2"></div>
                     </div>
                   </div>

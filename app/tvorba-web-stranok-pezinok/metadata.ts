@@ -2,11 +2,11 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Tvorba web stránok Pezinok | Andrej Srna',
-  description: 'Profesionálna tvorba web stránok v Pezinku. Moderný dizajn, SEO optimalizácia a bezproblémová funkčnosť. Kontaktujte nás pre cenovú ponuku.',
+  description: 'Profesionálna tvorba web stránok v Pezinku. Moderný dizajn, SEO a výkon. Nezáväzná konzultácia; externé spolupráce riešim mimo pracovného času.',
   keywords: 'tvorba web stránok, web development, Pezinok, web dizajn, SEO Pezinok, tvorba webu Pezinok',
   openGraph: {
     title: 'Tvorba web stránok Pezinok | Andrej Srna',
-    description: 'Profesionálna tvorba web stránok v Pezinku. Moderný dizajn, SEO optimalizácia a bezproblémová funkčnosť. Kontaktujte nás pre cenovú ponuku.',
+    description: 'Profesionálna tvorba web stránok v Pezinku. Moderný dizajn, SEO a výkon. Nezáväzná konzultácia; externé spolupráce mimo pracovného času.',
     url: 'https://andrejsrna.sk/tvorba-web-stranok-pezinok',
     images: [
       {
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Tvorba web stránok Pezinok | Andrej Srna',
-    description: 'Profesionálna tvorba web stránok v Pezinku. Moderný dizajn, SEO optimalizácia a bezproblémová funkčnosť. Kontaktujte nás pre cenovú ponuku.',
+    description: 'Profesionálna tvorba web stránok v Pezinku. Moderný dizajn, SEO a výkon. Nezáväzná konzultácia; externé spolupráce mimo pracovného času.',
     images: ['/andrej-srna-cover.jpg']
   }
 }; 

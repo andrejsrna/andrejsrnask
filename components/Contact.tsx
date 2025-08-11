@@ -89,7 +89,7 @@ export function Contact() {
               <CardContent className="pt-8">
                 <div className="mb-8">
                   <h3 className="text-lg font-semibold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text">
-                    Spojte sa so mnou
+                    Nezáväzná konzultácia
                   </h3>
                   <ContactItem
                     icon={Phone}
@@ -132,23 +132,28 @@ export function Contact() {
                 </div>
 
                 <div className="mt-8">
-                  <h4 className="text-sm font-medium text-gray-500 mb-3">Bankové spojenie</h4>
-                  <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-xl border border-gray-200">
-                    <div className="space-y-2">
-                      <p className="text-sm text-gray-700 flex justify-between">
-                        <span className="text-gray-500">IBAN:</span>
-                        <span className="font-medium">SK53 1100 0000 0029 4212 1294</span>
-                      </p>
-                      <p className="text-sm text-gray-700 flex justify-between">
-                        <span className="text-gray-500">SWIFT:</span>
-                        <span className="font-medium">TATRSKBX</span>
-                      </p>
-                      <p className="text-sm text-gray-700 flex justify-between">
-                        <span className="text-gray-500">Banka:</span>
-                        <span className="font-medium">Tatra banka, a.s.</span>
-                      </p>
+                  <details className="group">
+                    <summary className="cursor-pointer list-none flex items-center justify-between px-3 py-2 bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg border border-gray-200">
+                      <span className="text-sm font-medium text-gray-700">Bankové spojenie</span>
+                      <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <div className="mt-3 bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-xl border border-gray-200">
+                      <div className="space-y-2">
+                        <p className="text-sm text-gray-700 flex justify-between">
+                          <span className="text-gray-500">IBAN:</span>
+                          <span className="font-medium">SK53 1100 0000 0029 4212 1294</span>
+                        </p>
+                        <p className="text-sm text-gray-700 flex justify-between">
+                          <span className="text-gray-500">SWIFT:</span>
+                          <span className="font-medium">TATRSKBX</span>
+                        </p>
+                        <p className="text-sm text-gray-700 flex justify-between">
+                          <span className="text-gray-500">Banka:</span>
+                          <span className="font-medium">Tatra banka, a.s.</span>
+                        </p>
+                      </div>
                     </div>
-                  </div>
+                  </details>
                 </div>
               </CardContent>
             </Card>
@@ -160,8 +165,7 @@ export function Contact() {
               viewport={{ once: true }}
               className="lg:col-span-2 text-center text-sm text-gray-500 bg-gradient-to-br from-gray-50 to-gray-100 p-4 rounded-xl border border-gray-200"
             >
-              <p>Spoločnosť je zapísaná v Obchodnom registri Okresného súdu Bratislava III,</p>
-              <p>oddiel: Sro, vložka č.: 157956/B</p>
+              <p>Externé spolupráce riešim selektívne a mimo pracovného času, v súlade so zmluvnými podmienkami.</p>
             </motion.div>
           </motion.div>
         </div>
