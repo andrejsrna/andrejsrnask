@@ -32,9 +32,7 @@ const isSubmenuItem = (item: MenuItem): item is SubmenuItem => {
 };
 
 const menuItems: MenuItem[] = [
-  { href: "/#services", label: "Služby" },
   { href: "/#references", label: "Portfólio" },
-  { href: "/tvorba-web-stranok-cennik", label: "Cenník" },
   { href: "/blog", label: "Blog" },
   { href: "/#about", label: "O mne" },
 ];

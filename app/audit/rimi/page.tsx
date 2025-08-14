@@ -10,6 +10,435 @@ export const metadata: Metadata = {
 };
 
 export default function AuditRimi() {
+  const seoAuditReport = `Features
+Pricing
+Resources
+Login
+Audit Results for micro-code.sk
+Your page could be better
+
+On-Page SEO
+
+Links
+
+Usability
+
+Performance
+
+Social
+Report Generated: 13 August 7:32AM UTC Refresh Results Now
+Improve Your Site With Our DIY SEO Tool
+
+Review unlimited pages. Crawl your whole site for problems and get clear, easy to follow recommendations with guides for your CMS. Monitor your keyword rankings and get regular updates on your site's performance.
+
+Helping Business Owners promote their websites the affordable way.
+Recommendations
+Execute a Link Building Strategy
+Links
+High Priority
+Enable Page Indexing
+On-Page SEO
+Medium Priority
+Remove Duplicate H1 Tags
+On-Page SEO
+Medium Priority
+Add Canonical Tag
+On-Page SEO
+Medium Priority
+Add Alt Attributes to all images
+On-Page SEO
+Low Priority
+Create and link your X Profile
+Social
+Low Priority
+Use your main keywords across the important HTML Tags
+On-Page SEO
+Low Priority
+Remove Clear Text Email Addresses
+Usability
+Low Priority
+Install a Facebook Pixel
+Social
+Low Priority
+Create and link an associated LinkedIn Profile
+Social
+Low Priority
+Create and link an associated Instagram Profile
+Social
+Low Priority
+Fix DMARC Mail Record
+Other
+Low Priority
+Increase your YouTube Channel subscribers
+Social
+Low Priority
+Remove Inline Styles
+Performance
+Low Priority
+On-Page SEO Results
+Your On-Page SEO could be better
+Your page has some level of On-Page SEO optimization but could be improved further. On-Page SEO is important to ensure Search Engines can understand your content appropriately and help it rank for relevant keywords. You should ensure that HTML Tag Content is completed correctly and align text content to target keywords.
+Title Tag
+You have a Title Tag of optimal length (between 50 and 60 characters).
+Prevencia kriminality | Označovanie leptaním a mikrobodmi
+Length : 57
+Meta Description Tag
+Your page has a Meta Description of optimal length (between 120 and 160 characters).
+Prevencia kriminality pomocou trvalého značenia – zabezpečený autá, bicykle, motorky a skútre. Ochrana vozidla aj pri rozobratí na súčiastky.
+Length : 141
+SERP Snippet Preview
+This illustrates how your page may appear in Search Results. Note, this is intended as a guide and Search Engines are more frequently generating this content dynamically.
+MICRO-CODE ǀ Prevencia kriminalityhttps://micro-code.sk
+Prevencia kriminality | Označovanie leptaním a mikrobodmi
+Prevencia kriminality pomocou trvalého značenia – zabezpečený autá, bicykle, motorky a skútre. Ochrana vozidla aj pri rozobratí na súčiastky.
+Hreflang Usage
+Your page is not making use of Hreflang attributes.
+Language
+Your page is using the Lang Attribute.
+Declared: sk-SK
+H1 Header Tag Usage
+Your page has more than one H1 Tag. It is generally recommended to only use one H1 Tag on a page.
+The H1 Header Tag is an important way of signaling to search engines what your content is about, and subsequently the keywords it should rank for.
+H2-H6 Header Tag Usage
+Your page is making use multiple levels of Header Tags.
+Header Tag\tFrequency\t
+H2\t9\t
+H3\t8\t
+H4\t0\t
+H5\t0\t
+H6\t0\t
+Keyword Consistency
+Your page's main keywords are not distributed well across the important HTML Tags.
+Your page content should be focused around particular keywords you would like to rank for. Ideally these keywords should also be distributed across tags such as the title, meta and header tags.
+Individual Keywords
+Keyword \tTitle \tMeta Description Tag \tHeadings Tags \tPage Frequency \t
+vozidlo \t\t\t\t11 \t
+značenie \t\t\t\t10 \t
+vozidla \t\t\t\t9 \t
+označenie \t\t\t\t9 \t
+bezpečnostné \t\t\t\t7 \t
+identifikačný \t\t\t\t7 \t
+kód \t\t\t\t7 \t
+vozidiel \t\t\t\t6 \t
+Phrases
+Phrase \tTitle \tMeta Description Tag \tHeadings Tags \tPage Frequency \t
+bezpečnostné značenie \t\t\t\t7 \t
+identifikačný kód \t\t\t\t7 \t
+je možné \t\t\t\t6 \t
+bezpečnostného značenia \t\t\t\t5 \t
+krokom je \t\t\t\t5 \t
+v prípade \t\t\t\t4 \t
+vozidiel sa \t\t\t\t3 \t
+identifikačného kódu \t\t\t\t3 \t
+Amount of Content
+Your page has a good level of textual content, which will assist in it's ranking potential.
+Word Count: 683
+Image Alt Attributes
+You have images on your page that are missing Alt Attributes.
+
+We found 21 images on your page and 21 of them are missing the attribute.
+Alt Attributes are an often overlooked and simple way to signal to Search Engines what an image is about, and help it rank in image search results.
+Canonical Tag
+Your page is not using the Canonical Tag.
+The Canonical Tag tells Search Engines the primary URL of a page. Google recommends all pages specify a Canonical.
+Noindex Tag Test
+Your page is using the Noindex Tag which prevents indexing.
+Using the Noindex Tag will instruct Search Engines to ignore a page, completely removing it's ranking ability. This has a significant impact which is often overlooked.
+Noindex Header Test
+Your page is not using the Noindex Header which prevents indexing.
+SSL Enabled
+Your website has SSL enabled.
+HTTPS Redirect
+Your page successfully redirects to a HTTPS (SSL secure) version.
+Robots.txt
+Your website appears to have a robots.txt file.
+http://micro-code.sk/robots.txt
+Blocked by Robots.txt
+Your page does not appear to be blocked by robots.txt.
+XML Sitemaps
+Your website appears to have an XML Sitemap.
+https://micro-code.sk/sitemap_index.xml
+Analytics
+Your page is using an analytics tool.
+  Google Analytics
+Schema.org Structured Data
+You are using JSON-LD Schema on your page.
+Rankings
+Top Keyword Rankings
+You can see the live Keyword Rankings for your page within the report by signing up to one of our premium plans.
+Links
+Backlink Summary
+You have a reasonably weak level of backlink activity to this page.
+Search Engines use backlinks as a strong indicator of a page's authority, relevance and ranking potential. There are various strategies available to gain links to a page to improve this factor
+
+Domain
+Strength
+
+Page
+Strength
+0
+Total Backlinks
+0
+Referring Domains
+0
+Nofollow Backlinks
+0
+Dofollow Backlinks
+0
+Edu Backlinks
+0
+Gov Backlinks
+0
+IPs
+0
+Subnets
+Top Backlinks
+We haven't found any backlinks to report for this site.
+Top Pages by Backlinks
+We haven't found any Top Pages data for this site.
+Top Anchors by Backlinks
+We haven't found any Anchor Text data for this site.
+Top Referring Domain Geographies
+We haven't found any Geographic Data for this site.
+On-Page Link Structure
+We found 81 total links. 7% of your links are external links and are sending authority to other sites. 0% of your links are nofollow links, meaning authority is not being passed to those destination pages.
+On-Page Links
+81 Total
+Internal Links
+75
+External Links: Follow
+6
+External Links: Nofollow
+0
+Friendly Links
+Your link URLs appear friendly (easily human or search engine readable).
+Create White Label PDFs
+
+Upload your own logo and company's contact details. Generate unlimited PDFs under our White Label plans. See an example PDF Report
+
+Embed the Audit Tool into your website. Get notified of leads straight from your website.
+Usability
+Your usability is very good!
+Your page is highly usable across devices. Usability is important to maximize your available audience and minimize user bounce rates (which can indirectly affect your search engine rankings).
+Device Rendering
+This check visually demonstrates how your page renders on different devices. It is important that your page is optimized for mobile and tablet experiences as today the majority of web traffic comes from these sources.
+Google's Core Web Vitals
+Google is indicating that they do not have 'sufficient real-world speed data for this page' in order to make a Core Web Vitals assessment. This can occur for smaller websites or those that are not crawl-able by Google.
+Use of Mobile Viewports
+Your page specifies a Viewport matching the device's size, allowing it to render appropriately across devices.
+Google's PageSpeed Insights - Mobile
+Google is indicating that your page is scoring well on their Mobile PageSpeed Insights evaluation.
+
+Note that this evaluation is being performed from US servers and the results may differ slightly from an evaluation carried out from Google's PageSpeed Web Interface as that reporting localizes to the region in which you are running the report.
+Lab Data\tValue
+First Contentful Paint\t1.9 s
+Speed Index\t4.6 s
+Largest Contentful Paint\t2.6 s
+Time to Interactive\t5.4 s
+Total Blocking Time\t0.05 s
+Cumulative Layout Shift\t0.052
+Opportunities\tEstimated Savings
+Avoid multiple page redirects\t0.63 s
+Defer offscreen images\t0.3 s
+Properly size images\t0.3 s
+Eliminate render-blocking resources\t0.23 s
+Google's PageSpeed Insights - Desktop
+Google is indicating that your page is scoring well on their Desktop PageSpeed Insights evaluation.
+Lab Data\tValue
+First Contentful Paint\t0.5 s
+Speed Index\t1.7 s
+Largest Contentful Paint\t0.8 s
+Time to Interactive\t0.8 s
+Total Blocking Time\t0 s
+Cumulative Layout Shift\t0.017
+Opportunities\tEstimated Savings
+Avoid multiple page redirects\t0.19 s
+Flash Used?
+No Flash content has been identified on your page.
+iFrames Used?
+There are no iFrames detected on your page.
+Favicon
+Your page has specified a Favicon.
+Email Privacy
+Email addresses have been found in plain text.
+We recommend removing any plain text email addresses and replacing them with images or contact forms. Plain text email addresses can be susceptible to scrapers and email spammers.
+Legible Font Sizes
+The text on your page appears to be legible across devices.
+Tap Target Sizing
+The links and buttons on your page appear to be appropriately sized for a user to easily tap on a touchscreen.
+Performance Results
+Your performance is very good!
+Congratulations, your page has performed very well in our testing meaning it should be reasonably fast and responsive for users. Performance is important to ensure a good user experience, and reduced bounce rates (which can also indirectly affect your search engine rankings). Continue to monitor your performance over time to ensure there are no periodic fluctuations.
+Website Load Speed
+Your page loads in a reasonable amount of time.
+Server Response
+0.3s
+All Page Content Loaded
+2.2s
+All Page Scripts Complete
+7.7s
+Website Download Size
+Your page's file size is reasonably low which is good for Page Load Speed and user experience.
+Download Page Size
+1.13MB
+Download Page Size Breakdown
+1.13MB Total
+HTML
+0.09MB
+CSS
+0MB
+JS
+0.29MB
+Images
+0.51MB
+Other
+0.25MB
+Compression Usage (Gzip, Deflate, Brotli)
+Your website appears to be using a reasonable level of compression.
+Compression Rate
+60%
+Compression Rates
+HTML
+77% compressed of 0.38MB
+CSS
+91% compressed of 0.02MB
+JS
+64% compressed of 0.80MB
+Images
+42% compressed of 0.87MB
+Other
+69% compressed of 0.79MB
+Total
+60% compressed of 2.86MB
+Resources Breakdown
+This check displays the total number of files that need to be retrieved from web servers to load your page.
+
+69
+
+Total Objects
+
+2
+
+Number of HTML Pages
+
+31
+
+Number of JS Resources
+
+1
+
+Number of CSS Resources
+
+23
+
+Number of Images
+
+12
+
+Other Resources
+Google Accelerated Mobile Pages (AMP)
+This page does not appear to have AMP Enabled.
+JavaScript Errors
+Your page is not reporting any JavaScript errors.
+HTTP2 Usage
+Your website is using the recommended HTTP/2+ Protocol.
+Optimize Images
+All of the images on your page appear to be optimized.
+Minification
+All your JavaScript and CSS files appear to be minified.
+Deprecated HTML
+No deprecated HTML tags have been found within your page.
+Inline Styles
+Your page appears to be using Inline Styles.
+Inline Styles are an older coding practice and discouraged in favor of using CSS style sheets, due to their ability to degrade page load performance and unnecessarily complicate HTML Code.
+Social Results
+Your social needs improvement
+You appear to have a weak social presence or level of social activity (or we may just not be able to see your profiles!). Social activity is important for customer communication, brand awareness and as a marketing channel to bring visitors to your website. We recommend that you list all of your profiles on your page for visibility, and begin to build a following on those networks.
+Facebook Page Linked
+Your page has a link to a Facebook Page.
+\thttps://facebook.com/micro.code.sk
+Facebook Open Graph Tags
+Your page is using Facebook Open Graph Tags.
+Facebook Pixel
+We have not detected a Facebook Pixel on your page.
+Facebook's Pixel is a useful piece of analytics code that allows you to retarget visitors if you decide to run Facebook Ads in future.
+X (formerly Twitter) Account Linked
+No associated X Profile found as a link on your page.
+X Cards
+Your page is using X Cards.
+Instagram Linked
+No associated Instagram Profile found linked on your page
+LinkedIn Page Linked
+No associated LinkedIn Profile found linked on your page.
+YouTube Channel Linked
+Your page has a link to a YouTube Channel.
+\thttps://youtube.com/channel/UCicp37MK5M4laZz9a3ZQXZg
+YouTube Channel Activity
+You have a low number of YouTube Channel subscribers.
+0
+Followers
+3
+View Count
+Want to grow your YouTube Channel? Try our  
+YouTube SEO Tool
+Local SEO
+Local Business Schema
+Local Business Schema identified on the page.
+LocalBusiness
+Google Business Profile Identified
+You can see information about your page's Google Business Profile within this report by signing up to one of our premium plans.
+Want to improve your Local Search Presence? Try our  
+Local SEO Tool
+Technology Results
+Technology List
+These software or coding libraries have been identified on your page.
+\tTechnology\tVersion
+\tGoogle Analytics\t
+\tHostinger\t
+\tHTTP/3\t
+\tLiteSpeed\t
+\tMautic\t
+\tMySQL\t
+\tPHP\t8.3.16
+\tWordPress\t
+\tWP Rocket\t
+Server IP Address
+89.117.168.35
+DNS Servers
+ns2.dns-parking.com
+ns1.dns-parking.com
+Web Server
+LiteSpeed
+Charset
+text/html; charset=UTF-8
+DMARC Record
+You have a DMARC record in place though the syntax appears invalid.
+
+DMARC1; p=none;
+Syntax errors:
+First tag in a DMARC policy must be 'v'
+'dmarc1' - incorrect tag
+DMARC records are important to improve email deliverability and combat spoofing.
+SPF Record
+This site appears to have an SPF record.
+v=spf1 include:_spf.mail.hostinger.com ~all
+Review Child Pages
+Page
+/2023/08/01/
+/2023/09/22/
+/4-urovne-ochrany-vozidla/
+/bezpecnostne-oznacenie-skiel-vozidla-leptanie-gravirovanie/
+/blog/
+/faq/
+/kontakt/
+/moj-ucet/
+/nahlasenie-kradeze/
+/nahlasenie-najdeneho-vozidla/
+/o-nas/
+/obchod/
+Embed an Audit Tool into your Agency's Site
+
+Match your website's styling and colors. Show your customer a beautiful branded report. Get notified of leads straight to your Inbox.`;
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
       <div className="container mx-auto px-4 py-16">
@@ -22,6 +451,145 @@ export default function AuditRimi() {
             Nezávislý audit webu, SEO, UX a komunikácie s prioritizovanými odporúčaniami.
           </p>
         </div>
+
+        <details id="seo-audit" className="bg-white rounded-2xl shadow-lg mb-16">
+          <summary className="cursor-pointer select-none px-6 py-4 text-2xl font-bold text-slate-900">SEO audit: micro-code.sk</summary>
+          <div className="px-6 pb-6">
+            <div className="bg-white rounded-2xl p-8 shadow-lg mb-8">
+              <h2 className="text-2xl font-bold text-slate-900 mb-4">Zhrnutie stavu</h2>
+              <ul className="text-slate-700 list-disc pl-6 space-y-1">
+                <li>Stránka nie je indexovateľná (noindex) – nutné odstrániť pre akékoľvek umiestnenie vo vyhľadávaní.</li>
+                <li>Duplicita H1 nadpisu – odporúčané mať iba jeden H1 na stránku.</li>
+                <li>Chýba kanonická značka (canonical) – riziko duplicít a rozdelenia signálov.</li>
+                <li>Obrázky bez alt atribútov (21/21) – znížená prístupnosť a SEO signály.</li>
+                <li>Nepoužité hreflang atribúty – pri viacjazyčných verziách zhoršené zacielenie.</li>
+                <li>Rozloženie kľúčových slov v hlavičkách a tagoch je slabé.</li>
+                <li>Title a meta description sú v odporúčaných dĺžkach.</li>
+              </ul>
+            </div>
+
+            <div className="bg-white rounded-2xl p-8 shadow-lg mb-8">
+              <h2 className="text-2xl font-bold text-slate-900 mb-6">Odporúčané kroky (prioritizované)</h2>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="border-l-4 border-red-500 pl-6">
+                  <h3 className="text-xl font-semibold text-slate-900 mb-2">Vysoká priorita</h3>
+                  <ul className="text-slate-700 list-disc pl-6 space-y-1">
+                    <li>Povoliť indexovanie (odstrániť noindex, skontrolovať robots a CMS nastavenia).</li>
+                    <li>Spustiť stratégiu získavania odkazov (link building) pre zvýšenie autority domény.</li>
+                  </ul>
+                </div>
+                <div className="border-l-4 border-orange-500 pl-6">
+                  <h3 className="text-xl font-semibold text-slate-900 mb-2">Stredná priorita</h3>
+                  <ul className="text-slate-700 list-disc pl-6 space-y-1">
+                    <li>On‑page: jeden H1, canonical, alt pre všetky obrázky.</li>
+                    <li>Rozmiestniť hlavné kľúčové slová do title, meta, H1 a H2‑H3 prirodzene.</li>
+                  </ul>
+                </div>
+                <div className="border-l-4 border-slate-400 pl-6">
+                  <h3 className="text-xl font-semibold text-slate-900 mb-2">Nižšia priorita</h3>
+                  <ul className="text-slate-700 list-disc pl-6 space-y-1">
+                    <li>Prepojiť profily: X, Instagram, LinkedIn; doplniť Facebook Pixel.</li>
+                    <li>Skryť e‑mailové adresy v čistom texte (použiť formulár alebo obfuskačný skript).</li>
+                    <li>Fixnúť DMARC záznam (syntaktická chyba), SPF je v poriadku.</li>
+                    <li>Minimalizovať inline štýly.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl p-8 shadow-lg mb-8">
+              <h2 className="text-2xl font-bold text-slate-900 mb-6">On‑page detaily</h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-slate-50 rounded-lg p-6 border border-slate-200">
+                  <h3 className="font-semibold text-slate-900 mb-2">Tagy a nadpisy</h3>
+                  <ul className="text-slate-700 list-disc pl-6 space-y-1">
+                    <li>H2/H3: používané; zosúladiť s cieľovými kľúčovými slovami.</li>
+                  </ul>
+                </div>
+                <div className="bg-slate-50 rounded-lg p-6 border border-slate-200">
+                  <h3 className="font-semibold text-slate-900 mb-2">Obsah a médiá</h3>
+                  <ul className="text-slate-700 list-disc pl-6 space-y-1">
+                    <li>Textová náplň: dobrá (cca 680+ slov).</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl p-8 shadow-lg mb-8">
+              <h2 className="text-2xl font-bold text-slate-900 mb-6">Výkon a použiteľnosť</h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-emerald-50 rounded-lg p-6 border border-emerald-100">
+                  <h3 className="font-semibold text-slate-900 mb-2">Výkon (PageSpeed)</h3>
+                  <ul className="text-slate-700 list-disc pl-6 space-y-1">
+                    <li>Mobil: FCP ~1.9s, LCP ~2.6s, CLS ~0.052.</li>
+                    <li>Desktop: FCP ~0.5s, LCP ~0.8s, CLS ~0.017.</li>
+                    <li>Optimalizácia obrázkov a minifikácia sú v poriadku.</li>
+                  </ul>
+                </div>
+                <div className="bg-slate-50 rounded-lg p-6 border border-slate-200">
+                  <h3 className="font-semibold text-slate-900 mb-2">Použiteľnosť</h3>
+                  <ul className="text-slate-700 list-disc pl-6 space-y-1">
+                    <li>Vynikajúca čitateľnosť a veľkosti prvkov pre dotyk.</li>
+                    <li>Žiadne JS chyby; responzívny viewport nastavený.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl p-8 shadow-lg mb-8">
+              <h2 className="text-2xl font-bold text-slate-900 mb-4">Sociálne siete a sledovanie</h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-slate-50 rounded-lg p-6 border border-slate-200">
+                  <h3 className="font-semibold text-slate-900 mb-2">Stav profilov</h3>
+                  <ul className="text-slate-700 list-disc pl-6 space-y-1">
+                    <li>Facebook stránka: prepojená.</li>
+                    <li>X, Instagram, LinkedIn: neprepojené – doplniť odkazy.</li>
+                    <li>YouTube: prepojený kanál, nízka aktivita.</li>
+                  </ul>
+                </div>
+                <div className="bg-slate-50 rounded-lg p-6 border border-slate-200">
+                  <h3 className="font-semibold text-slate-900 mb-2">Tagy a pixely</h3>
+                  <ul className="text-slate-700 list-disc pl-6 space-y-1">
+                    <li>Open Graph a X Cards: nastavené.</li>
+                    <li>Facebook Pixel: chýba – pridať pre remarketing a atribúciu.</li>
+                    <li>Google Analytics: aktívny.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl p-8 shadow-lg mb-8">
+              <h2 className="text-2xl font-bold text-slate-900 mb-4">Technické a infra</h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-slate-50 rounded-lg p-6 border border-slate-200">
+                  <h3 className="font-semibold text-slate-900 mb-2">Indexácia a mapy</h3>
+                  <ul className="text-slate-700 list-disc pl-6 space-y-1">
+                    <li>SSL a HTTPS presmerovanie: OK.</li>
+                    <li>robots.txt a XML sitemap: prítomné.</li>
+                    <li>Noindex meta: zapnutý – odstrániť, ak má byť stránka indexovaná.</li>
+                  </ul>
+                </div>
+                <div className="bg-slate-50 rounded-lg p-6 border border-slate-200">
+                  <h3 className="font-semibold text-slate-900 mb-2">E‑mail a bezpečnosť</h3>
+                  <ul className="text-slate-700 list-disc pl-6 space-y-1">
+                    <li>DMARC: syntaktická chyba – opraviť (pridať v=DMARC1; ...).</li>
+                    <li>SPF: prítomný.</li>
+                    <li>Na stránke sa nachádzajú e‑maily v čistom texte – skryť.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl p-8 shadow-lg">
+              <h2 className="text-2xl font-bold text-slate-900 mb-2">Odkazy</h2>
+              <p className="text-slate-700">Backlinky: veľmi slabé (0 domén). Odporúčaná obsahová a PR stratégia, spolupráce a lokálne citácie.</p>
+            </div>
+
+            <div className="hidden">
+              <pre className="whitespace-pre-wrap font-mono text-sm text-slate-700">{seoAuditReport}</pre>
+            </div>
+          </div>
+        </details>
 
         <details className="bg-white rounded-2xl shadow-lg mb-16">
           <summary className="cursor-pointer select-none px-6 py-4 text-2xl font-bold text-slate-900">Analýza aktuálneho stavu</summary>
@@ -279,36 +847,7 @@ export default function AuditRimi() {
           </div>
         </div>
 
-        <div className="bg-white rounded-2xl p-8 shadow-lg mb-16">
-          <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">
-            Kroky
-          </h2>
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div>
-              <Image 
-                src="/rimi/kroky.png" 
-                alt="Aktuálna sekcia krokov" 
-                width={600} 
-                height={400}
-                className="rounded-lg shadow-lg"
-              />
-            </div>
-            <div className="space-y-3">
-              <div className="flex items-start space-x-3">
-                <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
-                <p className="text-slate-600">Skrátiť text na stručné body (1–2 vety/krok)</p>
-              </div>
-              <div className="flex items-start space-x-3">
-                <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
-                <p className="text-slate-600">Primárne vizuály, sekundárne text</p>
-              </div>
-              <div className="flex items-start space-x-3">
-                <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
-                <p className="text-slate-600">Každý krok s ikonou/obrázkom a krátkym CTA</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        
           </div>
         </details>
 
@@ -482,7 +1021,7 @@ export default function AuditRimi() {
 
 
         <details className="bg-white rounded-2xl shadow-lg mb-16">
-          <summary className="cursor-pointer select-none px-6 py-4 text-2xl font-bold text-slate-900">FAQ, Lokálne SEO, Obsah a B2B</summary>
+          <summary className="cursor-pointer select-none px-6 py-4 text-2xl font-bold text-slate-900">FAQ, obsah a B2B</summary>
           <div className="px-6 pb-6">
 
             <div className="bg-white rounded-2xl p-8 shadow-lg mb-16">
@@ -512,7 +1051,7 @@ export default function AuditRimi() {
             </div>
 
             <div className="bg-white rounded-2xl p-8 shadow-lg mb-16">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">Lokálne SEO</h2>
+              <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">Lokálna prítomnosť</h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-slate-50 rounded-lg p-6 border border-slate-200">
                   <h3 className="font-semibold text-slate-900 mb-2">Google Business Profile</h3>
@@ -675,7 +1214,7 @@ export default function AuditRimi() {
         </details>
 
         <details className="bg-white rounded-2xl shadow-lg mb-16">
-          <summary className="cursor-pointer select-none px-6 py-4 text-2xl font-bold text-slate-900">KPI, Roadmapa a technické SEO</summary>
+          <summary className="cursor-pointer select-none px-6 py-4 text-2xl font-bold text-slate-900">KPI, roadmapa a technika</summary>
           <div className="px-6 pb-6">
 
             <div className="bg-white rounded-2xl p-8 shadow-lg mb-16">
@@ -771,7 +1310,7 @@ export default function AuditRimi() {
               </div>
             </div>
 
-            <div className="bg-white rounded-2xl p-8 shadow-lg mb-16">
+            <div id="seo-deep" className="bg-white rounded-2xl p-8 shadow-lg mb-16">
               <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">SEO technický audit do hĺbky</h2>
               <div className="space-y-6">
                 <div className="bg-slate-50 rounded-lg p-6 border border-slate-200">
@@ -957,29 +1496,7 @@ export default function AuditRimi() {
               </div>
             </div>
 
-            <div className="bg-white rounded-2xl p-8 shadow-lg mb-16">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">
-                FAQ – návrh otázok
-              </h2>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-slate-50 rounded-lg p-6 border border-slate-200">
-                  <h3 className="font-semibold text-slate-900 mb-2">Je označenie viditeľné?</h3>
-                  <p className="text-slate-600">Voľným okom nie. Kód je čitateľný pri kontrole.</p>
-                </div>
-                <div className="bg-slate-50 rounded-lg p-6 border border-slate-200">
-                  <h3 className="font-semibold text-slate-900 mb-2">Ovplyvní to záruku?</h3>
-                  <p className="text-slate-600">Nie, postup je neinvazívny.</p>
-                </div>
-                <div className="bg-slate-50 rounded-lg p-6 border border-slate-200">
-                  <h3 className="font-semibold text-slate-900 mb-2">Ako prebieha registrácia?</h3>
-                  <p className="text-slate-600">Po montáži vám priradíme kód a pošleme potvrdenie e‑mailom.</p>
-                </div>
-                <div className="bg-slate-50 rounded-lg p-6 border border-slate-200">
-                  <h3 className="font-semibold text-slate-900 mb-2">Čo ak predám vozidlo?</h3>
-                  <p className="text-slate-600">V registri prevedieme vlastníctvo na nového majiteľa.</p>
-                </div>
-              </div>
-            </div>
+            
 
             <div className="bg-white rounded-2xl p-8 shadow-lg mb-16">
               <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">
@@ -1163,6 +1680,99 @@ export default function AuditRimi() {
             </div>
           </div>
         </div>
+          </div>
+        </details>
+
+        <details className="bg-white rounded-2xl shadow-lg mb-16">
+          <summary className="cursor-pointer select-none px-6 py-4 text-2xl font-bold text-slate-900">Executive brief a ROI model</summary>
+          <div className="px-6 pb-6">
+            <div className="bg-white rounded-2xl p-8 shadow-lg mb-8">
+              <h2 className="text-2xl font-bold text-slate-900 mb-4">Executive brief</h2>
+              <ul className="text-slate-700 list-disc pl-6 space-y-1">
+                <li>Quick wins: prepracovať hero a CTA, povoliť indexáciu, viditeľný výber riešenia (auto/bike).</li>
+                <li>Riziká: noindex, duplicita obsahu, chýbajúce dôkazy a social proof.</li>
+                <li>Náklady: nízka/stredná – copy, UI úpravy, schema a meranie.</li>
+                <li>Dopad: vyšší CTR na CTA, rast CR o 0.8–1.5 p.b., zlepšenie viditeľnosti v SERP.</li>
+              </ul>
+            </div>
+            <div className="bg-white rounded-2xl p-8 shadow-lg">
+              <h2 className="text-2xl font-bold text-slate-900 mb-4">ROI model</h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-slate-50 rounded-lg p-6 border border-slate-200">
+                  <h3 className="font-semibold text-slate-900 mb-2">Vstupné predpoklady</h3>
+                  <ul className="text-slate-700 list-disc pl-6 space-y-1">
+                    <li>Návštevnosť/mes.: 10 000</li>
+                    <li>Základná CR: 2.0 %</li>
+                    <li>Uplift z quick wins: +0.8 až +1.5 p.b.</li>
+                    <li>AOV: 120 €</li>
+                  </ul>
+                  <pre className="whitespace-pre-wrap font-mono text-sm text-slate-700 mt-3">Mesačný prínos ≈ návštevnosť × (CR_po – CR_pred) × AOV</pre>
+                </div>
+                <div className="bg-slate-50 rounded-lg p-6 border border-slate-200">
+                  <h3 className="font-semibold text-slate-900 mb-2">Scenáre</h3>
+                  <pre className="whitespace-pre-wrap font-mono text-sm text-slate-700">Best: 10 000 × (3.5% – 2.0%) × 120 € = 18 000 €
+Base: 10 000 × (2.8% – 2.0%) × 120 € = 9 600 €
+Worst: 10 000 × (2.5% – 2.0%) × 120 € = 6 000 €</pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <details className="bg-white rounded-2xl shadow-lg mb-16">
+          <summary className="cursor-pointer select-none px-6 py-4 text-2xl font-bold text-slate-900">Redirecty, hreflang a schema kit</summary>
+          <div className="px-6 pb-6">
+            <div className="bg-white rounded-2xl p-8 shadow-lg mb-8">
+              <h2 className="text-2xl font-bold text-slate-900 mb-4">Redirect mapa (CSV)</h2>
+              <pre className="whitespace-pre-wrap font-mono text-sm text-slate-700">from,to,type
+https://micro-code.eu/produkt-a,https://micro-code.sk/produkt-a,301
+https://micro-code.hu/rolunk,https://micro-code.sk/o-nas,301
+https://micro-code.eu/blog/stary,https://micro-code.sk/blog/novy,301</pre>
+            </div>
+            <div className="bg-white rounded-2xl p-8 shadow-lg mb-8">
+              <h2 className="text-2xl font-bold text-slate-900 mb-4">Canonical a hreflang</h2>
+              <pre className="whitespace-pre-wrap font-mono text-sm text-slate-700">{`<link rel="canonical" href="https://micro-code.sk/sk/" />
+<link rel="alternate" href="https://micro-code.sk/sk/" hrefLang="sk" />
+<link rel="alternate" href="https://micro-code.sk/hu/" hrefLang="hu" />
+<link rel="alternate" href="https://micro-code.sk/en/" hrefLang="en" />
+<link rel="alternate" href="https://micro-code.sk/" hrefLang="x-default" />`}</pre>
+            </div>
+            <div className="bg-white rounded-2xl p-8 shadow-lg">
+              <h2 className="text-2xl font-bold text-slate-900 mb-4">Schema (JSON‑LD)</h2>
+              <pre className="whitespace-pre-wrap font-mono text-sm text-slate-700">{`{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Bezpečnostné označenie vozidla",
+  "description": "Označenie dielov a register pre vozidlá.",
+  "brand": { "@type": "Brand", "name": "Micro‑Code" },
+  "offers": {
+    "@type": "Offer",
+    "price": "199",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/InStock"
+  }
+}
+
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Je označenie viditeľné?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Voľným okom nie." }
+    }
+  ]
+}
+
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Micro‑Code",
+  "url": "https://micro-code.sk",
+  "sameAs": ["https://facebook.com/...", "https://www.linkedin.com/company/..."]
+}`}</pre>
+            </div>
           </div>
         </details>
 

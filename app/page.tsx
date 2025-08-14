@@ -32,7 +32,7 @@ const FAQ = dynamic(() => import('@/components/FAQ'), {
 });
 
 export default function Home() {
-  return (
+return (
     <>
       <Hero />
       <AboutMe />
