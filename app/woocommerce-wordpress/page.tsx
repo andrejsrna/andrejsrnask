@@ -234,7 +234,7 @@ export default function WooCommercePage() {
 
               <div className="pt-4 flex flex-col sm:flex-row gap-3 items-start sm:items-center">
                 <Link
-                  href="/#contact"
+                  href="/#contact-form"
                   className="px-8 py-4 text-lg bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                 >
                   Nezáväzná konzultácia

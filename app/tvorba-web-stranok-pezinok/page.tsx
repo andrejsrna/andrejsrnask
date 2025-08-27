@@ -338,7 +338,7 @@ export default function TvorbaWebStranokPezinok() {
               </div>
             </div>
             <div className="mt-10">
-              <Link href="#contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-gray-900 text-white hover:bg-gray-800 transition-colors">Skontrolovať váš lokálny profil</Link>
+              <Link href="#contact-form" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-gray-900 text-white hover:bg-gray-800 transition-colors">Skontrolovať váš lokálny profil</Link>
             </div>
           </motion.div>
         </div>
@@ -352,7 +352,7 @@ export default function TvorbaWebStranokPezinok() {
         <div className="container mx-auto px-6 text-center">
           <div className="inline-flex flex-col sm:flex-row gap-3 items-center justify-center">
             <Link href="/tvorba-web-stranok-cennik" className="px-6 py-3 rounded-lg bg-gray-900 text-white hover:bg-gray-800 transition-colors">Pozrieť cenník</Link>
-            <Link href="#contact" className="px-6 py-3 rounded-lg border border-gray-200 text-gray-800 hover:bg-gray-50 transition-colors">Nezáväzná konzultácia</Link>
+            <Link href="#contact-form" className="px-6 py-3 rounded-lg border border-gray-200 text-gray-800 hover:bg-gray-50 transition-colors">Nezáväzná konzultácia</Link>
           </div>
         </div>
       </section>

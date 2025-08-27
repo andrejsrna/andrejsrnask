@@ -244,7 +244,7 @@ export default function Header() {
               transition={{ duration: 0.5, delay: menuItems.length * 0.1 }}
             >
               <Link
-                href="/#contact"
+                href="/#contact-form"
                 onClick={handleLinkClick}
                 className="ml-4 px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               >
@@ -340,7 +340,7 @@ export default function Header() {
                 ))}
                 <div>
                   <Link
-                    href="/#contact"
+                    href="/#contact-form"
                     onClick={handleLinkClick}
                     className="block px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 text-center"
                   >

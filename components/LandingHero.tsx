@@ -70,35 +70,40 @@ export function LandingHero() {
           </div>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6">
-            Tvorba web stránok{" "}
+            Moderné weby pre firmy v{" "}
             <span className="relative">
               <span className="relative z-10 bg-gradient-to-r from-blue-400 to-red-400 text-transparent bg-clip-text">
-                Pezinok
+                Pezinku a okolí
               </span>
               <span className="absolute -bottom-2 left-0 w-full h-3 bg-blue-500/20 -rotate-1" />
             </span>
           </h1>
 
           <p className="text-lg md:text-xl text-blue-100 mb-8 leading-relaxed">
-            Vytváram moderné a responzívne webové stránky, ktoré{" "}
-            <span className="font-semibold text-blue-300">zvýšia vašu online prezentáciu</span>{" "}
-            a pomôžu vám získať viac zákazníkov.
+            Navrhujem a optimalizujem weby, ktoré nielen dobre vyzerajú, ale aj{" "}
+            <span className="font-semibold text-blue-300">prinášajú zákazníkov</span>.{" "}
+            Každému projektu sa venujem osobne a naplno.
           </p>
 
           {/* CTA Buttons */}
           <motion.div
             variants={landingButtonVariants}
-            className="flex flex-col sm:flex-row gap-4"
+            className="space-y-6"
           >
-            <Button asChild size="lg" className="bg-gradient-to-r from-blue-600 to-red-600 hover:from-blue-700 hover:to-red-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] text-lg">
-              <a href="#contact" className="flex items-center gap-2">
-                Nezáväzná konzultácia
-                <ArrowRight className="w-5 h-5" />
-              </a>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="border-2 border-blue-700/30 text-blue-900 hover:bg-blue-900/50 hover:text-white transition-all duration-300 text-lg backdrop-blur-sm">
-              <a href="/tvorba-web-stranok-cennik">Pozrieť cenník</a>
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button asChild size="lg" className="bg-gradient-to-r from-blue-600 to-red-600 hover:from-blue-700 hover:to-red-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] text-lg">
+                <a href="#contact-form" className="flex items-center gap-2">
+                  Poďme prebrať váš projekt
+                  <ArrowRight className="w-5 h-5" />
+                </a>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="border-2 border-blue-700/30 text-white hover:bg-blue-900/50 hover:text-white transition-all duration-300 text-lg backdrop-blur-sm">
+                <a href="/tvorba-web-stranok-cennik">Pozrieť cenník</a>
+              </Button>
+            </div>
+            <p className="text-base text-blue-100 text-center sm:text-left font-medium leading-relaxed">
+              Spoločne nájdeme cestu k lepšiemu webu.
+            </p>
           </motion.div>
 
           {/* Trust Indicators */}

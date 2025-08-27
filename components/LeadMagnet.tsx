@@ -18,12 +18,15 @@ export default function LeadMagnet() {
               <ArrowRight className="w-5 h-5" />
             </a>
             <a
-              href="#contact"
+              href="#contact-form"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-gray-200 text-gray-800 rounded-lg font-medium hover:bg-gray-50 transition-all duration-300"
             >
               Nezáväzná konzultácia
             </a>
           </div>
+          <p className="text-sm text-gray-500 mt-3">
+            Stačí 2 minúty, odpoviem do 24 hodín.
+          </p>
         </div>
       </div>
     </section>

@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { useState, Suspense } from "react";
 import { motion, Variants } from "framer-motion";
-import { ArrowRight, Code, Palette, Zap } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const heroVariants: Variants = {
   hidden: { opacity: 0, y: -50 },
@@ -29,25 +29,9 @@ const buttonVariants: Variants = {
   }
 };
 
-const stats = [
-  {
-    icon: Code,
-    number: "10+",
-    label: "Rokov skúseností"
-  },
-  {
-    icon: Palette,
-    number: "50+",
-    label: "Projektov"
-  },
-  {
-    icon: Zap,
-    number: "100%",
-    label: "Dedikácia"
-  }
-];
 
-const HERO_DESCRIPTION = "Osobné portfólio a konzultácie v oblastiach webu, performance a SEO. Spolupráce po dohode, mimo pracovného času.";
+
+
 
 export function Hero() {
   const [clickCount, setClickCount] = useState(0);
@@ -72,10 +56,10 @@ export function Hero() {
   const handleClick = () => {
     setClickCount(prev => prev + 1);
     
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
+    const contactFormSection = document.getElementById('contact-form');
+    if (contactFormSection) {
       const headerOffset = 64;
-      const elementPosition = contactSection.getBoundingClientRect().top;
+      const elementPosition = contactFormSection.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
       window.scrollTo({
@@ -115,55 +99,58 @@ export function Hero() {
 
               {/* Main Heading */}
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white">
-                Tvorím rýchle weby a e‑shopy, ktoré prinášajú{" "}
+                Weby a marketing, ktoré prinášajú{" "}
                 <span className="relative">
                   <span className="relative z-10 bg-gradient-to-r from-red-400 to-purple-400 text-transparent bg-clip-text">
-                    zákazníkov
+                    výsledky
                   </span>
                   <span className="absolute -bottom-2 left-0 w-full h-3 bg-red-500/20 -rotate-1" />
                 </span>
               </h1>
 
               {/* Description */}
-              <p className="text-lg md:text-xl text-blue-100 leading-relaxed max-w-2xl" suppressHydrationWarning>
-                {HERO_DESCRIPTION.split('.').map((sentence, i) => (
-                  <span key={i} className="inline-block">
-                    {sentence.trim()}{i < HERO_DESCRIPTION.split('.').length - 1 ? '. ' : ''}
-                  </span>
-                ))}
+              <p className="text-lg md:text-xl text-blue-100 leading-relaxed max-w-2xl">
+                Pomáham firmám a značkám rásť online – od rýchlych webov až po SEO a výkonnostný marketing. Spolupracujem selektívne, aby mal každý projekt moju plnú pozornosť.
               </p>
 
               {/* CTA Button */}
               <motion.div
                 variants={buttonVariants}
-                className="pt-4"
+                className="pt-6"
               >
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex flex-col sm:flex-row gap-6 items-start">
                   {/* Primary CTA - Contact */}
-                  <div className="relative">
+                  <div className="relative flex-1">
                     <button
                       onClick={handleClick}
-                      className="inline-flex items-center justify-center gap-2 px-8 py-4 text-lg bg-gradient-to-r from-red-600 to-purple-600 hover:from-red-700 hover:to-purple-700 text-white rounded-full transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-xl"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 text-lg bg-gradient-to-r from-red-600 to-purple-600 hover:from-red-700 hover:to-purple-700 text-white rounded-full transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-xl"
                     >
-                      Nezáväzná konzultácia
+                      Získajte mini audit zdarma
                       <ArrowRight className="w-5 h-5" />
                     </button>
+                    <p className="text-base text-blue-100 mt-3 text-center sm:text-left font-medium leading-relaxed">
+                      Zistíte, kde váš web stráca zákazníkov.
+                    </p>
                     {clickCount >= 3 && (
                       <motion.p 
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="absolute -bottom-8 left-1/2 -translate-x-1/2 text-sm text-blue-300 font-semibold whitespace-nowrap"
+                        className="absolute -bottom-12 left-1/2 sm:left-0 -translate-x-1/2 sm:translate-x-0 text-sm text-blue-300 font-semibold whitespace-nowrap"
                       >
                         {getCurrentMessage()}
                       </motion.p>
                     )}
                   </div>
-                  <a
-                    href="#references"
-                    className="inline-flex items-center justify-center gap-2 px-8 py-4 text-lg border border-white/20 text-white rounded-full transition-all duration-300 hover:bg-white/10"
-                  >
-                    Pozrieť projekty
-                  </a>
+                  
+                  {/* Secondary CTA */}
+                  <div className="flex-1">
+                    <a
+                      href="#references"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 text-lg border border-white/20 text-white rounded-full transition-all duration-300 hover:bg-white/10"
+                    >
+                      Pozrieť projekty
+                    </a>
+                  </div>
                 </div>
               </motion.div>
             </div>
@@ -199,27 +186,7 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.7 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-2xl mx-auto mt-16"
-        >
-          {stats.map((stat, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
-              className="text-center p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-300"
-            >
-              <stat.icon className="w-8 h-8 text-red-400 mx-auto mb-3" />
-              <div className="text-2xl font-bold text-white">{stat.number}</div>
-              <div className="text-sm text-blue-200">{stat.label}</div>
-            </motion.div>
-          ))}
-        </motion.div>
+
       </motion.div>
 
       {/* Bottom Wave */}

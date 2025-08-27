@@ -2,6 +2,7 @@
 
 import { FaGithub, FaTwitter, FaYoutube, FaInstagram, FaTiktok } from "react-icons/fa";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const footerVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -101,9 +102,20 @@ export function Footer() {
             className="text-center"
           >
             <div className="h-px w-32 mx-auto bg-gradient-to-r from-transparent via-gray-600 to-transparent mb-6"></div>
-            <p className="text-sm text-gray-500">
-              &copy; {new Date().getFullYear()} Andrej Srna. Všetky práva vyhradené.
-            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm text-gray-500">
+              <p>
+                &copy; {new Date().getFullYear()} Andrej Srna. Všetky práva vyhradené.
+              </p>
+              <div className="flex items-center gap-4">
+                <span>•</span>
+                <Link 
+                  href="/ochrana-osobnych-udajov"
+                  className="hover:text-gray-300 transition-colors duration-300 underline"
+                >
+                  Ochrana osobných údajov
+                </Link>
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>

@@ -54,63 +54,48 @@ const cardVariants = {
   }
 };
 
-const referencesData = [
+const caseStudiesData = [
   {
-    title: "Web Trnavského samosprávneho raja",
-    description: "Komplexný redesign webovej stránky pre Trnavský samosprávny kraj, vytvorenie moderného, responzívneho rozhrania so zameraním na používateľskú prívetivosť a prístupnosť informácií.",
+    title: "Komplexný web pre úrad Trnavského samosprávneho kraja",
+    problem: "potrebovali modernizovať zastaraný portál a zlepšiť komunikáciu s občanmi",
+    solution: "komplexný redesign, mobilná optimalizácia, zlepšená navigácia",
+    result: "moderný responzívny portál, lepšia dostupnosť informácií pre občanov",
     imageUrl: "/ttsk.jpg",
     websiteUrl: "https://www.trnava-vuc.sk",
-    imagePosition: "right",
-    technologies: ["WordPress", "PHP", "Tailwind CSS", "Responsive Design", "SEO", "Google Analytics", "User Permissions", "UX/UI Design", "UX Research", "UX Testing", "CMS", "API", "REST", "Nginx", "MySQL", "jQuery", "AJAX", "Facebook API"],
+    technologies: ["WordPress", "PHP", "Tailwind CSS", "SEO", "UX Design"],
     anonymize: true,
-    anonymizedTitle: "Verejný sektor: portál kraja",
-    anonymizedDescription: "Redesign verejného portálu so zameraním na prístupnosť, prehľadnú navigáciu a výkon."
+    anonymizedTitle: "Portál regionálnej samosprávy",
+    anonymizedProblem: "zastaraný dizajn, neprehľadná štruktúra informácií",
+    anonymizedSolution: "moderný responzívny dizajn, optimalizovaná navigácia",
+    anonymizedResult: "lepšia dostupnosť informácií pre občanov, moderný vzhľad"
   },
   {
     title: "Správa majetku mesta Trnava",
-    description: "Vývoj komplexnej webovej aplikácie pre správu mestského majetku, implementácia pokročilých nástrojov pre efektívnu správu nehnuteľností.",
+    problem: "lepšia dostupnosť dôležitých informácií pre občanov a menej otravovania zamestnancov",
+    solution: "intuitívne rozhranie, samoobslužné funkcie, prehľadná dokumentácia",
+    result: "efektívnejšia komunikácia, menej administratívnej záťaže pre zamestnancov",
     imageUrl: "/smmt.jpg",
     websiteUrl: "https://smmt.trnava.sk/",
-    imagePosition: "left",
-    technologies: ["WordPress", "PHP", "CSS", "jQuery", "AJAX", "MySQL", "API", "REST", "Nginx", "Tailwind CSS", "Facebook API", "CMS", "SEO", "Google Analytics", "User Permissions", "Responsive Design", "UX/UI Design", "UX Research", "UX Testing"],
+    technologies: ["WordPress", "PHP", "UX Research", "API", "Responsive Design"],
     anonymize: true,
-    anonymizedTitle: "Mestský interný systém",
-    anonymizedDescription: "Webová aplikácia pre správu majetku so zameraním na prehľadnosť, stabilitu a práva používateľov."
+    anonymizedTitle: "Systém správy mestského majetku",
+    anonymizedProblem: "neefektívne procesy, častý kontakt občanov so zamestnancami",
+    anonymizedSolution: "samoobslužné riešenia, jasná dokumentácia, intuitive UX",
+    anonymizedResult: "menej administratívnej záťaže, spokojnejší občania aj zamestnanci"
   },
   {
-    title: "Zdravá župa",
-    description: "Vývoj komplexnej webovej aplikácie pre Zdravú župu, implementácia pokročilých nástrojov pre efektívnu správu informácií o zdravotníckych službách.",
+    title: "Rýchla, SEO optimalizovaná stránka pre zdravotnícke centrum pod správou TTSK",
+    problem: "5+ ambulancií potrebovalo jednotný online systém s notifikáciami",
+    solution: "výkonná platforma so systémom notifikácií, pokročilé SEO",
+    result: "zjednotený portál pre všetky ambulancie",
     imageUrl: "/zz.jpg",
     websiteUrl: "https://www.zdravazupa.sk/",
-    imagePosition: "right",
-    technologies: ["React", "Tailwind", "Shadcn", "Next.js", "TypeScript", "API", "REST", "NextAuth", "PostgreSQL", "Docker", "Router", "Git", "GitHub", "Prisma", "Responsive Design", "SEO", "Cursor", "React Lightbox", "Confluence", "Jira"],
+    technologies: ["React", "Next.js", "TypeScript", "SEO", "Notifikácie"],
     anonymize: true,
-    anonymizedTitle: "Zdravotnícky portál",
-    anonymizedDescription: "Portál so sieťou poskytovateľov a vyhľadávaním, nasadenie s dôrazom na výkon a dostupnosť."
-  },
-  {
-    title: "AllSoftCorp",
-    description: "Vývoj moderného korporátneho webu pre softvérovú spoločnosť s dôrazom na profesionálny vzhľad a používateľský zážitok, implementácia pokročilých UX/UI princípov.",
-    imageUrl: "/allsoftcorp.jpeg",
-    websiteUrl: "https://allsoftcorp.com",
-    imagePosition: "right",
-    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "UX/UI Design", "UX Research", "UX Testing", "Responsive Design", "SEO", "Git", "GitHub", "Router", "API", "REST", "Performance Optimization"]
-  },
-  {
-    title: "Grilované prasiatko",
-    description: "Kompletná prerábka klientovej prezentačnej stránky do moderného responzívneho dizajnu pomocou no-code Oxygen Builder, zachovanie všetkých dôležitých informácií s vylepšeným používateľským zážitkom.",
-    imageUrl: "/grilovaneprasiatko.jpeg",
-    websiteUrl: "https://grilovaneprasiatko.com",
-    imagePosition: "left",
-    technologies: ["WordPress", "Oxygen Builder", "Tailwind CSS", "No-Code", "Responsive Design", "SEO", "CMS", "MySQL", "UX/UI Design"]
-  },
-  {
-    title: "WordPress to CloudFlare R2 Media Offload",
-    description: "Vývoj open-source WordPress pluginu pre automatické presúvanie médií do CloudFlare R2 úložiska, implementácia S3-kompatibilného API s pokročilými funkciami pre správu médií.",
-    imageUrl: "/r2-media-offload.jpeg",
-    websiteUrl: "https://github.com/andrejsrna/WordPress-to-CloudFlare-R2-Media-Offload",
-    imagePosition: "right",
-    technologies: ["PHP", "WordPress Plugin", "CloudFlare R2", "S3 API", "AWS SDK", "MySQL", "Git", "GitHub", "Object Storage", "Media Management", "API", "REST", "Performance Optimization", "Open Source", "MIT License"]
+    anonymizedTitle: "Zdravotnícka platforma s 5+ ambulanciami",
+    anonymizedProblem: "roztrieštenosť služieb, chýbajúce online notifikácie",
+    anonymizedSolution: "centralizovaná platforma, notifikačný systém",
+    anonymizedResult: "zjednotený systém, automatické notifikácie, lepšia SEO viditeľnosť"
   }
 ];
 
@@ -131,21 +116,21 @@ export function References() {
         <div className="max-w-4xl mx-auto text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">
             <span className="bg-gradient-to-r from-red-500 to-blue-600 text-transparent bg-clip-text">
-              Vybrané projekty
+              Case Studies
             </span>
           </h2>
           <p className="text-xl text-gray-600">
-            Výsledky a úlohy, na ktorých som sa podieľal. Citlivé údaje sú zjednodušené.
+            Konkrétne problémy, riešenia a výsledky z reálnych projektov. Citlivé údaje sú anonymizované.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {referencesData.map((reference) => {
-            const technologies = reference.technologies.map(categorizeTechnology);
+          {caseStudiesData.map((caseStudy) => {
+            const technologies = caseStudy.technologies.map(categorizeTechnology);
             
             return (
               <motion.div
-                key={reference.title}
+                key={caseStudy.title}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
@@ -167,8 +152,8 @@ export function References() {
                     {/* Image Container */}
                     <div className="relative aspect-[16/9] overflow-hidden bg-gray-50">
                         <Image 
-                          src={reference.imageUrl}
-                          alt={reference.anonymize ? (reference.anonymizedTitle || reference.title) : reference.title}
+                          src={caseStudy.imageUrl}
+                          alt={caseStudy.anonymize ? (caseStudy.anonymizedTitle || caseStudy.title) : caseStudy.title}
                         fill
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -179,15 +164,42 @@ export function References() {
                     {/* Content Section */}
                     <div className="p-6 flex flex-col flex-grow">
                       <div className="mb-6">
-                        <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                          {reference.anonymize ? (reference.anonymizedTitle || reference.title) : reference.title}
+                        <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                          {caseStudy.anonymize ? (caseStudy.anonymizedTitle || caseStudy.title) : caseStudy.title}
                         </h3>
-                        <p className="text-gray-500 text-sm leading-relaxed">
-                          {reference.anonymize ? (reference.anonymizedDescription || reference.description) : reference.description}
-                        </p>
-                         <div className="mt-4 text-sm text-gray-600">
-                           <span className="font-medium text-gray-800">Moja úloha:</span> návrh riešenia, performance, technická SEO
-                         </div>
+                        
+                        {/* Problem */}
+                        <div className="mb-3">
+                          <div className="flex items-center gap-2 mb-1">
+                            <div className="w-2 h-2 rounded-full bg-red-500"></div>
+                            <span className="text-xs font-semibold text-red-600 uppercase tracking-wide">Problém</span>
+                          </div>
+                          <p className="text-gray-700 text-sm leading-relaxed">
+                            {caseStudy.anonymize ? (caseStudy.anonymizedProblem || caseStudy.problem) : caseStudy.problem}
+                          </p>
+                        </div>
+
+                        {/* Solution */}
+                        <div className="mb-3">
+                          <div className="flex items-center gap-2 mb-1">
+                            <div className="w-2 h-2 rounded-full bg-blue-500"></div>
+                            <span className="text-xs font-semibold text-blue-600 uppercase tracking-wide">Riešenie</span>
+                          </div>
+                          <p className="text-gray-700 text-sm leading-relaxed">
+                            {caseStudy.anonymize ? (caseStudy.anonymizedSolution || caseStudy.solution) : caseStudy.solution}
+                          </p>
+                        </div>
+
+                        {/* Result */}
+                        <div className="mb-4">
+                          <div className="flex items-center gap-2 mb-1">
+                            <div className="w-2 h-2 rounded-full bg-green-500"></div>
+                            <span className="text-xs font-semibold text-green-600 uppercase tracking-wide">Výsledok</span>
+                          </div>
+                          <p className="text-gray-900 text-sm font-semibold leading-relaxed">
+                            {caseStudy.anonymize ? (caseStudy.anonymizedResult || caseStudy.result) : caseStudy.result}
+                          </p>
+                        </div>
                       </div>
 
                       <div className="mt-auto">
@@ -196,9 +208,9 @@ export function References() {
                           <span className="text-sm font-medium text-gray-900">Použité technológie</span>
                         </div>
                         
-                        <div className="flex flex-wrap gap-1.5 mb-6">
+                        <div className="flex flex-wrap gap-1.5 mb-4">
                           <AnimatePresence>
-                            {technologies.map((tech, i) => (
+                            {technologies.slice(0, 4).map((tech, i) => (
                               <motion.span 
                                 key={tech.name}
                                 initial={{ opacity: 0, scale: 0.9 }}
@@ -213,18 +225,24 @@ export function References() {
                                 {tech.name}
                               </motion.span>
                             ))}
+                            {technologies.length > 4 && (
+                              <span className="px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-600 border border-gray-200">
+                                +{technologies.length - 4}
+                              </span>
+                            )}
                           </AnimatePresence>
                         </div>
 
-                        {reference.websiteUrl && (
+                        {caseStudy.websiteUrl && (
                           <Button 
                             variant="outline"
+                            size="sm"
                             className="w-full bg-white hover:bg-gray-50 border-gray-200 text-gray-600 transition-all duration-200 group/button"
-                            onClick={() => window.open(reference.websiteUrl, '_blank')}
+                            onClick={() => window.open(caseStudy.websiteUrl, '_blank')}
                           >
                             <span className="flex items-center justify-center gap-2">
                               Navštíviť stránku
-                              <ExternalLink className="w-4 h-4 transition-transform duration-200 group-hover/button:translate-x-0.5" />
+                              <ExternalLink className="w-3 h-3 transition-transform duration-200 group-hover/button:translate-x-0.5" />
                             </span>
                           </Button>
                         )}

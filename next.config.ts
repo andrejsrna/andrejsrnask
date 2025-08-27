@@ -3,6 +3,9 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   output: 'standalone',
   reactStrictMode: true,
+  env: {
+    NEXT_PUBLIC_CF_TURNSTILE_SITE_KEY: process.env.CF_TURNSTILE_SITE_KEY,
+  },
   images: {
     unoptimized: false,
     domains: ['admin.andrejsrna.sk'],

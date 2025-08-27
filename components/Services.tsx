@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Zap, Code, Rocket } from "lucide-react";
+import { Zap, Code, Rocket, Search } from "lucide-react";
 import { motion } from "framer-motion";
 
 const serviceVariants = {
@@ -21,24 +21,31 @@ const serviceVariants = {
 const servicesData = [
   {
     icon: Zap,
-    title: "Weby a aplikácie, ktoré šetria čas aj náklady",
-    description: "Audit rýchlosti a UX, návrh riešení a prioritizácia. Dôraz na Core Web Vitals, stabilitu a konverzie.",
+    title: "Tvorba webstránok – rýchle, moderné, responzívne",
+    description: "Google aj ľudia ich budú milovať",
     color: "text-blue-500",
     gradient: "from-blue-50/50 to-white"
   },
   {
     icon: Code,
-    title: "WordPress na mieru bez limitov",
-    description: "Technické konzultácie, performance, bezpečnosť a integrácie. Odporúčania pre tému/pluginy a roadmapu zlepšení.",
+    title: "SEO optimalizácia – viac zákazníkov z vyhľadávania",
+    description: "bez platených reklám",
     color: "text-emerald-500",
     gradient: "from-emerald-50/50 to-white"
   },
   {
     icon: Rocket,
-    title: "Zrýchlenie webu a rast organiky",
-    description: "Technická SEO, CWV, štruktúrované dáta a interné prelinkovanie. Zameranie na merateľné výsledky.",
+    title: "Výkonnostný marketing – Google Ads, Meta Ads",
+    description: "trackovanie výsledkov, nie len kliky",
     color: "text-purple-500",
     gradient: "from-purple-50/50 to-white"
+  },
+  {
+    icon: Search,
+    title: "Mini audit zdarma – konkrétne tipy, čo vylepšiť",
+    description: "ešte pred spoluprácou",
+    color: "text-orange-500",
+    gradient: "from-orange-50/50 to-white"
   }
 ];
 
@@ -60,7 +67,7 @@ export function Services() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {servicesData.map((service, index) => (
             <motion.div
               key={service.title}

@@ -293,6 +293,19 @@ export default function Pricing() {
           </motion.div>
         </div>
 
+        {/* CTA Description */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          viewport={{ once: true }}
+          className="text-center mt-8"
+        >
+          <p className="text-sm text-gray-400">
+            Žiadny záväzok, iba nápady pre váš web.
+          </p>
+        </motion.div>
+
         {/* Additional Services */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

@@ -99,7 +99,7 @@ export default function FacebookAd() {
             viewport={{ once: true }}
           >
             <Button asChild size="lg" className="bg-white hover:bg-gray-100 text-blue-600 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] text-lg">
-              <Link href="/#contact" className="flex items-center gap-2">
+              <Link href="/#contact-form" className="flex items-center gap-2">
                 Mám záujem
                 <ArrowRight className="w-5 h-5" />
               </Link>

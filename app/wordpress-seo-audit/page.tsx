@@ -220,7 +220,7 @@ export default function WordpressSeoAuditPage() {
 
               <div className="pt-4">
                 <Link
-                  href="/#contact"
+                  href="/#contact-form"
                   className="inline-block px-8 py-4 text-lg bg-gradient-to-r from-sky-600 to-green-600 hover:from-sky-700 hover:to-green-700 text-white rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                 >
                   Objednať SEO Audit
