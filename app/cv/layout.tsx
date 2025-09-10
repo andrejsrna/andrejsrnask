@@ -1,20 +1,25 @@
-import type { Metadata } from 'next';
+'use client';
 
-export const metadata: Metadata = {
-  title: 'Andrej Srna - CV',
-  description: 'Full Stack Developer | Web Development & Optimization Specialist | SEO & System Administration',
-};
+import { useEffect } from 'react';
 
 export default function CVLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  useEffect(() => {
+    // Add class to body to identify CV page
+    document.body.classList.add('cv-page');
+    
+    // Cleanup on unmount
+    return () => {
+      document.body.classList.remove('cv-page');
+    };
+  }, []);
+
   return (
-    <html lang="en">
-      <body className="bg-white m-0 p-0">
-        {children}
-      </body>
-    </html>
+    <div>
+      {children}
+    </div>
   );
 }

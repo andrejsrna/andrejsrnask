@@ -92,13 +92,10 @@ export function LandingHero() {
           >
             <div className="flex flex-col sm:flex-row gap-4">
               <Button asChild size="lg" className="bg-gradient-to-r from-blue-600 to-red-600 hover:from-blue-700 hover:to-red-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] text-lg">
-                <a href="#contact-form" className="flex items-center gap-2">
+                <a href="#contact" className="flex items-center gap-2">
                   Poďme prebrať váš projekt
                   <ArrowRight className="w-5 h-5" />
                 </a>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="border-2 border-blue-700/30 text-white hover:bg-blue-900/50 hover:text-white transition-all duration-300 text-lg backdrop-blur-sm">
-                <a href="/tvorba-web-stranok-cennik">Pozrieť cenník</a>
               </Button>
             </div>
             <p className="text-base text-blue-100 text-center sm:text-left font-medium leading-relaxed">

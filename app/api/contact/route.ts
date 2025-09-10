@@ -47,8 +47,7 @@ export async function POST(request: NextRequest) {
 
     // Konfigurácia Brevo API
     const apiInstance = new brevo.TransactionalEmailsApi();
-    const apiKey = apiInstance.authentications['apiKey'];
-    apiKey.apiKey = process.env.BREVO_API_KEY;
+    apiInstance.setApiKey(brevo.TransactionalEmailsApiApiKeys.apiKey, process.env.BREVO_API_KEY!);
 
     if (!process.env.BREVO_API_KEY) {
       console.error('BREVO_API_KEY nie je nastavené');

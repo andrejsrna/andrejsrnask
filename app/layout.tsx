@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import CustomCursor from '@/components/CustomCursor';
-import ScrollProgress from '@/components/ScrollProgress';
 
 // Dynamically import heavy components
 const Header = dynamic(() => import('@/components/Header'), {
@@ -48,13 +47,14 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
-        <ScrollProgress />
         <CustomCursor />
         <Header />
         <main className="mt-16">
           {children}
         </main>
-        <Footer />
+        <div className="footer-wrapper">
+          <Footer />
+        </div>
       </body>
     </html>
   );

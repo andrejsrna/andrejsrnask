@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import DownloadAuditButton from "@/components/DownloadAuditButton";
+import PrintAuditButton from "@/components/PrintAuditButton";
 import Contact from "@/components/Contact";
 import Image from "next/image";
 import type { Metadata } from "next";
@@ -450,6 +451,134 @@ Match your website's styling and colors. Show your customer a beautiful branded 
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
             Nezávislý audit webu, SEO, UX a komunikácie s prioritizovanými odporúčaniami.
           </p>
+        </div>
+
+        <div className="bg-white rounded-2xl p-8 shadow-lg mb-16">
+          <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">
+            Jedna suma a čas (minulosť) – kompletná dnešná podoba
+          </h2>
+          
+          <div className="text-center mb-8">
+            <div className="inline-block text-slate-900 px-8 py-4 rounded-lg">
+              <p className="text-2xl font-bold">Celkom: 5 900 €</p>
+              <p className="text-lg">Dodanie: 5 týždňov</p>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-8">
+            <div>
+              <h3 className="text-xl font-semibold text-slate-900 mb-4">Čo je v cene zahrnuté</h3>
+              <ul className="space-y-2 text-slate-600">
+                <li>• Web (prezentačná časť micro-code)</li>
+                <li>• E-shop (produktové stránky, košík, objednávkový tok, e-maily)</li>
+                <li>• Register (vstupy: Overiť kód / Nahlásiť nález / Nahlásiť krádež; základné stavy)</li>
+                <li>• Globálny prieskum trhu (desk research, benchmarking konkurencie, základný pricing komparatív)</li>
+                <li>• Názov a doména (naming, registrácia, DNS)</li>
+                <li>• Logo + základné brand prvky</li>
+                <li>• Texty a návody (copywriting &ldquo;manažérska&rdquo; úroveň, SK/EN)</li>
+                <li>• Obrázky (produkty/ilustrácie – tvorba/úpravy)</li>
+                <li>• Video (2× krátke promo, 15–30 s)</li>
+                <li>• Balenie (návrh + print-ready podklady)</li>
+                <li>• Listy pre poisťovne, predajcov a policajné zložky (šablóny, SK/EN)</li>
+                <li>• Projektový manažment a QA</li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3 className="text-xl font-semibold text-slate-900 mb-4">Prehľad orientačných položiek</h3>
+              <div className="space-y-3">
+                <div className="flex justify-between items-center py-2 border-b border-slate-200">
+                  <span className="text-slate-600">Web + e-shop + register:</span>
+                  <span className="font-semibold">2 500 €</span>
+                </div>
+                <div className="flex justify-between items-center py-2 border-b border-slate-200">
+                  <span className="text-slate-600">Globálny prieskum trhu:</span>
+                  <span className="font-semibold">500 €</span>
+                </div>
+                <div className="flex justify-between items-center py-2 border-b border-slate-200">
+                  <span className="text-slate-600">Názov + doména:</span>
+                  <span className="font-semibold">100 €</span>
+                </div>
+                <div className="flex justify-between items-center py-2 border-b border-slate-200">
+                  <span className="text-slate-600">Logo + základné brand prvky:</span>
+                  <span className="font-semibold">500 €</span>
+                </div>
+                <div className="flex justify-between items-center py-2 border-b border-slate-200">
+                  <span className="text-slate-600">Texty/návody (SK/EN):</span>
+                  <span className="font-semibold">600 €</span>
+                </div>
+                <div className="flex justify-between items-center py-2 border-b border-slate-200">
+                  <span className="text-slate-600">Obrázky – tvorba/úpravy:</span>
+                  <span className="font-semibold">250 €</span>
+                </div>
+                <div className="flex justify-between items-center py-2 border-b border-slate-200">
+                  <span className="text-slate-600">Video (2× 15–30 s):</span>
+                  <span className="font-semibold">500 €</span>
+                </div>
+                <div className="flex justify-between items-center py-2 border-b border-slate-200">
+                  <span className="text-slate-600">Balenie – návrh + print-ready:</span>
+                  <span className="font-semibold">500 €</span>
+                </div>
+                <div className="flex justify-between items-center py-2 border-b border-slate-200">
+                  <span className="text-slate-600">Listy (poisťovne/predajcovia/policajné zložky):</span>
+                  <span className="font-semibold">250 €</span>
+                </div>
+                <div className="flex justify-between items-center py-2 border-b border-slate-200">
+                  <span className="text-slate-600">Projektový manažment a QA:</span>
+                  <span className="font-semibold">200 €</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-slate-50 rounded-lg p-4 border border-slate-200 mb-8">
+            <h4 className="font-semibold text-slate-900 mb-2">Nezahŕňa:</h4>
+            <p className="text-slate-600">Externé náklady (tlač balení, platené fotobanky/licencie, preklady nad rámec SK/EN, štátne/registračné poplatky).</p>
+          </div>
+
+          <h3 className="text-2xl font-bold text-slate-900 mb-6 text-center print:break-before-page print:break-after-avoid">Varianty spolupráce (teraz)</h3>
+          
+          <div className="space-y-6">
+            <div className="border border-slate-200 rounded-lg p-6">
+              <h4 className="text-xl font-semibold text-slate-900 mb-3">Fáza 1 – Užívateľská &ldquo;kozmetika&rdquo; (rýchly efekt)</h4>
+              <p className="text-slate-600 mb-3"><strong>Cieľ:</strong> prehľadnejší web a jasné CTA bez zásahov do systému (aby bol viditeľný rozdiel &ldquo;na oči&rdquo;).</p>
+              <p className="text-slate-600 mb-3"><strong>Rozsah:</strong> hero + CTA, navigácia a hierarchia, &ldquo;produkt ako landing page&rdquo;, zviditeľnenie Register / Overiť / Nahlásiť, mikrokópia, základné CSS kontrasty.</p>
+              <div className="flex justify-between items-center">
+                <span className="text-slate-600">Dodanie: 3–5 pracovných dní</span>
+                <span className="text-2xl font-bold text-slate-900">450 €</span>
+              </div>
+              <p className="text-slate-500 text-sm mt-2">Pozn.: 100 % kreditu z Fázy 1 sa započíta do Fázy 2.</p>
+              <p className="text-slate-500 text-sm">(Voliteľné) Klikateľný náhľad layoutu do 24 h: 190 €.</p>
+            </div>
+
+            <div className="border border-slate-200 rounded-lg p-6">
+              <h4 className="text-xl font-semibold text-slate-900 mb-3">Fáza 2 – Technická/odborná úprava</h4>
+              <p className="text-slate-600 mb-3"><strong>Cieľ:</strong> výkon, bezpečnosť, legislatíva, meranie; dotiahnutie e-shopu a registra.</p>
+              <p className="text-slate-600 mb-3"><strong>Rozsah:</strong> cookies/GDPR + anti-spam, bezpečnostné hlavičky, výkon/SEO základy, GTM/GA (resp. PostHog), objednávkový tok (validácie, e-maily), stavy a toky registra.</p>
+              <div className="flex justify-between items-center">
+                <span className="text-slate-600">Dodanie: 2–3 týždne</span>
+                <span className="text-2xl font-bold text-slate-900">1 200 – 1 800 €</span>
+              </div>
+              <p className="text-slate-500 text-sm mt-2">(podľa finálneho rozsahu; mínus kredit z Fázy 1)</p>
+            </div>
+
+            <div className="border border-slate-200 rounded-lg p-6">
+              <h4 className="text-xl font-semibold text-slate-900 mb-3">MC Global Blueprint – podklad pre globálneho partnera</h4>
+              <p className="text-slate-600 mb-3"><strong>Cieľ:</strong> prototyp a architektúra pre škálovanie (shop → ERP/účtovníctvo → logistika → AI podpora → call routing).</p>
+              <p className="text-slate-600 mb-3"><strong>Výstup:</strong> klikateľný prototyp kľúčových stránok, systémová architektúra, shortlist 3–5 firiem + RFP balík (rozsah, KPI), odhady rozpočtov a roadmapa (pilot → škálovanie), variant spolupráce fix + revenue-share.</p>
+              <div className="flex justify-between items-center">
+                <span className="text-slate-600">Dodanie: 10 pracovných dní</span>
+                <span className="text-2xl font-bold text-slate-900">1 200 €</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-blue-50 rounded-lg p-6 border border-blue-200 mt-8 print:break-before-page">
+            <h4 className="text-xl font-semibold text-slate-900 mb-3">Ako ďalej</h4>
+            <p className="text-slate-600 mb-3"><strong>Vybrať variant:</strong> Fáza 1 (rýchly vizuálny efekt) / MC Global Blueprint (globálny plán) / A → B (kombinácia).</p>
+            <p className="text-slate-600 mb-3"><strong>Fakturácia a prístupy:</strong> po potvrdení pošleme faktúru a založíme staging (WP/FTP/SFTP).</p>
+            <p className="text-slate-600"><strong>Kontrolný checkpoint:</strong> odovzdanie, pripomienky, nasadenie / handover.</p>
+          </div>
         </div>
 
         <details id="seo-audit" className="bg-white rounded-2xl shadow-lg mb-16">
@@ -1520,6 +1649,7 @@ Match your website's styling and colors. Show your customer a beautiful branded 
         <details className="bg-white rounded-2xl shadow-lg mb-16">
           <summary className="cursor-pointer select-none px-6 py-4 text-2xl font-bold text-slate-900">Obsahové odporúčania</summary>
           <div className="px-6 pb-6">
+
         <div className="bg-white rounded-2xl p-8 shadow-lg mb-16">
           <h2 className="text-3xl font-bold text-slate-900 mb-2 text-center">
             Obsahové odporúčania
@@ -1777,8 +1907,11 @@ https://micro-code.eu/blog/stary,https://micro-code.sk/blog/novy,301</pre>
         </details>
 
         </div>
-        <div className="text-center">
-          <DownloadAuditButton />
+        <div className="text-center no-print">
+          <div className="inline-flex gap-3 flex-wrap justify-center">
+            <DownloadAuditButton />
+            <PrintAuditButton />
+          </div>
         </div>
       </div>
 

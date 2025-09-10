@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Card, CardContent } from "@/components/ui/card";
 import { Star, TrendingUp, Users, Globe, Quote } from 'lucide-react';
@@ -30,40 +29,6 @@ const statsVariants = {
     }
   }
 };
-
-// Logá klientov
-const clientLogos = [
-  {
-    name: "Trnava",
-    logo: "/clients/trnava.png",
-    width: 120,
-    height: 40
-  },
-  {
-    name: "Orange Slovensko",
-    logo: "/clients/orange.svg", 
-    width: 100,
-    height: 40
-  },
-  {
-    name: "Asseco",
-    logo: "/clients/asseco.png",
-    width: 100,
-    height: 40
-  },
-  {
-    name: "Trnavský samosprávny kraj",
-    logo: "/clients/ttsklogo.webp",
-    width: 120,
-    height: 40
-  },
-  {
-    name: "Masarykova univerzita",
-    logo: "/clients/muni.webp",
-    width: 120,
-    height: 40
-  }
-];
 
 // Štatistiky
 const stats = [
@@ -169,39 +134,6 @@ export function TrustElements() {
             ))}
           </motion.div>
 
-          {/* Client Logos */}
-          <motion.div
-            variants={trustVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
-            className="mb-16"
-          >
-            <h3 className="text-2xl font-semibold text-center text-gray-900 mb-8">
-              Dôverujú mi
-            </h3>
-            <div className="flex flex-wrap justify-center items-center gap-8 opacity-70 hover:opacity-100 transition-opacity duration-300">
-              {clientLogos.map((client, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.5 + index * 0.1 }}
-                  className="relative grayscale hover:grayscale-0 transition-all duration-300"
-                >
-                  <Image
-                    src={client.logo}
-                    alt={client.name}
-                    width={client.width}
-                    height={client.height}
-                    className="object-contain"
-                  />
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
 
           {/* Testimonials */}
           <motion.div

@@ -1,6 +1,5 @@
 'use client';
-import Image from "next/image";
-import { useState, Suspense } from "react";
+import { useState } from "react";
 import { motion, Variants } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
@@ -87,10 +86,10 @@ export function Hero() {
         animate="visible"
         className="relative container mx-auto px-6 z-10"
       >
-        <div className="flex flex-col-reverse md:flex-row items-center justify-between min-h-[calc(100vh-8rem)]">
+        <div className="flex flex-col items-center justify-center text-center py-16">
           {/* Content */}
-          <div className="w-full md:w-1/2 mb-8 md:mb-0">
-            <div className="space-y-6">
+          <div className="w-full max-w-4xl">
+            <div className="space-y-6 justify-center align-middle">
               {/* Badge */}
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-900/50 to-purple-900/50 border border-blue-700/30 shadow-sm backdrop-blur-sm">
                 <span className="text-blue-200 font-medium">Web Developer & Marketér</span>
@@ -109,7 +108,7 @@ export function Hero() {
               </h1>
 
               {/* Description */}
-              <p className="text-lg md:text-xl text-blue-100 leading-relaxed max-w-2xl">
+              <p className="text-lg md:text-xl text-blue-100">
                 Pomáham firmám a značkám rásť online – od rýchlych webov až po SEO a výkonnostný marketing. Spolupracujem selektívne, aby mal každý projekt moju plnú pozornosť.
               </p>
 
@@ -118,9 +117,9 @@ export function Hero() {
                 variants={buttonVariants}
                 className="pt-6"
               >
-                <div className="flex flex-col sm:flex-row gap-6 items-start">
+                <div className="flex flex-col sm:flex-row gap-6 items-top justify-center">
                   {/* Primary CTA - Contact */}
-                  <div className="relative flex-1">
+                  <div className="relative">
                     <button
                       onClick={handleClick}
                       className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 text-lg bg-gradient-to-r from-red-600 to-purple-600 hover:from-red-700 hover:to-purple-700 text-white rounded-full transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-xl"
@@ -128,14 +127,14 @@ export function Hero() {
                       Získajte mini audit zdarma
                       <ArrowRight className="w-5 h-5" />
                     </button>
-                    <p className="text-base text-blue-100 mt-3 text-center sm:text-left font-medium leading-relaxed">
+                    <p className="text-base text-blue-100 mt-3 text-center font-medium leading-relaxed">
                       Zistíte, kde váš web stráca zákazníkov.
                     </p>
                     {clickCount >= 3 && (
                       <motion.p 
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="absolute -bottom-12 left-1/2 sm:left-0 -translate-x-1/2 sm:translate-x-0 text-sm text-blue-300 font-semibold whitespace-nowrap"
+                        className="absolute -bottom-12 left-1/2 -translate-x-1/2 text-sm text-blue-300 font-semibold whitespace-nowrap"
                       >
                         {getCurrentMessage()}
                       </motion.p>
@@ -143,7 +142,7 @@ export function Hero() {
                   </div>
                   
                   {/* Secondary CTA */}
-                  <div className="flex-1">
+                  <div>
                     <a
                       href="#references"
                       className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 text-lg border border-white/20 text-white rounded-full transition-all duration-300 hover:bg-white/10"
@@ -156,34 +155,6 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Profile Image */}
-          <div className="w-full md:w-1/2 flex justify-center mb-8 md:mb-0">
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="relative w-64 h-64 md:w-80 md:h-80"
-            >
-              <Suspense fallback={
-                <div className="w-full h-full rounded-full bg-gray-800 content-placeholder" />
-              }>
-                <Image
-                  src="/zombo-andrej.webp"
-                  alt="Andrej Srna"
-                  fill
-                  priority={true}
-                  loading="eager"
-                  fetchPriority="high"
-                  className="rounded-full shadow-2xl border-4 border-white/10 relative z-10 object-cover"
-                  sizes="(max-width: 768px) 256px, 320px"
-                  quality={90}
-                  placeholder="blur"
-                  blurDataURL="data:image/webp;base64,..."
-                />
-              </Suspense>
-              <div className="absolute -inset-4 bg-gradient-to-r from-red-500 to-purple-500 rounded-full opacity-20 blur-2xl animate-pulse" />
-            </motion.div>
-          </div>
         </div>
 
 
