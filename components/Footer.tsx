@@ -228,6 +228,15 @@ export function Footer() {
                 >
                   Ochrana osobných údajov
                 </Link>
+                <span>•</span>
+                <a 
+                  href="https://synthbit.sk"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-gray-300 transition-colors duration-300 underline"
+                >
+                  Synthbit
+                </a>
               </div>
             </div>
           </motion.div>

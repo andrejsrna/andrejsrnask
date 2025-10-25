@@ -5,11 +5,6 @@ import "./globals.css";
 import CustomCursor from '@/components/CustomCursor';
 
 // Dynamically import heavy components
-const Header = dynamic(() => import('@/components/Header'), {
-  ssr: true,
-  loading: () => <div className="h-16" /> // Simple loading state
-});
-
 const Footer = dynamic(() => import('@/components/Footer').then(mod => mod.Footer), {
   ssr: true
 });
@@ -48,7 +43,6 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <CustomCursor />
-        <Header />
         <main className="mt-16">
           {children}
         </main>
