@@ -117,7 +117,7 @@ export function Contact() {
                   <ContactItem
                     icon={MapPin}
                     label="Sídlo"
-                    value="1. mája 33 900 84 Báhoň"
+                    value="Karpatské námestie 10A 831 06 Bratislava - mestská časť Rača"
                   />
                   <ContactItem
                     icon={Globe}

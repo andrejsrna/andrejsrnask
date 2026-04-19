@@ -11,7 +11,7 @@ export default function CV() {
           <div>
             <h1 className="text-3xl font-bold text-gray-800">Andrej Srna</h1>
             <p className="text-lg text-blue-600 font-medium italic">
-              IT specialista | správa webů a systémů | vedení IT projektů
+              Tvorím digitálne produkty | web developer a marketér
             </p>
           </div>
           <div className="w-32 h-32 md:w-36 md:h-36 relative overflow-hidden rounded-lg shadow-[4px_4px_8px_#d1d1d1,-4px_-4px_8px_#ffffff] print:shadow-none">
@@ -70,96 +70,96 @@ export default function CV() {
         <h2 className="text-2xl font-semibold mb-4 border-b pb-2 text-gray-800">Profil</h2>
         <div className="space-y-3 text-gray-700 leading-relaxed">
           <p>
-            Zkušený IT specialista s více než 7 lety praxe v oblasti správy webů, systémů a IT infrastruktury. 
-            Mám zkušenosti s vedením projektů, návrhem a implementací technických řešení a koordinací spolupráce mezi interními týmy a externími dodavateli.
+            Od roku 2016 sa venujem freelancingu, tvorbe digitálnych produktov a web developmentu.
+            Navrhujem, vyvíjam a zlepšujem weby, aplikácie a online služby tak, aby boli funkčné, rýchle a prinášali merateľný výsledok.
           </p>
           <p>
-            Mou silnou stránkou je schopnost kombinovat technické znalosti (infrastruktura, bezpečnost, IS/IT) se strategickým a organizačním pohledem. 
-            Hledám příležitost, kde mohu uplatnit své schopnosti v řízení IT oddělení a přispět k rozvoji moderní infrastruktury v městské organizaci.
+            Mám skúsenosti s projektmi pre komerčnú aj štátnu sféru, kde prepájam produktové uvažovanie, web development a digitálny marketing.
+            Pracoval som pre organizácie ako Ministerstvo zdravotníctva SR, Asseco, Slovak Business Agency, Ministerstvo hospodárstva SR, Slovenská inovačná a energetická agentúra, Krajská inovačná agentúra, Talent Centrum Trnava či Správa majetku mesta Trnava.
           </p>
         </div>
       </section>
 
       <section className="mb-10 bg-white p-6 rounded-xl shadow-[8px_8px_16px_#d1d1d1,-8px_-8px_16px_#ffffff] print:shadow-none">
-        <h2 className="text-2xl font-semibold mb-4 border-b pb-2 text-gray-800">PRACOVNÍ ZKUŠENOSTI</h2>
+        <h2 className="text-2xl font-semibold mb-4 border-b pb-2 text-gray-800">PRACOVNÉ SKÚSENOSTI</h2>
         <div className="space-y-8 text-gray-700">
           <div>
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-2">
-              <h3 className="text-xl font-bold text-gray-800">Trnavský samosprávný kraj – Website Administrator & IT Project Lead</h3>
-              <span className="text-gray-600">01/2023 – současnost</span>
+              <h3 className="text-xl font-bold text-gray-800">Freelance – Tvorba digitálnych produktov, web developer a marketér</h3>
+              <span className="text-gray-600">2016 – doteraz</span>
             </div>
             <ul className="list-disc list-inside space-y-2">
-              <li>Řízení redesignu hlavního webu: +30 % nárůst uživatelského zapojení, +20 % rychlejší načítání.</li>
-              <li>Plánování a koordinace IT projektů: návrh nových online služeb, integrace s existujícími systémy.</li>
-              <li>Dohled nad dodavateli a komunikace ohledně technických požadavků.</li>
-              <li>Prosazování bezpečnostních opatření (SSL/TLS, WAF, monitoring).</li>
-              <li>Vedení dokumentace, příprava směrnic a podkladů pro audit.</li>
+              <li>Tvorba webov, landing pageov, interných systémov a digitálnych produktov pre komerčnú aj štátnu sféru.</li>
+              <li>Návrh riešení od zadania cez UX, obsah a vývoj až po spustenie, SEO a marketingovú optimalizáciu.</li>
+              <li>Projekty a spolupráce pre Ministerstvo zdravotníctva SR, Asseco, Slovak Business Agency, Ministerstvo hospodárstva SR, Slovenskú inovačnú a energetickú agentúru, Krajskú inovačnú agentúru, Talent Centrum Trnava a Správu majetku mesta Trnava.</li>
+              <li>Prepájanie technickej realizácie s obchodným cieľom projektu, dôraz na výkon, konverzie a dlhodobú správu.</li>
             </ul>
           </div>
 
           <div>
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-2">
-              <h3 className="text-xl font-bold text-gray-800">QBSW, a.s. (Bratislava) – Web Developer</h3>
+              <h3 className="text-xl font-bold text-gray-800">Trnavský samosprávny kraj – Web developer a digitálne produkty</h3>
+              <span className="text-gray-600">01/2023 – doteraz</span>
+            </div>
+            <ul className="list-disc list-inside space-y-2">
+              <li>Riadenie redizajnu hlavného webu: +30 % nárast zapojenia používateľov, +20 % rýchlejšie načítanie.</li>
+              <li>Návrh a realizácia nových online služieb, zlepšovanie používateľskej skúsenosti a obsahovej štruktúry.</li>
+              <li>Koordinácia dodávateľov, technických požiadaviek a interných tímov pri doručovaní digitálnych riešení.</li>
+              <li>Prepojenie vývoja, analytiky a dlhodobej správy webu s cieľmi organizácie.</li>
+            </ul>
+          </div>
+
+          <div>
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-2">
+              <h3 className="text-xl font-bold text-gray-800">QBSW, a.s. (Bratislava) – Webový vývojár</h3>
               <span className="text-gray-600">2021 – 2022</span>
             </div>
             <ul className="list-disc list-inside space-y-2">
-              <li>Spolupráce na více než 15 projektech, tvorba technických specifikací a komunikace s klienty.</li>
-              <li>Úpravy a integrace systémů, optimalizace datových vazeb.</li>
-              <li>Podpora při testování a nasazování řešení.</li>
-            </ul>
-          </div>
-
-          <div>
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-2">
-              <h3 className="text-xl font-bold text-gray-800">VILTEN s.r.o. (Pezinok) – Frontend Developer</h3>
-              <span className="text-gray-600">2020 – 2021</span>
-            </div>
-            <ul className="list-disc list-inside space-y-2">
-              <li>Vývoj interní databázové aplikace pro Úřad veřejného zdravotnictví SR.</li>
-              <li>Návrh a realizace datových modelů, příprava API rozhraní.</li>
-              <li>Spolupráce na architektuře systému, tvorba dokumentace a manuálů.</li>
+              <li>Spolupráca na viac ako 15 projektoch, tvorba technických špecifikácií a komunikácia s klientmi.</li>
+              <li>Úpravy a integrácia systémov, optimalizácia dátových väzieb.</li>
+              <li>Podpora pri testovaní a nasadzovaní riešení.</li>
             </ul>
           </div>
         </div>
       </section>
 
       <section className="mb-10 bg-white p-6 rounded-xl shadow-[8px_8px_16px_#d1d1d1,-8px_-8px_16px_#ffffff] print:shadow-none">
-        <h2 className="text-2xl font-semibold mb-4 border-b pb-2 text-gray-800">KLÍČOVÉ DOVEDNOSTI</h2>
+        <h2 className="text-2xl font-semibold mb-4 border-b pb-2 text-gray-800">KĽÚČOVÉ ZRUČNOSTI</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-700">
           <div>
-            <h3 className="text-lg font-semibold mb-2 text-gray-800">Řízení IT projektů</h3>
+            <h3 className="text-lg font-semibold mb-2 text-gray-800">Tvorba digitálnych produktov</h3>
             <ul className="list-disc list-inside space-y-1">
-              <li>plánování, rozpočtování, komunikace s dodavateli, vedení týmu</li>
+              <li>zadanie, štruktúra, UX, MVP, prioritizácia a doručenie riešenia</li>
             </ul>
           </div>
           <div>
-            <h3 className="text-lg font-semibold mb-2 text-gray-800">IT infrastruktura</h3>
+            <h3 className="text-lg font-semibold mb-2 text-gray-800">Web development</h3>
             <ul className="list-disc list-inside space-y-1">
-              <li>cloudové služby, správa serverů (Linux), webhosting, ERP integrace</li>
+              <li>HTML, CSS, JavaScript, PHP, React, Next.js, WordPress, REST API</li>
             </ul>
           </div>
           <div>
-            <h3 className="text-lg font-semibold mb-2 text-gray-800">ITSM & bezpečnost</h3>
+            <h3 className="text-lg font-semibold mb-2 text-gray-800">Digitálny marketing</h3>
             <ul className="list-disc list-inside space-y-1">
-              <li>správa incidentů, firewall (F5), WAF, SSL/TLS, monitoring logů, základní SIEM</li>
+              <li>landing pages, obsah, SEO, konverzná optimalizácia a analytika</li>
             </ul>
           </div>
           <div>
-            <h3 className="text-lg font-semibold mb-2 text-gray-800">Analýza a návrh systémů</h3>
+            <h3 className="text-lg font-semibold mb-2 text-gray-800">Projektové vedenie</h3>
             <ul className="list-disc list-inside space-y-1">
-              <li>UML, BPMN, dokumentace funkčních a technických specifikací</li>
+              <li>komunikácia s klientmi, dodávateľmi a tímami, plánovanie a koordinácia</li>
             </ul>
           </div>
           <div>
-            <h3 className="text-lg font-semibold mb-2 text-gray-800">Vývoj & integrace</h3>
+            <h3 className="text-lg font-semibold mb-2 text-gray-800">Analýza a integrácie</h3>
             <ul className="list-disc list-inside space-y-1">
-              <li>HTML, CSS, JS, PHP, React/Next.js, REST API</li>
+              <li>technické špecifikácie, dátové väzby, návrh riešení a prepájanie systémov</li>
             </ul>
           </div>
           <div>
-            <h3 className="text-lg font-semibold mb-2 text-gray-800">Databáze</h3>
+            <h3 className="text-lg font-semibold mb-2 text-gray-800">Prevádzka a výkon</h3>
             <ul className="list-disc list-inside space-y-1">
-              <li>SQL – návrh schémat, práce s relačními databázemi</li>
+              <li>výkon webu, technické SEO, monitoring a dlhodobá správa riešení</li>
             </ul>
           </div>
         </div>
@@ -168,18 +168,18 @@ export default function CV() {
       <section className="mb-10 bg-white p-6 rounded-xl shadow-[8px_8px_16px_#d1d1d1,-8px_-8px_16px_#ffffff] print:shadow-none">
         <h2 className="text-2xl font-semibold mb-4 border-b pb-2 text-gray-800">JAZYKY</h2>
         <ul className="list-disc list-inside space-y-1 text-gray-700">
-          <li>Čeština / Slovenština – rodilý mluvčí</li>
+          <li>Čeština / Slovenčina – rodený hovoriaci</li>
           <li>Angličtina – pokročilá (B2)</li>
         </ul>
       </section>
 
       <section className="mb-10 bg-white p-6 rounded-xl shadow-[8px_8px_16px_#d1d1d1,-8px_-8px_16px_#ffffff] print:shadow-none">
-        <h2 className="text-2xl font-semibold mb-4 border-b pb-2 text-gray-800">OSOBNÍ PŘEDPOKLADY</h2>
+        <h2 className="text-2xl font-semibold mb-4 border-b pb-2 text-gray-800">OSOBNÉ PREDPOKLADY</h2>
         <ul className="list-disc list-inside space-y-1 text-gray-700">
-          <li>Strategické a analytické myšlení</li>
-          <li>Schopnost efektivně vést tým a komunikovat napříč organizací</li>
-          <li>Důslednost, spolehlivost a flexibilita</li>
-          <li>Orientace na výsledky a efektivní využití zdrojů</li>
+          <li>Strategické a analytické myslenie</li>
+          <li>Schopnosť efektívne viesť tím a komunikovať naprieč organizáciou</li>
+          <li>Dôslednosť, spoľahlivosť a flexibilita</li>
+          <li>Orientácia na výsledky a efektívne využitie zdrojov</li>
         </ul>
       </section>
 

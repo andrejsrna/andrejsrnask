@@ -182,9 +182,9 @@ export default function TvorbaWebStranokPezinok() {
               telephone: '+421914230321',
               address: {
                 '@type': 'PostalAddress',
-                streetAddress: '1. mája 33',
-                addressLocality: 'Báhoň',
-                postalCode: '900 84',
+                streetAddress: 'Karpatské námestie 10A',
+                addressLocality: 'Bratislava - mestská časť Rača',
+                postalCode: '831 06',
                 addressCountry: 'SK'
               },
               areaServed: {
